@@ -1,0 +1,349 @@
+\documentclass[11pt]{report}		
+\usepackage{fullpage}				% title page gets one full page
+\usepackage{graphicx}
+
+% no indent after paragraphs (\par)
+\usepackage[parfill]{parskip}
+
+% eliminate 1ex gap after subsection 
+\usepackage{titlesec}
+\titlespacing\subsubsection{0pt}{1.0ex plus -1ex minus -.2ex}{-\parskip}
+\titlespacing\subsection{0pt}{1.0ex plus -1ex minus -.2ex}{-\parskip}
+
+% include subsubsections in TOC
+\setcounter{tocdepth}{3}
+
+% start every section on a new page.
+\let\stdsection\section
+\renewcommand\section{\newpage\stdsection}
+
+\author{Your Name Here}
+\title {Your Title Here}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+% ----------------------------------------------------------------
+% project definition
+% ----------------------------------------------------------------
+\chapter*{Project Definition}		% gets rid of 'chapter' at top
+\setcounter{chapter}{1}			% not zero based
+
+% ----------------------------------------------------------------
+% background summary
+% ----------------------------------------------------------------
+\section{Background Summary}
+
+% statement of need
+\subsection{Statement of Need}
+\par For many years, the human-machine interface has maintained a standard formula. Persons are limited to point and click technology as their only means by which to interract with the digital realm. As technology has advanced, new alternatives have emerged to allow  greater freedom of control, and although many of these devices are available to consumers, there has not been a push to combine them in ways that are intuitive and natural to use.
+
+\par There is also a need for a faster and more configurable CNC. Most CNCs found on the consumer market are slow~ causing the 'rapid prototyping' phase of development to suffer correspondingly. A faster, more robust robot would cut down on project time and open the door for other applications. Reconfiguration will help the technology to adapt and stay relevant.
+
+\par One application possible with an improved interface and more robust robotics would be Printed Circuit Board repair. As components shrink in size, they become more difficult to manipulate. When this is compounded with the complexities inherent in soldering, it can become dangerous to perform standard PCB repairs. Although industry has already solved the problem of component placement for bare circuit boards, no device yet exisists that allows persons to utilize the precision of robotics in this area. 
+
+% research summary
+\subsection{Research Summary}
+\par The Delta Robot to be used as the foundation for this 2014 Capstone Project was inspired by several recent trends in robotics. The OpenBeam Kossel Pro is a 2012 project that uses a delta robot for 3D printing, much like its open-source counterpart, the Rostock. While both represent breakthroughs in Delta Robot application, its originination in industry as a rapid placement device on assembly lines suggests that the architecture is capable of much more complex tasks.
+
+\par One of the Delta Robot's primary advantages over a standard CNC is the increased degree of freedom that comes with independantly controlled axes. While several industrial robots take advantage of this fact, their pricetag can fluctuate in excess of \$50,000. There are currently no commercially available Delta Robots that are affordable, precise, customizable, and open source.
+
+\par Fortunately, recent advances in the human-machine interface have countered stagnation in consumer robotics. The Oculus Rift is one such revalation; a virtual reality helmet that can handle 3D output through stereoscopic vision. The helmet also has motion sensors to be able to sense where a user would like to look or change focus to, enabling total immersion in a digital world.
+
+\par The Leap Motion is another new technology that is reshaping how humans interact with machines. The Leap Motion is a control interface that is touch free. The Leap has a work area monitored by infrared sensors that can track many objects, but specifically had hands in mind. The Leap can track multiple hands and each finger individually. This technology has been used in many applications, from replacing a mouse to controlling a robotic hand. Its versatility has the potential to be useful, especially as its availability and community grows.
+
+\par When a human tries to perform a task, there is one limiting factor: the human's fine motor skills are limited by what they can see. When a human looks into a microscope, it is very easy for them to manipulate small items with tweezers. Increasing the resolution of what a human can see will increase the resolution of what a human can manipulate. In combining the above technologies, this 2014 Senior Capstone Project seeks to overcome many of the challenges faces by those with limited vision and movement capabilities.
+
+% system requirements
+\subsection{System Requirements}
+\subsubsection{Stakeholder Chart}
+The Stakeholder Chart is shown in Figure ~\ref{fig:organization}.
+\begin{figure}[p]
+	\centering
+	\includegraphics[width=0.5\textwidth]{organization.png}
+	\caption{Stakeholder Chart}
+	\label{fig:organization}
+\end{figure}
+
+\subsubsection{Marketing Requirements}
+The system will meet the following criteria:
+\begin{enumerate} \parskip2pt
+	\item be intuitive.
+	\item act predictably.
+	\item have an ergonomic design.
+	\item have a simple interface.
+	\item automatically configuration itself.
+	\item be robust.
+	\item have a modular design.
+	\item operate safely.
+	\item not harm humans.
+	\item not harm itself.
+	\item be able to recover from unexpected occurrences.
+	\item be versatile in its uses.
+	\item be able to be used for multiple applications.
+	\item be able to use multple interfaces for communication.
+	\item be open source.
+\end{enumerate}
+
+\newpage
+\subsubsection{Engineering Requirements}
+The system will meet the following criteria:
+\begin{enumerate} \parskip2pt
+	\item Performance
+	\begin{enumerate}
+		\item have an accuracy finer than 0.025 mm.
+		\item have a resolution finer than 0.25 mm.
+		\item have a work area 50 cm in diameter and 50 cm in height.
+		\item travel faster than 500 mm per minute.
+	\end{enumerate}
+
+	\item Environmental
+	\begin{enumerate}
+		\item be transportable by two or fewer persons.
+		\item produce less than 85 dB of sound from a distance of 3 feet.
+	\end{enumerate}
+
+	\item Health and Safety
+	\begin{enumerate}
+		\item have thermal shutdown and over-current protection.
+		\item have a readily accessible emergency stop switch.
+		\item halt all motion if a user enters the work area.
+	\end{enumerate}
+
+	\item Reliability
+	\begin{enumerate}
+		\item have critical components shielded from the work area.
+		\item be modular in construction.
+		\item use standard components.
+		\item be vibration resistant.
+		\item be able to run for 8 continuous hours of operation.
+	\end{enumerate}
+
+	\item Interfacing
+	\begin{enumerate}
+		\item be compatible with current G-Code standards.
+		\item have no more than five menus.
+		\item have Ethernet compatability.
+	\end{enumerate}
+\end{enumerate}
+
+\subsubsection{Required Resources}
+\par The persons involved with this project will require a dedicated collaborative space where regular meetings can be held, and items remain posted between sessions. A lab environment equipped with computers containing nessescary software, and soldering stations will be required for the hardware design and construction. The software development can be done through any computer that has the proper tools installed, which depends upon the hardware chosen for the project. Financial resources required will be determined upon initial analysis of the project requirements, but should not exceed \$5,000.
+
+% ----------------------------------------------------------------
+% project boundaries
+% ----------------------------------------------------------------
+\section{Project Boundaries}
+
+% statement of scope
+\subsection{Statement of Scope}
+The Project will contain the following aspects.
+
+\subsubsection{Human-Machine Interface}
+\par It is the primary goal of this 2014 Capstone Project to improve the human machine interface through the addition of 3D visualization and 3D manipulation capabilities not currently implemented in industry and consumer electronics. Students will seek to build upon recent commercially available technology, and combine it in new ways to create an interface that is intuitive, versatile, and robust.
+
+\paragraph{3D Visualization}
+Modern mechanical interfaces generally employ 2D methods (computer monitors) in order to render a machine's world view. 2D visualization causes problems in orientation and perception, as the end-user is unable to discern crucial depth information from a single point source. This project seeks to solve issues in orientation and depth perception through the use of a 3D display interface that presents to the user the data necessary to navigate in 3 dimensions.
+
+\paragraph{3D Manipulation}
+Following the same logic, this 2014 Capstone Project also seeks to alleviate common control issues in machine interfaces based upon 2 dimensional button or joystick systems. Allowing the end user to operate in real space will enhance control, stability, and ease of use for the final system.
+
+\subsubsection{Application of Interface}
+\par While the ability to control machinery in real space may ultimately yield many implementations, members involved with this project seek to demonstrate its abilities in the construction of a system by which minute electronic repairs may be examined and performed. This system will utilize the Human-Machine Interface outlined above in order to manipulate real world components with the end goal of improving the PCB repair process.
+
+\subsubsection{Generation of Knowledge}
+\par Many of the engineering challenges encountered through this undertaking will be in areas not covered by the consumer knowledge base. It is then the goal of this project to document solutions in such a way that they may be of benefit to persons in the academic research and open-source communities.
+
+\subsubsection{Refinement of Engineering Processes}
+\par Finally, persons involved with this project seek to refine their private principles and abilities in the application of good engineering practices through the duration of the undertaking. It is the ultimate goal of this 2014 Capstone Project to produce engineers ready for industry, by thoroughly testing their problem solving capacity over the course of the next 6 months.
+
+% disclosure of team expertise
+\newpage
+\subsection{Disclosure of Team Expertise}
+Team member skill set allocation is as follows.
+
+\subsubsection{James Gehringer}
+\par Jamie is the Resource Manager for this 2014 Capstone Project. He has a great deal of experience with bio-medical engineering, and brings a thorough knowledge of the human-machine interface to the project. He works with many of the 3D mapping technologies that will be required in order to build this device. His skills in this area will enable the team to push the operability of the product past simple control systems to actual robotic intelligence, and define the system as whole.
+
+\subsubsection{Josh DeWitt}
+\par Josh is the Software Development Engineer for this 2014 Capstone project. He is fluent in Groovy, Java, C and bash scripting, and has made extensive use of test-driven development in all these languages. Hands-on experience in computer networking, managing remote hardware, Linux server management, and creating highly-available systems enable him to focus development on improved functionality over “getting things to work.” He prefers agile, social coding using pair programming, test-driven development, and Git. 
+
+\subsubsection{Evan Milton}
+\par Evan is the Systems Engineer for this 2014 Capstone project. With years of CNC experience, He has already designed and prototyped many of the components necessary to operate the Delta Robot. His mechanical engineering skills will allow for the construction of the precision components required by this system. He has a solid background in microcontroller implementation, and a firm understanding of the design process in delivering operational results under pressure.
+
+\subsubsection{Chad Staley}
+\par Chad is the Hardware Development Engineer for this 2014 Capstone Project. He has several years worth of experience in electronic assembly and PCB design. Much of his internship has consisted of the testing and verification of electronic systems, and is well practiced in the creation of complex signal networks. These skills will serve to produce a clean and robust hardware platform that can be well maintained and troubleshot with ease.
+
+% success criteria
+\newpage
+\subsection{Success Criteria}
+The project will be deemed a success, should the following parameters be met.
+
+\subsubsection{System Functionality}
+\par The system will be intuitive, versatile, and robust. It will allow users to manipulate objects via the user interface in a manner much the same as they might in person. The system will require minimal configuration from the user. The system will be able to handle a variety of inputs requirements, and operate in commercial conditions.
+
+\subsubsection{System Application}
+\par The project will demonstrate applications for the completed Human-Machine Interface to sufficiently justify its construction expenses both financially and in terms of labor.
+
+\subsubsection{System Documentation}
+\par The project will yield documentation adequate for remote individuals to validate the engineering decisions made at every step, and re-create the complete system or portions thereof with minimal research.
+
+% ----------------------------------------------------------------
+% proposed solutions
+% ----------------------------------------------------------------
+\section{Proposed Solutions}
+
+% objective tree
+\subsection{Objective Tree}
+\par The objective tree has been outlined for this Senior Capstone 2014 Project in Figure ~\ref{fig:objectivetree}. There are three primary marketing requirements, followed by their respecitve sub-requirements. Each requirement contains a relative weight of 1.00. Piecewise comparisons of each component are shown in Tables ~\ref{table:primary} through ~\ref{table:versatile}.
+
+\par The three marketing requirement are Intuitive, Robust, and Versatile. The most important marketing requirement is Intuitiveness, as the complexity involved with working in 3 dimensions makes it important for users to be able to operate in a manner that feels natural. Components can be damaged if the robot is not operated in an expected manner. It is also important for the robot to be robust. This will help extend to robots work life and make failure less likely. Finally, the robot must also be versatile. While the focus of this project is PCB repair, the delta robot platform will lend itself to many applications. By creating this open source platform, others will be able to extend the usability of the delta robot.
+
+\begin{table}[ht] 
+	\caption{Primary Objective Definition}
+	\label{table:primary}
+	\centering 
+	\begin{tabular}{c c c c c} 
+		\hline\hline \\
+		 			& Intuitive 	& Robust 		& Versatile 	& Total\\ 
+		Intuitive 	& 1.00 		& 1.20 		& 1.50 		& 0.40 \\ 
+		Robust 		& 0.83 		& 1.00 		& 1.25		& 0.33 \\ 
+		Versatile 	& 0.67 		& 0.80 		& 1.00 		& 0.27 \\ 
+	\end{tabular} 
+\end{table}
+
+\begin{table}[ht] 
+	\caption{Intuitive Objective Definition}
+	\label{table:intuitive}
+	\centering 
+	\begin{tabular}{c c c c c c} 
+		\hline\hline \\
+		 			& Predictable	& Ergonomic	& Simple 		& Automatic 	& Total\\ 
+		Predictable 	& 1.00 		& 2.00 		& 1.00 		& 1.50 		& 0.32 \\ 
+		Ergonomic		& 0.50 		& 1.00 		& 0.50		& 0.75 		& 0.15 \\ 
+		Simple	 	& 1.00 		& 2.00 		& 1.00 		& 1.50 		& 0.32 \\ 
+		Automatic	 	& 0.67		& 1.33 		& 0.67 		& 1.00 		& 0.21 \\ 
+	\end{tabular} 
+\end{table}
+
+\begin{table}[ht] 
+	\caption{Robust Objective Definition}
+	\label{table:robust}
+	\centering 
+	\begin{tabular}{c c c c c} 
+		\hline\hline \\
+		 			& Modular 	& Safe 		& Recoverable	& Total\\ 
+		Modular	 	& 1.00 		& 0.80		& 1.00 		& 0.31 \\ 
+		Safe 		& 1.25		& 1.00 		& 1.25		& 0.38 \\ 
+		Recoverable 	& 1.00 		& 0.80 		& 1.00 		& 0.31 \\ 
+	\end{tabular} 
+\end{table}
+
+\begin{table}[ht] 
+	\caption{Versatile Objective Definition}
+	\label{table:versatile}
+	\centering 
+	\begin{tabular}{c c c c c} 
+		\hline\hline \\
+		 			& Applications& Interfaces	& Open Source	& Total\\ 
+		Applications	& 1.00 		& 2.00		& 3.00 		& 0.55 \\ 
+		Interfaces	& 0.50		& 1.00 		& 1.50		& 0.27 \\ 
+		Open Source 	& 0.33 		& 0.67 		& 1.00 		& 0.18 \\ 
+	\end{tabular} 
+\end{table}
+
+% makes compiling slow!
+\begin{figure}[p]
+	\centering
+	\includegraphics[width=.8\textwidth]{objectivetree.png}
+	\caption{Delta Robot Objective Tree}
+	\label{fig:objectivetree}
+\end{figure}
+
+% microprocessor functionality
+\newpage
+\subsection{Microprocessor Functionality}
+\par The main microprocessor, an ARM Cortex 11 on the Raspberry Pi, will primarily be responsible for controlling the three stepper motors for the delta robot. This objective will be achieved by creating a gcode interpreter written in C. Gcode is a standard way to instruct a CNC router to move the work head throughout a 3D space, but is more complicated than accepting individual commands to move the motors. The microprocessor will be responsible for scheduling movements to make smooth transitions to the destination, as interpreted from the gcode. 
+\par Instead of having physical buttons or a local user interface, the system will mainly be a network device, connected through WiFi or Ethernet. The microprocessor will obtain gcode commands through local storage or by accepting gcode files over HTTP or SSH. The gcode received over HTTP or SSH may then be optionally stored locally for faster use again in the future. Execution of gcode sequences will be started through an HTTP interface, meaning any device with a browser can interact with the system. All network interfaces will be password protected and use encryption algorithms to ensure that all commands executed are from authorized users. 
+
+\par A secondary microprocessor may be required to control the tools on the delta robot, including the heat of a soldering iron, the rotation of a drill bit, or the positioning of cameras based on the user's position. This secondary microprocessor will perform any required communication with the network-connected main microprocessor through a serial interface. 
+
+% telecommunications functionality
+\subsection{Telecommunications Functionality}
+\par The telecommunications requirements for the project will involve sending data from the Oculus Rift to a centralized computed where it will be converted to movement data for the operation of the Delta Robot. Video information must also be sent from the computer to the Oculus Rift. The movement data will be transmitted from the central computer to the Delta Robot via Ethernet. Video data from the Delta Robot will be transmitted to the computer by a video channel such a S-video. The Oculus Rift will use a USB channel to transmit data to the computer while the computer will use a DVI channel to transmit the video data to the Oculus Rift.
+
+% ceen appropriateness
+\newpage
+\subsection{CEEN Appropriateness}
+\par The senior capstone design project serves as part of the ABET accreditation for the CEEN program. To meet these standards, students at the time of graduation will have:
+\begin{enumerate} \parskip2pt
+	\item The ability to apply knowledge of mathematics, science, and engineering. (ABET 3a)
+	\item The ability to design and conduct experiments, as well as to analyze and interpret data. (ABET 3b)
+	\item The ability to design a system, component, or process to meet desired needs within realistic constraints such as economic, environmental, social, political, ethical, health and safety, manufacturability, and sustainability. (ABET 3c)
+	\item The ability to function on multidisciplinary teams. (ABET 3d)
+	\item The ability to identify, formulate, and solve engineering problems. (ABET 3e)
+	\item The understanding of professional and ethical responsibility. (ABET 3f)
+	\item The ability to communicate effectively. (ABET 3g)
+the broad education necessary to understand the impact of engineering solutions in a global, economic, environmental, and societal context. (ABET 3h)
+	\item The recognition of the need for, and an ability to engage in life-long learning. (ABET 3i)
+	\item The knowledge of contemporary issues. (ABET 3j)
+	\item The ability to use the techniques, skills, and modern engineering tools necessary for engineering practice. (ABET 3k)
+\end{enumerate}
+
+\par Through the design of the Delta Robot, all of these requirements will be met. The design and construction will require the rigorous application of mathematics, science, and engineering for the software, hardware, mechanical, and system control. (ABET 3a). Notably, the kinematics of the robot will require intense mathematical computations to ensure accuracy. Experiments must be designed and conducted to ensure proper operation of components and the final result (ABET 3b). The end result of the project will meet the needs outlined in the Background Summary (ABET 3c). The level of success of the project will depend on how well the the team is able to cooperate and strive to achieve common goals (ABET 3d). This project will present many engineering problems that will have to be solved (ABET 3e). Not only must the group work towards common goals, but they must also communicate effectively (ABET 3g). Similarly to ABET 3a, the entire project will involve the use of engineering skills that have been learned in previous coursework (ABET 3k).
+
+\newpage
+\par The senior capstone project also serves as a culmination of the CEEN curriculum. Concepts and skills learned in previous courses must be applied in the design, construction, and documentation of the project. Courses that will be built upon in the design of the Delta Robot are:
+\begin{enumerate} \parskip2pt
+	\item Microprocessor Applications
+	\item Electrical \& Electronic Circuits
+	\item Communication Systems
+	\item Signals \& Linear Systems
+	\item Digital Design \& Interface
+	\item Microprocessor System Design
+	\item Embedded Microcontroller Design
+\end{enumerate}
+
+\par In conclusion, the Delta Robot will prove a technically challenging project, requiring many of the skills taught throughout the CEEN curricula. The completion of this project alone will meet at least 7 of the 11 ABET accreditation criteria.
+
+% constraints
+\subsection{Constraints}
+Constraints for this project are as follows:
+
+\subsubsection{ Identification}
+\par Most notabe among the constraints to be outlined for this project are time and money. As full-time students with part-time jobs, time is to be split among many areas in the next 7-8 months. Therefore, hours must be carefully scheduled as a group for work on the project. Much of the time spent working will have to be on an individual basis. The scope of the project must be carefully decided so as to not accrue an impossible time requirement. 
+\par This 2014 Capstone Project is funded entirely by the engineering team. Again, as full-time students with part-time jobs, funds are limited. Therefore, cost will play a significant role in determining which components to buy. Solutions must be carefully planned in order to avoid rework and wasting money spent.
+
+\par Other constraints will be safety, manufacturability, robustness, and versatility as described in the Background Summary.
+
+\par The primary resources for the project are the four engineers involved with the undertaking. The engineers will be responsible for all design and implementation. Other resources that will be used include a senior thesis office that will be the primary work space, and a CNC PCB mill that will be used for prototyping.
+
+\subsubsection{IEEE Standards}
+\par The following IEEE standards will be adhered to when appropriate:
+\begin{enumerate} \parskip2pt
+	\item IEEE Std 830-1998/IEEE Recommended Practice for Software Requirements Speciﬁcations
+	\item IEEE Std 1220-2005/Standard for Application and Management of the Systems Engineering Process
+	\item IEEE Std 1490-2011/A Guide to the Project Management Body of Knowledge
+\end{enumerate}
+
+\subsubsection{Preliminary Budget}
+\par A preliminary budget of \$2500 has been appropriated, but is subject to change. The breakdown is shown in Table ~\ref{table:budget}. The bulk of the cost of the project will be mechanical parts such as belts, rods, fasteners, etc. The next greatest expense is expected to be electronic components. Most software required is expected to be freely available, but funds have been left under 'unallocated' should this be nessescary. Finally 'Systems' has received a budget of \$500 for aquiring the assembled technology nessescary to implement the project. 
+
+\begin{table}[ht] 
+	\centering 
+	\begin{tabular}{c c c} 
+		Designation	& Funds 		& Percentage\\
+		\hline
+		Mechanical	& \$1,000 	& 40.0\% \\ 
+		Electrical	& \$500 		& 20.0\% \\ 
+		Systems		& \$500 		& 20.0\% \\ 
+		Unallocated	& \$500 		& 20.0\% \\
+	\end{tabular} 
+	\caption{Preliminary Design Budget}
+	\label{table:budget}
+\end{table}
+
+\subsubsection{Engineering Hours}
+\par In comparison to the scope and time required of previous capstone design projects, an estimated 1000 work hours will be needed to complete this project. This corresponds to approximately 8 hours per week per person involved with this 2014 Capstone Project.
+\end{document}
