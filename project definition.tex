@@ -30,7 +30,7 @@
 	James Gehringer \\
 	Computer and Electronics Engineering \\
 	University of Nebraska at Lincoln - Omaha Campus \\
-	Computer Engineering and Mathematics, minor in Computer Science
+	Computer Engineering, minor in Computer Science
 }
 \date{\today}
 
@@ -42,7 +42,7 @@
 \chapter{Background Summary}
 \section{Statement of Need}
 For many years, the human-machine interface has maintained a standard formula.
-Persons are limited to point and click technology as their only means by which to interract with the digital realm.
+Persons are limited to point and click technology as their only means by which to interact with the digital realm.
 As technology has advanced, new alternatives have emerged to allow  greater freedom of control, and although many of these devices are available to consumers, there has not been a push to combine them in ways that are intuitive and natural to use.
 
 There is also a need for a faster and more configurable CNC.
@@ -53,19 +53,19 @@ Reconfiguration will help the technology to adapt and stay relevant.
 One application possible with an improved interface and more robust robotics would be Printed Circuit Board repair.
 As components shrink in size, they become more difficult to manipulate.
 When this is compounded with the complexities inherent in soldering, it can become dangerous to perform standard PCB repairs.
-Although industry has already solved the problem of component placement for bare circuit boards, no device yet exisists that allows persons to utilize the precision of robotics in this area. 
+Although industry has already solved the problem of component placement for bare circuit boards, no device yet exists that allows persons to utilize the precision of robotics in this area. 
 
 \section{Research Summary}
 The Delta Robot to be used as the foundation for this 2014 Capstone Project was inspired by several recent trends in robotics.
 The OpenBeam Kossel Pro is a 2012 project that uses a delta robot for 3D printing, much like its open-source counterpart, the Rostock.
-While both represent breakthroughs in Delta Robot application, its originination in industry as a rapid placement device on assembly lines suggests that the architecture is capable of much more complex tasks.
+While both represent breakthroughs in Delta Robot application, its origination in industry as a rapid placement device on assembly lines suggests that the architecture is capable of much more complex tasks.
 
-One of the Delta Robot's primary advantages over a standard CNC is the increased degree of freedom that comes with independantly controlled axes.
-While several industrial robots take advantage of this fact, their pricetag can fluctuate in excess of \$50,000.
+One of the Delta Robot's primary advantages over a standard CNC is the increased degree of freedom that comes with independently controlled axes.
+While several industrial robots take advantage of this fact, their price can fluctuate in excess of \$50,000.
 There are currently no commercially available Delta Robots that are affordable, precise, customizable, and open source.
 
 Fortunately, recent advances in the human-machine interface have countered stagnation in consumer robotics.
-The Oculus Rift is one such revalation; a virtual reality helmet that can handle 3D output through stereoscopic vision.
+The Oculus Rift is one such revelation; a virtual reality helmet that can handle 3D output through stereoscopic vision.
 The helmet also has motion sensors to be able to sense where a user would like to look or change focus to, enabling total immersion in a digital world.
 
 The Leap Motion is another new technology that is reshaping how humans interact with machines.
@@ -106,7 +106,7 @@ The system will meet the following criteria:
 	\item be able to recover from unexpected occurrences.
 	\item be versatile in its uses.
 	\item be able to be used for multiple applications.
-	\item be able to use multple interfaces for communication.
+	\item be able to use multiple interfaces for communication.
 	\item be open source.
 \end{enumerate}
 
@@ -145,15 +145,15 @@ The system will meet the following criteria:
 
 	\item Interfacing
 	\begin{enumerate}
-		\item be compatible with current G-Code standards.
+		\item be compatible with current G-code standards.
 		\item have no more than five menus.
-		\item have Ethernet compatability.
+		\item have Ethernet compatibility.
 	\end{enumerate}
 \end{enumerate}
 
 \subsection{Required Resources}
 The persons involved with this project will require a dedicated collaborative space where regular meetings can be held, and items remain posted between sessions.
-A lab environment equipped with computers containing nessescary software, and soldering stations will be required for the hardware design and construction.
+A lab environment equipped with computers containing necessary software, and soldering stations will be required for the hardware design and construction.
 The software development can be done through any computer that has the proper tools installed, which depends upon the hardware chosen for the project.
 Financial resources required will be determined upon initial analysis of the project requirements, but should not exceed \$5,000.
 
@@ -192,7 +192,7 @@ Team member skill set allocation is as follows.
 \subsection{James Gehringer}
 Jamie is the Resource Manager for this 2014 Capstone Project. He has a great deal of experience with bio-medical engineering, and brings a thorough knowledge of the human-machine interface to the project.
 He works with many of the 3D mapping technologies that will be required in order to build this device.
-His skills in this area will enable the team to push the operability of the product past simple control systems to actual robotic intelligence, and define the system as whole.
+His skills in this area will enable the team to push the user interface of the product past simple control systems to actual robotic intelligence, and define the system as whole.
 
 \subsection{Josh DeWitt}
 Josh is the Software Development Engineer for this 2014 Capstone project.
@@ -230,7 +230,7 @@ The project will yield documentation adequate for remote individuals to validate
 \chapter{Proposed Solutions}
 \section{Objective Tree}
 The objective tree has been outlined for this Senior Capstone 2014 Project in Figure ~\ref{fig:objectivetree}.
-There are three primary marketing requirements, followed by their respecitve sub-requirements. Each requirement contains a relative weight of 1.00.
+There are three primary marketing requirements, followed by their respective sub-requirements. Each requirement contains a relative weight of 1.00.
 Piecewise comparisons of each component are shown in Tables ~\ref{table:primary} through ~\ref{table:versatile}.
 
 \begin{figure}[h]
@@ -304,14 +304,14 @@ By creating this open source platform, others will be able to extend the usabili
 
 \section{Microprocessor Functionality}
 The main microprocessor, an ARM Cortex 11 on the Raspberry Pi, will primarily be responsible for controlling the three stepper motors for the delta robot.
-This objective will be achieved by creating a gcode interpreter written in C.
-Gcode is a standard way to instruct a CNC router to move the work head throughout a 3D space, but is more complicated than accepting individual commands to move the motors.
-The microprocessor will be responsible for scheduling movements to make smooth transitions to the destination, as interpreted from the gcode.
+This objective will be achieved by creating a G-code interpreter written in C.
+G-code is a standard way to instruct a CNC router to move the work head throughout a 3D space, but is more complicated than accepting individual commands to move the motors.
+The microprocessor will be responsible for scheduling movements to make smooth transitions to the destination, as interpreted from the G-code.
 
 Instead of having physical buttons or a local user interface, the system will mainly be a network device, connected through WiFi or Ethernet.
-The microprocessor will obtain gcode commands through local storage or by accepting gcode files over HTTP or SSH.
-The gcode received over HTTP or SSH may then be optionally stored locally for faster use again in the future.
-Execution of gcode sequences will be started through an HTTP interface, meaning any device with a browser can interact with the system.
+The microprocessor will obtain G-code commands through local storage or by accepting G-code files over HTTP or SSH.
+The G-code received over HTTP or SSH may then be optionally stored locally for faster use again in the future.
+Execution of G-code sequences will be started through an HTTP interface, meaning any device with a browser can interact with the system.
 All network interfaces will be password protected and use encryption algorithms to ensure that all commands executed are from authorized users. 
 
 A secondary microprocessor may be required to control the tools on the delta robot, including the heat of a soldering iron, the rotation of a drill bit, or the positioning of cameras based on the user's position.
@@ -370,7 +370,7 @@ The completion of this project alone will meet at least 7 of the 11 ABET accredi
 Constraints for this project are as follows:
 
 \subsection{ Identification}
-Most notabe among the constraints to be outlined for this project are time and money.
+Most notable among the constraints to be outlined for this project are time and money.
 As full-time students with part-time jobs, time is to be split among many areas in the next 7-8 months.
 Therefore, hours must be carefully scheduled as a group for work on the project.
 Much of the time spent working will have to be on an individual basis.
@@ -389,7 +389,7 @@ Other resources that will be used include a senior thesis office that will be th
 \subsection{IEEE Standards}
 The following IEEE standards will be adhered to when appropriate:
 \begin{enumerate} \parskip2pt
-	\item IEEE Std 830-1998/IEEE Recommended Practice for Software Requirements Speciﬁcations
+	\item IEEE Std 830-1998/IEEE Recommended Practice for Software Requirements Specifications
 	\item IEEE Std 1220-2005/Standard for Application and Management of the Systems Engineering Process
 	\item IEEE Std 1490-2011/A Guide to the Project Management Body of Knowledge
 \end{enumerate}
@@ -400,7 +400,7 @@ The breakdown is shown in Table ~\ref{table:budget}.
 The bulk of the cost of the project will be mechanical parts such as belts, rods, fasteners, etc.
 The next greatest expense is expected to be electronic components.
 Most software required is expected to be freely available, but funds have been left under 'unallocated' should this be nessescary.
-Finally 'Systems' has received a budget of \$500 for aquiring the assembled technology nessescary to implement the project. 
+Finally 'Systems' has received a budget of \$500 for acquiring the assembled technology necessary to implement the project. 
 
 \begin{table}[ht] 
 	\centering 
