@@ -1,24 +1,44 @@
-\documentclass[11pt]{report}		
-\usepackage{fullpage}				% title page gets one full page
+\documentclass[11pt]{report}
+\usepackage[margin=1in]{geometry}
+\usepackage{titlesec}
 \usepackage{graphicx}
-
-% no indent after paragraphs (\par)
-\usepackage[parfill]{parskip}
+\usepackage{parskip}
 
 % eliminate 1ex gap after subsection 
-\usepackage{titlesec}
-\titlespacing\subsubsection{0pt}{1.0ex plus -1ex minus -.2ex}{-\parskip}
-\titlespacing\subsection{0pt}{1.0ex plus -1ex minus -.2ex}{-\parskip}
+\titlespacing\chapter{0pt}{*1}{*1}
+\titlespacing\section{0pt}{*0}{*0}
+\titlespacing\subsection{0pt}{*0}{*0}
 
-% include subsubsections in TOC
-\setcounter{tocdepth}{3}
+\titleformat{\chapter}
+  {\Large\bfseries} % format
+  {}                % label
+  {0pt}             % sep
+  {\huge}           % before-code
+{}
 
-% start every section on a new page.
-\let\stdsection\section
-\renewcommand\section{\newpage\stdsection}
-
-\author{Your Name Here}
-\title {Your Title Here}
+\title{Delta Robot\\Project Definition}
+\author{
+Evan Milton\\
+Computer and Electronics Engineering\\
+University of Nebraska at Lincoln - Omaha Campus\\
+Electronics Engineering
+\and
+Josh DeWitt\\
+Computer and Electronics Engineering\\
+University of Nebraska at Lincoln - Omaha Campus\\
+Computer Engineering and Mathematics, minor in Computer Science
+\and
+Chad Staley\\
+Computer and Electronics Engineering\\
+University of Nebraska at Lincoln - Omaha Campus\\
+Electronics Engineering
+\and
+James Gehringer\\
+Computer and Electronics Engineering\\
+University of Nebraska at Lincoln - Omaha Campus\\
+Computer Engineering and Mathematics, minor in Computer Science
+}
+\date{\today}
 
 \begin{document}
 \maketitle
