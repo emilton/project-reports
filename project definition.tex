@@ -4,13 +4,18 @@
 \usepackage{graphicx}
 \usepackage{parskip}
 
+\titleformat{\chapter}{\Large\bfseries}{}{0pt}{\huge}
 \titlespacing\chapter{0pt}{*1}{*1}
 \titlespacing\section{0pt}{*0}{*0}
 \titlespacing\subsection{0pt}{*0}{*0}
 
-\titleformat{\chapter}{\Large\bfseries}{}{0pt}{\huge}
+\newcommand*{\TitleFont}{
+      \usefont{\encodingdefault}{\rmdefault}{b}{n}
+      \fontsize{24}{36}
+      \selectfont
+}
 
-\title{Delta Robot \\ Project Definition}
+\title{\TitleFont Delta Robot \\ Project Definition}
 \author{
 	Evan Milton \\
 	Computer and Electronics Engineering \\
