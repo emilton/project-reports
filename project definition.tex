@@ -23,7 +23,9 @@
 
 \newacronym{2d}{2-D}{Two-Dimensional}
 \newacronym{3d}{3-D}{Three-Dimensional}
+\newacronym{arm}{ARM}{Advanced RISC Machines}
 \newacronym{cnc}{CNC}{Computer Numerical Control}
+\newacronym{dvi}{DVI}{Digital Visual Interface}
 \newacronym{pcb}{PCB}{Printed Circuit Board}
 
 \title{\thickline \\ \novspace \thinline \\ \TitleFont Delta Robot \\ Project Definition \thinline \\ \novspace \thickline}
@@ -114,6 +116,7 @@ The Stakeholder Chart is shown in Figure ~\ref{fig:stakeholderchart}. Note that 
 	\label{fig:stakeholderchart}
 \end{figure}
 
+\newpage
 \subsection{Marketing Requirements}
 The system will meet the following criteria:
 \begin{enumerate} \parskip2pt
@@ -226,7 +229,7 @@ He prefers agile, social coding using pair programming, test-driven development,
 
 \paragraph{Evan Milton}
 Evan is the Systems Engineer for this 2014 Capstone project.
-With years of \gls{cnc} experience, He has already designed and prototyped many of the components necessary to operate the Delta Robot.
+With years of \gls{cnc} experience, he has already designed and prototyped many of the components necessary to operate the Delta Robot.
 His mechanical engineering skills will allow for the construction of the precision components required by this system.
 He has a solid background in microcontroller implementation, and a firm understanding of the design process in delivering operational results under pressure.
 
@@ -263,15 +266,6 @@ Piecewise comparisons of each component are shown in Tables ~\ref{table:primary}
 	\caption{Delta Robot Objective Tree}
 	\label{fig:objectivetree}
 \end{figure}
-
-The three marketing requirement are Intuitive, Robust, and Versatile.
-The most important marketing requirement is Intuitiveness, as the complexity involved with working in 3 dimensions makes it important for users to be able to operate in a manner that feels natural.
-Components can be damaged if the robot is not operated in an expected manner.
-It is also important for the robot to be robust.
-This will help extend to robots work life and make failure less likely.
-Finally, the robot must also be versatile.
-While the focus of this project is \gls{pcb} repair, the delta robot platform will lend itself to many applications.
-By creating this open source platform, others will be able to extend the usability of the delta robot.
 
 \begin{table}[ht] 
 	\caption{Primary Objective Definition}
@@ -326,8 +320,17 @@ By creating this open source platform, others will be able to extend the usabili
 	\end{tabular} 
 \end{table}
 
+The three marketing requirement are Intuitive, Robust, and Versatile.
+The most important marketing requirement is Intuitiveness, as the complexity involved with working in 3 dimensions makes it important for users to be able to operate in a manner that feels natural.
+Components can be damaged if the robot is not operated in an expected manner.
+It is also important for the robot to be robust.
+This will help extend to robots work life and make failure less likely.
+Finally, the robot must also be versatile.
+While the focus of this project is \gls{pcb} repair, the delta robot platform will lend itself to many applications.
+By creating this open source platform, others will be able to extend the usability of the delta robot.
+
 \section{Microprocessor Functionality}
-The main microprocessor, an ARM Cortex 11 on the Raspberry Pi, will primarily be responsible for controlling the three stepper motors for the delta robot.
+The main microprocessor, an \gls{arm} 11 on the Raspberry Pi, will primarily be responsible for controlling the three stepper motors for the delta robot.
 This objective will be achieved by creating a G-code interpreter written in C.
 G-code is a standard way to instruct a \gls{cnc} router to move the work head throughout a \gls{3d} space, but is more complicated than accepting individual commands to move the motors.
 The microprocessor will be responsible for scheduling movements to make smooth transitions to the destination, as interpreted from the G-code.
@@ -345,8 +348,8 @@ This secondary microprocessor will perform any required communication with the n
 The telecommunications requirements for the project will involve sending data from the Oculus Rift to a centralized computed where it will be converted to movement data for the operation of the Delta Robot.
 Video information must also be sent from the computer to the Oculus Rift.
 The movement data will be transmitted from the central computer to the Delta Robot via Ethernet.
-Video data from the Delta Robot will be transmitted to the computer by a video channel such a S-video.
-The Oculus Rift will use a USB channel to transmit data to the computer while the computer will use a DVI channel to transmit the video data to the Oculus Rift.
+Video data from the Delta Robot will be transmitted to the computer by a video channel such an S-video.
+The Oculus Rift will use a USB channel to transmit data to the computer while the computer will use a \gls{dvi} channel to transmit the video data to the Oculus Rift.
 
 \section{CEEN Appropriateness}
 The senior capstone design project serves as part of the ABET accreditation for the CEEN program.
@@ -355,7 +358,7 @@ To meet these standards, students at the time of graduation will have:
 	\item The ability to apply knowledge of mathematics, science, and engineering. (ABET 3a)
 	\item The ability to design and conduct experiments, as well as to analyze and interpret data. (ABET 3b)
 	\item The ability to design a system, component, or process to meet desired needs within realistic constraints such as economic, environmental, social, political, ethical, health and safety, manufacturability, and sustainability. (ABET 3c)
-	\item The ability to function on multidisciplinary teams. (ABET \gls{3d})
+	\item The ability to function on multidisciplinary teams. (ABET 3d)
 	\item The ability to identify, formulate, and solve engineering problems. (ABET 3e)
 	\item The understanding of professional and ethical responsibility. (ABET 3f)
 	\item The ability to communicate effectively. (ABET 3g)
@@ -370,7 +373,7 @@ The design and construction will require the rigorous application of mathematics
 Notably, the kinematics of the robot will require intense mathematical computations to ensure accuracy.
 Experiments must be designed and conducted to ensure proper operation of components and the final result (ABET 3b).
 The end result of the project will meet the needs outlined in the Background Summary (ABET 3c).
-The level of success of the project will depend on how well the the team is able to cooperate and strive to achieve common goals (ABET \gls{3d}).
+The level of success of the project will depend on how well the the team is able to cooperate and strive to achieve common goals (ABET 3d).
 This project will present many engineering problems that will have to be solved (ABET 3e).
 Not only must the group work towards common goals, but they must also communicate effectively (ABET 3g).
 Similarly to ABET 3a, the entire project will involve the use of engineering skills that have been learned in previous coursework (ABET 3k).
@@ -397,7 +400,7 @@ Constraints for this project are as follows:
 Most notable among the constraints to be outlined for this project are time and money.
 As full-time students with part-time jobs, time is to be split among many areas in the next 7-8 months.
 Therefore, hours must be carefully scheduled as a group for work on the project.
-Much of the time spent working will have to be on an individual basis.
+Much of the time spent working will have to be with other team members to ensure superior designs with the limited time constraints.
 The scope of the project must be carefully decided so as to not accrue an impossible time requirement. 
 This 2014 Capstone Project is funded entirely by the engineering team. 
 Again, as full-time students with part-time jobs, funds are limited.
@@ -419,7 +422,7 @@ The following IEEE standards will be adhered to when appropriate:
 \end{enumerate}
 
 \subsection{Preliminary Budget}
-A preliminary budget of \$2500 has been appropriated, but is subject to change.
+A preliminary budget of \$2,500 has been appropriated, but is subject to change.
 The breakdown is shown in Table ~\ref{table:budget}.
 The bulk of the cost of the project will be mechanical parts such as belts, rods, fasteners, etc.
 The next greatest expense is expected to be electronic components.
@@ -442,7 +445,7 @@ Finally 'Systems' has received a budget of \$500 for acquiring the assembled tec
 
 \subsection{Engineering Hours}
 In comparison to the scope and time required of previous capstone design projects, an estimated 1000 work hours will be needed to complete this project.
-This number corresponds to approximately 8 hours per week per person involved with this 2014 Capstone Project.
+This number corresponds to approximately 8 hours per week per person involved with this 2014 Capstone Project throughout the Fall and Spring semesters.
 
 \chapter{Project Charter}
 \section{Project Approach}
@@ -526,7 +529,8 @@ Detailed documentation of all efforts will be maintained in each person's engine
 \subsection{Communication Channel}
 Face-to-face group status meetings in PKI 330G will be held to update the status of each deliverable being worked on and provide proactive feedback to keep the project on track.
 As much communication as possible should be done in person, as opposed to through phone, text, or email conversations because of the higher information bandwidth.
-To aid in keeping track of status of individual kanbanpad.com, an online project tracking tool will be used to update the status of tasks between the planning, designing, development, testing, and release phases of project development.
+A wiki for the project, hosted on wikispaces.com, will be used to maintain documentation that will be useful during development and for the final users. 
+The website kanbanpad.com, an online project tracking tool, will be used to update the status of tasks between the planning, designing, development, testing, and release phases of project development.
 Room PKI 330G will be used for any additional meetings required, which may or may not include the entire team.
 
 \subsection{Communication Frequency}
