@@ -4,3 +4,6 @@
 *.gz(busy)
 *.aux
 *.toc
+*.bbl
+*.blg
+*.log
