@@ -7,8 +7,8 @@
 
 \titleformat{\chapter}{\Large\bfseries}{}{0pt}{\huge}
 \titlespacing\chapter{0pt}{*1}{*1}
-\titlespacing\section{0pt}{*0}{*0}
-\titlespacing\subsection{0pt}{*0}{*0}
+\titlespacing\section{0pt}{*0}{-\parskip}
+\titlespacing\subsection{0pt}{*0}{-\parskip}
 \titlespacing\paragraph{0pt}{*0}{*3}
 
 \newcommand*{\TitleFont}{
@@ -17,12 +17,16 @@
       \selectfont
 }
 
+\newcommand{\thickline}{\rule{\textwidth}{1.6pt}}
+\newcommand{\thinline}{\rule{\textwidth}{0.4pt}}
+\newcommand{\novspace}{\vspace*{-\baselineskip}\vspace*{4pt}}
+
 \newacronym{2d}{2-D}{Two-Dimensional}
 \newacronym{3d}{3-D}{Three-Dimensional}
 \newacronym{cnc}{CNC}{Computer Numerical Control}
 \newacronym{pcb}{PCB}{Printed Circuit Board}
 
-\title{\TitleFont Delta Robot \\ Project Definition}
+\title{\thickline \\ \novspace \thinline \\ \TitleFont Delta Robot \\ Project Definition \thinline \\ \novspace \thickline}
 \author{
 	Evan Milton \\
 	Computer and Electronics Engineering \\
