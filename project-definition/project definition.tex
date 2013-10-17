@@ -20,6 +20,8 @@
 \newcommand{\thickline}{\rule{\textwidth}{1.6pt}}
 \newcommand{\thinline}{\rule{\textwidth}{0.4pt}}
 \newcommand{\novspace}{\vspace*{-\baselineskip}\vspace*{4pt}}
+\let\oldtitle\title
+\renewcommand{\title}[1]{\oldtitle{\thickline \\ \novspace \thinline \\ \TitleFont {#1} \thinline \\ \novspace \thickline}}
 
 \newacronym{2d}{2-D}{Two-Dimensional}
 \newacronym{3d}{3-D}{Three-Dimensional}
@@ -28,7 +30,7 @@
 \newacronym{dvi}{DVI}{Digital Visual Interface}
 \newacronym{pcb}{PCB}{Printed Circuit Board}
 
-\title{\thickline \\ \novspace \thinline \\ \TitleFont Delta Robot \\ Project Definition \thinline \\ \novspace \thickline}
+\title{Delta Robot \\ Project Definition}
 \author{
 	Evan Milton \\
 	Computer and Electronics Engineering \\
