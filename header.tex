@@ -1,0 +1,49 @@
+\documentclass[11pt]{report}
+\usepackage[margin=1in]{geometry}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{parskip}
+\usepackage{glossaries}
+\usepackage{datetime}
+
+\titleformat{\chapter}{\Large\bfseries}{}{0pt}{\huge}
+\titlespacing\chapter{0pt}{*1}{*1}
+\titlespacing\section{0pt}{*0}{-\parskip}
+\titlespacing\subsection{0pt}{*0}{-\parskip}
+\titlespacing\paragraph{0pt}{*0}{*3}
+
+\newcommand*{\TitleFont}{
+      \usefont{\encodingdefault}{\rmdefault}{b}{n}
+      \fontsize{24}{36}
+      \selectfont
+}
+\newcommand{\thickline}{\rule{\textwidth}{1.6pt}}
+\newcommand{\thinline}{\rule{\textwidth}{0.4pt}}
+\newcommand{\novspace}{\vspace*{-\baselineskip}\vspace*{4pt}}
+\renewcommand{\dateseparator}{-}
+\let\oldtitle\title
+\renewcommand{\title}[1]{\oldtitle{\thickline \\ \novspace \thinline \\ \TitleFont {#1} \thinline \\ \novspace \thickline}}
+\newcommand{\tableoffiguresandtables}{\listoffigures\begingroup\let\clearpage\relax\listoftables\endgroup}
+
+\author{
+	Evan Milton \\
+	Computer and Electronics Engineering \\
+	University of Nebraska at Lincoln - Omaha Campus \\
+	Electronics Engineering
+		\and
+	Josh DeWitt \\
+	Computer and Electronics Engineering \\
+	University of Nebraska at Lincoln - Omaha Campus \\
+	Computer Engineering and Mathematics, minor in Computer Science
+		\and
+	Chad Staley \\
+	Computer and Electronics Engineering \\
+	University of Nebraska at Lincoln - Omaha Campus \\
+	Electronics Engineering
+		\and
+	James Gehringer \\
+	Computer and Electronics Engineering \\
+	University of Nebraska at Lincoln - Omaha Campus \\
+	Computer Engineering, minor in Computer Science
+}
+\date{\yyyymmdddate\today}
