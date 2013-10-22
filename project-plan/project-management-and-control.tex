@@ -1,20 +1,47 @@
 \chapter{Project Management and Control}
 \section{Work Breakdown Structure}
-\begin{table}[ht] 
+\begin{longtable}{|c|m{4cm}|>{\centering}m{1.75cm}|m{3.5cm}|m{4cm}|}
 	\caption{Work Breakdown Structure}
-	\label{table:primary}
-	\centering
-	\begin{tabular}{c c c c c} 
-		\hline\hline \\
-		ID & Deliverable & Duration (days) & Resources & Predecessors \\
-		1 & Mechanical Components\\
-		2 & Electrical Components \\
-		3 & Control Software \\
-		4 & Interface Software \\
-		5 & System Testing \\
-		6 & Integration Testing \\
-	\end{tabular} 
-\end{table}
+	\label{table:primary} \\
+	\hline \textbf{ID} & \textbf{Deliverable} & \textbf{Duration (Days)} & \textbf{Resources} & \textbf{Predecessors} \\ \hline
+	\endfirsthead
+	\multicolumn{5}{c}{\tablename\ \thetable\ -- \textit{Continued from previous page}} \\ \hline
+	\textbf{ID} & \textbf{Deliverable} & \textbf{Duration (Days)} & \textbf{Resources} & \textbf{Predecessors} \\ \hline
+	\endhead 
+	\multicolumn{5}{r}{\textit{Continued on next page}} \\
+	\endfoot \hline
+	\endlastfoot
+
+	\hline 1 & \multicolumn{4}{c|}{Mechanical Components} \\ \hline
+	1.1 & Structural Frame & 3 & Build Components & \\ \hline
+	1.2 & Build Platform & 4 & Build Components & Structural Frame \\ \hline
+	1.3 & Belt, Pulley, and Motor System & 10 & Stepper Motors\newline Pulleys\newline Belts & Structural Frame \\ \hline
+	1.4 & Armature & 5 & Rods\newline Rod Ends & Belt, Pulley, and Motor System \\ \hline
+	1.5 & Work Head & 4 & Rod End Mounts\newline Mounting Platform & Armature \\ \hline
+	1.6 & Sensor System & 2 & Lighting\newline Limit Switches & Structural Frame\\ \hline
+	\hline 2 & \multicolumn{4}{c|}{Electrical Components} \\ \hline
+	2.1 & LED Testing Breakout & 7 & Components\newline Perfboard & \\ \hline
+	2.2 & \multicolumn{4}{l|}{Motor Driver Prototype} \\ \hline
+	2.2.1 & Shield PCB & 30 & Eagle\newline CNC\newline Components & LED Testing Breakout \\ \hline
+	2.2.2 & Motor Drivers & 1 & Computer & \\ \hline
+	2.2.3 & Sensor Circuitry & 14 & Eagle\newline CNC\newline Components & Sensor System \\ \hline
+	2.2.4 & Power & 7 & Eagle\newline CNC\newline Components & \\ \hline
+	2.3 & Final Motor Driver & 14 & Eagle\newline CNC\newline Components & \\ \hline
+	2.4 & Work Head Controller & 17 & Eagle\newline CNC\newline Components & \\ \hline
+	\hline 3 & \multicolumn{4}{c|}{Control Software} \\ \hline
+	3.1 & LED Control Software & 7 & Computer & LED Testing Breakout \\ \hline
+	3.2 & Motor Controller & 10 & Computer & Motor Driver Prototype\\ \hline
+	3.3 & Kinematics & 14 & Computer & Motor Driver Prototype\newline Armature\\ \hline
+	3.4 & G-code Interpreter & 21 & Computer & Motor Driver Prototype\newline Armature \\ \hline
+	3.5 & Precision Enhancement & 14 & Computer & Motor Driver Prototype\newline Armature \\ \hline
+	\hline 4 & \multicolumn{4}{c|}{Interface Software} \\ \hline
+	4.1 & HTTPS Interface & 10 & Computer & \\ \hline
+	4.2 & HTTPS G-code Upload & 10 & Computer & \\ \hline
+	4.3 & HTTPS Website & 21 & Computer & \\ \hline
+	\hline 5 & \multicolumn{4}{c|}{System Testing} \\ \hline
+	5.1 & Engineering Requirements & 7 & & \\ \hline
+	\hline 6 & \multicolumn{4}{c|}{Integration Testing} \\ \hline
+\end{longtable}
 \subsection{Project Specific Deliverables}
 \subsection{Design Review}
 Review(s)?
@@ -30,3 +57,4 @@ Review(s)?
 \subsection{Landmark Schedule}
 \subsection{Critical Design Review Schedule}
 \subsection{WBS and LRC Review and Update Schedule}
+\subsection{Budget}
