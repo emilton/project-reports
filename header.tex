@@ -7,6 +7,7 @@
 \usepackage{parskip}
 \usepackage{glossaries}
 \usepackage{datetime}
+\usepackage{hyperref}
 
 \titleformat{\chapter}{\Large\bfseries}{}{0pt}{\huge}
 \titlespacing\chapter{0pt}{*1}{*1}
@@ -26,6 +27,14 @@
 \let\oldtitle\title
 \renewcommand{\title}[1]{\oldtitle{\thickline \\ \novspace \thinline \\ \TitleFont {#1} \thinline \\ \novspace \thickline}}
 \newcommand{\tableoffiguresandtables}{\listoffigures\begingroup\let\clearpage\relax\listoftables\endgroup}
+
+\hypersetup{
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black
+}
 
 \author{
 	Evan Milton \\
