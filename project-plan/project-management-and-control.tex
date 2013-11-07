@@ -1,54 +1,56 @@
 \chapter{Project Management and Control}
 \section{Work Breakdown Structure}
-\begin{longtable}{|c|m{4cm}|>{\centering}m{1.75cm}|m{3.5cm}|m{4cm}|}
+\begin{longtable}{|c|m{4cm}|m{4cm}|>{\centering}m{1.6cm}|m{3.5cm}|}
 	\caption{Work Breakdown Structure}
 	\label{table:primary} \\
-	\hline \textbf{ID} & \textbf{Deliverable} & \textbf{Duration (Days)} & \textbf{Resources} & \textbf{Predecessors} \\ \hline
+	\hline \textbf{ID} & \textbf{Activity} & \textbf{Deliverable} & \textbf{Duration (Days)} & \textbf{Resources} \\ \hline
 	\endfirsthead
 	\multicolumn{5}{c}{\tablename\ \thetable\ -- \textit{Continued from previous page}} \\ \hline
-	\textbf{ID} & \textbf{Deliverable} & \textbf{Duration (Days)} & \textbf{Resources} & \textbf{Predecessors} \\ \hline
+	\textbf{ID} & \textbf{Activity} & \textbf{Deliverable} & \textbf{Duration (Days)} & \textbf{Resources} \\ \hline
 	\endhead 
 	\multicolumn{5}{r}{\textit{Continued on next page}} \\
 	\endfoot \hline
 	\endlastfoot
 
 	\hline 1 & \multicolumn{4}{c|}{Mechanical Components} \\ \hline
-	1.1 & Structural Frame & 3 & Build Components & \\ \hline
-	1.2 & Build Platform & 4 & Build Components & Structural Frame \\ \hline
-	1.3 & Belt, Pulley, and Motor System & 10 & Stepper Motors\newline Pulleys\newline Belts & Structural Frame \\ \hline
-	1.4 & Armature & 5 & Rods\newline Rod Ends & Belt, Pulley, and Motor System \\ \hline
-	1.5 & Work Head & 4 & Rod End Mounts\newline Mounting Platform & Armature \\ \hline
-	1.6 & Sensor System & 2 & Lighting\newline Limit Switches & Structural Frame\\ \hline
+	1.1 & & Structural Frame & 3 & Build Components\\ \hline
+	1.2 & & Build Platform & 4 & Build Components \\ \hline
+	1.3 & & Belt, Pulley, and Motor System & 10 & Stepper Motors\newline Pulleys\newline Belts\\ \hline
+	1.4 & & Armature & 5 & Rods\newline Rod Ends \\ \hline
+	1.5 & & Work Head & 4 & Rod End Mounts\newline Mounting Platform \\ \hline
+	1.6 & & Sensor System & 2 & Lighting\newline Limit Switches \\ \hline
 	\hline 2 & \multicolumn{4}{c|}{Electrical Components} \\ \hline
-	2.1 & LED Testing Breakout & 7 & Components\newline Perfboard & \\ \hline
+	2.1 & Construct test board & LED Testing Breakout & 7 & Components\newline Perfboard \\ \hline
 	2.2 & \multicolumn{4}{l|}{Motor Driver Prototype} \\ \hline
-	2.2.1 & Shield PCB & 30 & Eagle\newline CNC\newline Components & LED Testing Breakout \\ \hline
-	2.2.2 & Motor Drivers & 1 & Computer & \\ \hline
-	2.2.3 & Sensor Circuitry & 14 & Eagle\newline CNC\newline Components & Sensor System \\ \hline
-	2.2.4 & Power & 7 & Eagle\newline CNC\newline Components & \\ \hline
-	2.3 & Final Motor Driver & 14 & Eagle\newline CNC\newline Components & \\ \hline
-	2.4 & Work Head Controller & 17 & Eagle\newline CNC\newline Components & \\ \hline
+	2.2.1 & Design motor driver PCB & Shield PCB & 30 & Eagle\newline CNC\newline Components \\ \hline
+	2.2.2 & Order motor drivers & Motor Drivers & 1 & Computer \\ \hline
+	2.2.3 & & Sensor Circuitry & 14 & Eagle\newline CNC\newline Components \\ \hline
+	2.2.4 & & Power & 7 & Eagle\newline CNC\newline Components \\ \hline
+	2.3 & & Final Motor Driver & 14 & Eagle\newline CNC\newline Components \\ \hline
+	2.4 & & Work Head Controller & 17 & Eagle\newline CNC\newline Components \\ \hline
 	\hline 3 & \multicolumn{4}{c|}{Control Software} \\ \hline
 	3.1 & \multicolumn{4}{l|}{LED Control Software} \\ \hline
-	3.1.1 & GPIO Research & 4 & Computer & \\ \hline
-	3.1.2 & LED Controller & 3 & Computer & LED Testing Breakout \\ \hline
+	3.1.1 & Research \gls{pi} \gls{gpio} & Pi \gls{gpio} knowledge & 4 & Computer \\ \hline
+	3.1.2 & Program for \gls{pi} \gls{gpio} & LED controller & 3 & Computer \\ \hline
 	3.2 & \multicolumn{4}{l|}{Motor Control Software} \\ \hline
-	3.2.1 & GPIO Timing Research & 5 & Computer & \\ \hline
-	3.2.2 & Motor Controller & 10 & Computer & Motor Driver Prototype \\ \hline
+	3.2.1 & \gls{gpio} Timing research & \gls{gpio} timing understanding & 5 & Computer \\ \hline
+	3.2.2 & Program motor controller & Motor controller software & 10 & Computer \\ \hline
 	3.3 & \multicolumn{4}{l|}{Kinematics Control Software} \\ \hline
-	3.3.1 & Kinematics Equations & 5 & Computer\newline Calculator & \\ \hline
-	3.3.2 & Kinematics Software & 10 & Computer & Motor Driver Prototype\newline Armature \\ \hline
+	3.3.1 & Research kinematics requirements & Kinematics equations & 5 & Computer\newline Calculator \\ \hline
+	3.3.2 & Program kinematics equations & Kinematics software & 10 & Computer \\ \hline
 	3.4 & \multicolumn{4}{l|}{G-code Interpreter} \\ \hline
-	3.4.1 & G-code Research & 7 & Computer & \\ \hline
-	3.4.2 & G-code Software & 14 & Computer & Motor Driver Prototype\newline Armature \\ \hline
-	3.5 & Precision Enhancement & 14 & Computer & Motor Driver Prototype\newline Armature \\ \hline
+	3.4.1 & G-code Research & G-code understanding & 7 & Computer \\ \hline
+	3.4.2 & Program g-code interpreter & G-code Software & 14 & Computer \\ \hline
+	3.5 & Experiment to improve accuracy & Improved precision & 14 & Computer \\ \hline
 	\hline 4 & \multicolumn{4}{c|}{Interface Software} \\ \hline
-	4.1 & HTTP Interface & 10 & Computer & \\ \hline
-	4.2 & HTTP G-code Upload & 10 & Computer & \\ \hline
-	4.3 & HTTP Website & 21 & Computer & \\ \hline
+	4.1 & Interface \gls{pi} with Ethernet & Wired TCP/IP Interface & 10 & Computer \\ \hline
+	4.2 & Interface \gls{pi} with WiFi & Wireless TCP/IP Interface & 15 & Computer \\ \hline
+	4.3 & Program ability to upload G-code & TCP/IP G-code Upload & 10 & Computer \\ \hline
+	4.4 & Program website for monitoring & HTTP Website & 21 & Computer \\ \hline
 	\hline 5 & \multicolumn{4}{c|}{System Testing} \\ \hline
-	5.1 & Engineering Requirements & 7 & & \\ \hline
+	5.1 & & Engineering Requirements & 7 & \\ \hline
 	\hline 6 & \multicolumn{4}{c|}{Integration Testing} \\ \hline
+	\hline 7 & \multicolumn{4}{c|}{Product Management} \\ \hline
 \end{longtable}
 \subsection{Project Specific Deliverables}
 \subsection{Design Review}
