@@ -3,6 +3,19 @@ The development of hardware and software will be done in parallel throughout the
 Rapid prototyping will be used for hardware development and \gls{xp} techniques will be used for software development producing deliverables on a regular basis that can be evaluated by the Systems Engineer, who will give feedback to improve the next iteration. 
 Rapid hardware prototyping is essential, as some software components rely on the hardware existing before any work can be done.
 \section{Hardware}
+The goal of the hardware development is to create dependable circuits that meet design requirements.
+Hardware prototypes will be quickly developed using a CNC to mill PCBs.
+This way prototypes can be quickly tested and will not delay software development.
+Where applicable, circuits will be simulated using CircuitLab.
+Otherwise, circuits will be prototyped using a breadboard.
+Once circuits pass the simulation stage a PCB board file will be developed in Eagle CAD.
+PCBs will be created from the board file using copper clad prototyping boards that will be drilled out by the CNC.
+The PCBs will then be populated and software integration and testing will begin.
+Prototypes meeting design and test specifications will be sent to a board house to develop a final product.
+
+To create a complete Bill of Materials, parts lists will be generated for all final hardware modules.
+All circuits will require a complete schematic including board layout. 
+
 \section{Software}
 The goal of the software development is to create reliable programs that can be understood and maintained over the course of the Capstone Design Sequence and beyond.
 \gls{xp} techniques will be used for software development to allow greater flexibility in the system and allow more rapid feature implementation and ensure that the software components are fully integrated with the hardware components. 
