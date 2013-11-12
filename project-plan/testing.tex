@@ -1,7 +1,47 @@
+\newcommand{\testheader}{\textrotate{\textbf{Step}} & \textbf{Action} & \textbf{Expected Result} & \textrotate{\textbf{Pass}} & \textrotate{\textbf{Fail}} & \textrotate{\textbf{N/A}} & \textbf{Comments} \\ \hline}
+\newcommand{\testinfo}[2]{\multicolumn{2}{|r|}{\textbf{Test Case Name:}} & \multicolumn{5}{m{11cm}|}{#1} \\ \hline \multicolumn{2}{|r|}{\textbf{Description:}} & \multicolumn{5}{m{11cm}|}{#2} \\ \hline}
+\newcommand{\testerinfo}{\multicolumn{2}{|r|}{\textbf{Name of Tester:}} & & \multicolumn{3}{l|}{\textbf{Date:}} & \\ \hline \multicolumn{2}{|r|}{\textbf{HW/SW Version:}} & & \multicolumn{3}{l|}{\textbf{Time:}} & \\ \hline}
+\newcommand{\testsetup}[1]{\multicolumn{2}{|r|}{\textbf{Setup:}} & \multicolumn{5}{m{11cm}|}{#1} \\ \hline}
+\newcommand{\testtabular}[3]{\begin{tabular}{|m{.25cm}|m{4cm}|m{5cm}|m{.25cm}|m{.25cm}|m{.25cm}|m{3cm}|}\hline\testinfo{#1}{#2}\testerinfo\testsetup{#3}\testheader}
+
 \chapter{Testing}
+Validation and verification prove to all stakeholders that the goals of the project have been met.
+Thorough testing throughout the entire project is vital to identifying potential issues and correcting them before a final product is created. 
+Validation was completed by comparing the engineering requirements with the marketing requirements that were discussed by the team. 
+
+The following 11 items are the success criteria for the project. 
+\begin{enumerate}
+	\item Create a complete \gls{bom} and order/sample all parts needed for the design.
+	\item Develop complete, accurate, readable schematic of the design, complete with interface loading analysis and interface timing analysis. 
+	\item Complete a layout and etch a \gls{pcb}.
+	\item Populate and debug the design on a custom \gls{pcb}.
+	\item Professionally package the finished product and demonstrate its functionality.
+	\item Stepper motor frequency capable of at least 11kHz, accurate within $\pm5\%$ of desired frequency.
+	\item Receive G-code through \gls{tcpip}.
+	\item Accept between 14V and 36V and draw no more than 11A.
+	\item Drive at least 4 stepper motors, 1 DC motor, and 16 GPIO. Receive input from at least 1 motor limit/emergency stop switch and 4 stepper motor home inputs.
+	\item Thermal shutdown will occur above CPU temperatures of $60^{\circ}C$.
+\end{enumerate}
 \section{Validation Metrics}
 \section{Verification Metrics}
 \subsection{Test Means}
 Procedures...
+\begin{enumerate}
+	\item
+	\item
+	\item
+	\item
+	\item
+	\item 
+	\testtabular{G-code Upload}{Checks that G-code can be successfully uploaded to the system through \gls{tcpip}.}{Connect system to network through Ethernet or WiFi. Connect test harness to motor drivers. Start up computer that can connect to the same network as the system.}
+		1 & Connect to system through \gls{tcpip}. & System is available and connection is established. & & & & \\ \hline
+		2 & Send G-code to system through \gls{tcpip}. & System receives G-code and sends acknowledgment. & & & & \\ \hline
+		3 & Send command to execute sent G-code. & System executes the newly received G-code. & & & & \\ \hline
+	\end{tabular}
+	\item
+	\item
+	\item
+	\item
+\end{enumerate}
 \subsection{Test Methods}
 Deliverables...
