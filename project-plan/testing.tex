@@ -18,7 +18,7 @@ The following 10 items are the success criteria for the project.
 	\item Professionally package the finished product and demonstrate its functionality.
 	\item Stepper motor frequency capable of at least 11kHz, accurate within $\pm5\%$ of desired frequency.
 	\item Receive G-code through \gls{tcpip}.
-	\item Accept between 14V and 36V and draw no more than 11A.
+	\item Accept between 14V and 36V and draw no more than 10A.
 	\item Drive at least 4 stepper motors, 1 DC motor, and 16 GPIO. Receive input from at least 1 motor limit/emergency stop switch and 4 stepper motor home inputs.
 	\item Thermal shutdown will occur above CPU temperatures of $60^{\circ}C$.
 \end{enumerate}
@@ -33,15 +33,42 @@ Procedures...
 	\item
 	\item
 	\item 
+	\item
 	\testtabular{G-code Upload}{Checks that G-code can be successfully uploaded to the system through \gls{tcpip}.}{Connect system to network through Ethernet or WiFi. Connect test harness to motor drivers. Start up computer that can connect to the same network as the system.}
 		1 & Connect to system through \gls{tcpip}. & System is available and connection is established. & & & & \\ \hline
 		2 & Send G-code to system through \gls{tcpip}. & System receives G-code and sends acknowledgment. & & & & \\ \hline
 		3 & Send command to execute sent G-code. & System executes the newly received G-code. & & & & \\ \hline
 	\end{tabular}
+
 	\item
+	\testtabular{Voltage Supply}{Tests that the system operates between 14-36V.}{Connect system to variable power supply with a range of at least 14-36V or seperate power supplies with voltages of 14V, 25V, and 36V.}
+		1 & Set power supply to 14V. & Raspberry Pi voltage supply is 5V. Microcontroller voltage supply is 5V. Motor Controller voltage supply is TBD.  & & & & \\ \hline
+		2 &  Set power supply to 25V. & Raspberry Pi voltage supply is 5V. Microcontroller voltage supply is 5V. Motor Controller voltage supply is TBD. & & & & \\ \hline
+		3 & Set power supply to 36V. & Raspberry Pi voltage supply is 5V. Microcontroller voltage supply is 5V. Motor Controller voltage supply is TBD. & & & & \\ \hline
+	\end{tabular}
+
+	\testtabular{Current Supply}{Tests that the system operates up to 10A.}{Connect system to variable power supply with a range of at least 14-36V or seperate power supplies with voltages of 14V, 25V, and 36V.}
+		1 & Set power supply to 14V. Connect test load. &  & & & & \\ \hline
+		2 &  Set power supply to 25V. Connect test load. & & & & & \\ \hline
+		3 & Set power supply to 36V. Connect test load. & & & & & \\ \hline
+	\end{tabular}
+
 	\item
+	\testtabular{Applications Test}{Tests that the system drives 4 stepper motors, 1 DC motor, and 16 GPIO.}{Connect 4 stepper motors and 1 DC motor to motor drivers. Connect test GPIO load to GPIO output. }
+		1 & Connect to system through \gls{tcpip}. & System is available and connection is established. & & & & \\ \hline
+		2 & Send G-code to system through \gls{tcpip}. & System receives G-code and sends acknowledgment. & & & & \\ \hline
+		3 & Send command to execute sent G-code. & System executes the newly received G-code. & & & & \\ \hline
+		4 & Verify that all motors respond appropriately. & The 4 stepper motors and 1 DC motor respond appropiately. & & & & \\ \hline
+		5 & Verify that all 16 GPIO outputs respond. & The GPIO port responds appropriately. & & & & \\ \hline
+	\end{tabular}
+
 	\item
-	\item
+	\testtabular{Thermal Shutdown}{Tests that the system shuts down at CPU temperatures greater than $60^{\circ}C$.}{Prepare the system for normal operation in a test oven.}
+		1 & Compare system temperature sensor to ambient temperature. & CPU temperature sensor is within $1^{\circ}C$ of ambient temperature.  & & & & \\ \hline
+		2 &  Increase oven temperature to  $55^{\circ}C$. Allow system to run until temperature sensor reaches  $55^{\circ}C$. & System operates normally. & & & & \\ \hline
+		3 &  Increase oven temperature to  $62^{\circ}C$. & System shuts off when CPU temperature reaches $60^{\circ}C$.  & & & & \\ \hline
+		4 &  Note oven temperature at which system shuts off. & System shuts off before oven temperature exceeds $61^{\circ}C$.  & & & & \\ \hline
+	\end{tabular}
 \end{enumerate}
 \subsection{Test Methods}
 Deliverables...
