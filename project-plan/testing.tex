@@ -4,7 +4,7 @@
 \newcommand{\testsetup}[1]{\multicolumn{2}{|r|}{\textbf{Setup:}} & \multicolumn{5}{m{11cm}|}{#1} \\ \hline}
 \newcommand{\testtabular}[3]{\begin{tabular}{|m{.25cm}|m{4cm}|m{5cm}|m{.25cm}|m{.25cm}|m{.25cm}|m{3cm}|}\hline\testinfo{#1}{#2}\testerinfo\testsetup{#3}\testheader}
 
-\chapter{Testing}
+\chapter{Testing and Integration}
 Validation and verification prove to all stakeholders that the goals of the project have been met.
 Thorough testing throughout the entire project is vital to identifying potential issues and correcting them before a final product is created. 
 Validation was completed by comparing the engineering requirements with the marketing requirements that were discussed by the team. 
@@ -25,15 +25,20 @@ The following 10 items are the success criteria for the project.
 \section{Validation Metrics}
 \section{Verification Metrics}
 \subsection{Test Means}
-Procedures...
+The following tests will give proof that all of the ten engineering requirements have been met.
 \begin{enumerate}
-	\item
-	\item
-	\item
-	\item
-	\item
+	\item Print out the schematic and the \gls{bom}. Work through all components on the schematic, placing a check mark next to each component and the corresponding part on the \gls{bom}. Once the schematic has been fully reviewed, ensure that all items on the \gls{bom} have exactly one check mark next to them.
+	\item Use schematic as the netlist for the \gls{pcb} and do not make any manual modifications to the netlist. Print out the schematic and review it with Professor Detloff to ensure readability. Verify loading and interface timing analyses through experimental measures using an oscilloscope. 
+	\item Generate a \gls{pcb} layout that passes all \gls{drc} operations performed by the \gls{drc} check available at http://www.4pcb.com. 
+	\item Use a \gls{dmm} to verify connectivity on all solder joints.
+	\item Demonstrate a fully-functional project at the annual senior design showcase. 
 	\item 
-	\item
+	\testtabular{Stepper Motor Accuracy}{Tests that the stepper motor pulses are accurate.}{Configure oscilloscope to measure the frequency of input 1. Set a constant running frequency of 10kHz on all motors through G-code.}
+		1 & Connect oscilloscope to the input of the first stepper motor driver. & Oscilloscope measures within 5\% of 10kHz. & & & & \\ \hline
+		2 & Repeat the previous step for the second, third, and forth stepper motor drivers. & Oscilloscope measures within 5\% of 10kHz. & & & & \\ \hline
+	\end{tabular}
+
+	\item 
 	\testtabular{G-code Upload}{Checks that G-code can be successfully uploaded to the system through \gls{tcpip}.}{Connect system to network through Ethernet or WiFi. Connect test harness to motor drivers. Start up computer that can connect to the same network as the system.}
 		1 & Connect to system through \gls{tcpip}. & System is available and connection is established. & & & & \\ \hline
 		2 & Send G-code to system through \gls{tcpip}. & System receives G-code and sends acknowledgment. & & & & \\ \hline
