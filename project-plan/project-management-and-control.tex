@@ -13,14 +13,14 @@
 	\endlastfoot
 
 	\hline 1 & \multicolumn{4}{c|}{Electrical Components} \\ \hline
-	1.1 & Construct test board & LED Testing Breakout & 7 & Components\newline Perfboard \\ \hline
+	1.1 & Construct test board & LED testing breakout & 7 & Components\newline Perfboard \\ \hline
 	1.2 & \multicolumn{4}{l|}{Motor Driver Prototype} \\ \hline
 	1.2.1 & Design motor driver PCB & Shield PCB & 30 & Eagle\newline \gls{cnc}\newline Components \\ \hline
-	1.2.2 & Order motor drivers & Motor Drivers & 1 & Computer \\ \hline
-	1.2.3 & & Sensor Circuitry & 14 & Eagle\newline \gls{cnc}\newline Components \\ \hline
-	1.2.4 & & Power & 7 & Eagle\newline \gls{cnc}\newline Components \\ \hline
-	1.3 & & Final Motor Driver & 14 & Eagle\newline \gls{cnc}\newline Components \\ \hline
-	1.4 & & Work Head Controller & 17 & Eagle\newline \gls{cnc}\newline Components \\ \hline
+	1.2.2 & Order motor drivers & Motor drivers & 1 & Computer \\ \hline
+	1.2.3 & Construct sensor circuitry & Sensor circuitry & 14 & Eagle\newline \gls{cnc}\newline Components \\ \hline
+	1.2.4 & Construct power supply & Power & 7 & Eagle\newline \gls{cnc}\newline Components \\ \hline
+	1.3 & Send final motor driver PCB design to boardhouse & Final motor driver & 14 & Eagle\newline \gls{cnc}\newline Components \\ \hline
+	1.4 & Construct work head controller & Work head controller & 17 & Eagle\newline \gls{cnc}\newline Components \\ \hline
 	\hline 2 & \multicolumn{4}{c|}{Control Software} \\ \hline
 	2.1 & \multicolumn{4}{l|}{LED Control Software} \\ \hline
 	2.1.1 & Research \gls{pi} \gls{gpio} & Pi \gls{gpio} knowledge & 4 & Computer \\ \hline
@@ -32,8 +32,8 @@
 	2.3.1 & Research kinematics requirements & Kinematics equations & 5 & Computer\newline Calculator \\ \hline
 	2.3.2 & Program kinematics equations & Kinematics software & 10 & Computer \\ \hline
 	2.4 & \multicolumn{4}{l|}{G-code Interpreter} \\ \hline
-	2.4.1 & G-code Research & G-code understanding & 7 & Computer \\ \hline
-	2.4.2 & Program g-code interpreter & G-code Software & 14 & Computer \\ \hline
+	2.4.1 & G-code research & G-code understanding & 7 & Computer \\ \hline
+	2.4.2 & Program G-code interpreter & G-code Software & 14 & Computer \\ \hline
 	2.5 & Experiment to improve accuracy & Improved precision & 14 & Computer \\ \hline
 	\hline 3 & \multicolumn{4}{c|}{Interface Software} \\ \hline
 	3.1 & Interface \gls{pi} with Ethernet & Wired TCP/IP Interface & 10 & Computer \\ \hline
@@ -41,28 +41,28 @@
 	3.3 & Program ability to upload G-code & TCP/IP G-code Upload & 10 & Computer \\ \hline
 	3.4 & Program website for monitoring & HTTP Website & 21 & Computer \\ \hline
 	\hline 4 & \multicolumn{4}{c|}{System Testing} \\ \hline
-	4.1 &Verifying motor frequency accuracy&The stepper motors will have a minimum pulse frequency of 10kHz and a margin of pulse frequency error of  $\pm $5\% & 7 & \\ \hline
-	4.2 &Verifying communication channels &  G-Code will be transfered through TCP/IP. & 7 & \\ \hline
-	4.3 &Verifying Power ratings& The system will work with any power supply that can output 14 to 36V and less than 10A. & 7 & \\ \hline
-	4.4 &Verifying control capabilites&  The system will be able to drive 4 stepper motors, 1 DC motor, 16 GPIO pins, 1 Emergency Stop and 4 Home switches. & 7 & \\ \hline
-	4.5 & Verifying saftey shutdown&The CPU will not exceed 60$^\circ$ Celsius. & 7 & \\ \hline
+	4.1 &Verifying motor frequency accuracy&The stepper motors will have a minimum pulse frequency of 10kHz and a margin of pulse frequency error of  $\pm $5\% & 7 & Computer \newline Oscilloscope \\ \hline
+	4.2 &Verifying communication channels &  G-Code will be transfered through TCP/IP. & 7 & Computer \\ \hline
+	4.3 &Verifying power ratings& The system will work with any power supply that can output 14 to 36V and up to 10A. & 7 & Oscilloscope \newline Multimeter \newline Power resistors \\ \hline
+	4.4 &Verifying control capabilities&  The system will be able to drive 4 stepper motors, 1 DC motor, 16 GPIO pins, 1 Emergency Stop and 4 Home switches. & 7 & Computer \newline Motors \newline LEDs\\ \hline
+	4.5 & Verifying safety shutdown&The CPU will not exceed 60$^\circ$ Celsius. & 7 & Test oven\\ \hline
 	\hline 5 & \multicolumn{4}{c|}{Integration Testing} \\ \hline
-	5.1 & & Web Interface & 7 & \\ \hline
-	5.2 & & Master Controller & 7 & \\ \hline
-	5.3 & & Motor Controlller & 7 & \\ \hline
-	5.4 & & Motor Driver Board& 7 & \\ \hline
+	5.1 & Test web interface & Web interface & 7 & Computer\\ \hline
+	5.2 & Test master controller & Master controller & 7 & Computer \newline Oscilloscope \newline Power supply \\ \hline
+	5.3 & Test motor controller & Motor controller & 7 & Oscilloscope \newline Power supply\\ \hline
+	5.4 & Test motor driver board & Motor driver board& 7 & Oscilloscope \newline Power supply\\ \hline
 	\hline 6 & \multicolumn{4}{c|}{Unit Testing} \\ \hline
-	6.1 & & G-code Interpretation& 7 & \\ \hline
-	6.2 & & Stepper Pulse Timing& 7 & \\ \hline
-	6.3 & & User Command Interpretation& 7 & \\ \hline
+	6.1 & Test G-code interpreter& G-code interpretation& 7 & Computer\\ \hline
+	6.2 & Test stepper pulse timing & Stepper pulse timing& 7 & Computer \newline Oscilloscope\\ \hline
+	6.3 & Test user command interpretations & User command interpretation& 7 & Computer\\ \hline
 	\hline 7 & \multicolumn{4}{c|}{Product Management} \\ \hline
-	7.1 &Documenting Work&Update Log Books & On-going & Log Book\newline Writing Utensil \\ \hline
-	7.2 &Keeping Project Management Charts Up to Date&Update Project Management Charts & On-going & \\ \hline
-	7.3 &Emergency Backups&Back Up Documentation & On-going & \\ \hline
-	7.4 &Communicating&Team Meetings & On-going & \\ \hline
-	7.5 &Keeping in Budget&Budget Reviews & On-going & \\ \hline
-	7.6 &Keeping on Time&Project Progress Reviews& On-going & \\ \hline
-	7.7 &&Meetings with Professors& On-going & \\ \hline
+	7.1 &Documenting work&Update Log Books & On-going & Log book\newline Writing utensil \\ \hline
+	7.2 &Keeping project management charts up to date&Update project management charts & On-going & Computer\\ \hline
+	7.3 &Emergency backups&Back up documentation & On-going & Computer\\ \hline
+	7.4 &Communicating&Team meetings & On-going & Log book \newline Communication device\\ \hline
+	7.5 &Keeping in budget&Budget reviews & On-going & Budget \newline Record book\\ \hline
+	7.6 &Keeping on time&Project progress reviews& On-going & Gantt chart\\ \hline
+	7.7 &Communicating progress &Meetings with professors& On-going & Computer \newline Log book\\ \hline
 \end{longtable}
 \subsection{Project Specific Deliverables}
 There are 5 Project Specific Deliverables.
@@ -149,7 +149,7 @@ The \gls{cnc} Interface does not need mechanical parts, eliminating many of the 
 	2.4  &1&2&4&4&&\\ \hline
 	2.4.1 &1&2&4&4&& \\ \hline
 	2.4.2 &1&2&4&4&& \\ \hline
-	2.5 &2&3&1&4&& \\ \hline
+	2.5 &2&3&1&3&& \\ \hline
 	\hline 3 & \multicolumn{6}{c|}{Interface Software} \\ \hline
 	3.1  &1& 2&4 &4 & & \\ \hline
 	3.2  &1& 2& 4& 4& & \\ \hline
