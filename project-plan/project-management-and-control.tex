@@ -96,7 +96,7 @@ This will be submitted to Professor Detolff for review.
 If the change is approved, an Engineering Change Order (ECO) will be used to direct the change.
 
 \subsection{Stakeholder, Communication, and Resource Review}
-\begin{figure}[p]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.6\textwidth]{shc.jpeg}
 \caption{Stakeholder Chart}
@@ -117,10 +117,10 @@ The \gls{cnc} Interface does not need mechanical parts, eliminating many of the 
 \begin{longtable}{|c|m{1.8cm}|m{1.8cm}|>{\centering}m{1.8cm}|m{1.8cm}|m{1.8cm}|m{2.5cm}|}
 	\caption{Linear Responsibility Chart}
 	\label{table:primary} \\
-	\hline \textbf{\gls{wbs} ID} & \textbf{Josh \newline DeWitt} & \textbf{James \newline Gehringer} & \textbf{Evan Milton} & \textbf{Chad \newline Staley} & \textbf{Herb Detloff} &\textbf{Constituents}\\ \hline
+	\hline \textbf{\gls{wbs} ID} & \textbf{Josh \newline DeWitt} & \textbf{James \newline Gehringer} & \textbf{Evan Milton} & \textbf{Chad \newline Staley} & \textbf{Herb Detloff} \\ \hline
 	\endfirsthead
 	\multicolumn{7}{c}{\tablename\ \thetable\ -- \textit{Continued from previous page}} \\ \hline
-	 \textbf{\gls{wbs} ID} & \textbf{Josh \newline DeWitt} & \textbf{James \newline Gehringer} & \textbf{Evan Milton} & \textbf{Chad \newline Staley}& \textbf{Herb Detloff} &\textbf{Constituents}
+	 \textbf{\gls{wbs} ID} & \textbf{Josh \newline DeWitt} & \textbf{James \newline Gehringer} & \textbf{Evan Milton} & \textbf{Chad \newline Staley}& \textbf{Herb Detloff}
 	\endhead 
 	\multicolumn{7}{r}{\textit{Continued on next page}} \\
 	\endfoot \hline
@@ -128,65 +128,71 @@ The \gls{cnc} Interface does not need mechanical parts, eliminating many of the 
 
 
 	\hline 1 & \multicolumn{6}{c|}{Electrical Components} \\ \hline
-	1.1  &4&4&2&1&&  \\ \hline
-	1.2  &4&4&1&2&&  \\ \hline
-	1.2.1&4&4&1&2&&  \\ \hline
-	1.2.2 &4&4&1&2&&  \\ \hline
-	1.2.3 &4&4&1&2&&  \\ \hline
-	1.2.4 &4&4&1&2&&  \\ \hline
-	1.3  &4&4&2&1&&\\ \hline
-	1.4  &4&4&1&2& &  \\ \hline
+	1.1  &4&4&2&1&  \\ \hline
+	1.2  &4&4&1&2&  \\ \hline
+	1.2.1&4&4&1&2&  \\ \hline
+	1.2.2 &4&4&1&2&  \\ \hline
+	1.2.3 &4&4&1&2&  \\ \hline
+	1.2.4 &4&4&1&2&  \\ \hline
+	1.3  &4&4&2&1&\\ \hline
+	1.4  &4&4&1&2&   \\ \hline
 	\hline 2 & \multicolumn{6}{c|}{Control Software} \\ \hline
-	2.1  &1&2&4&4& &  \\ \hline
-	2.1.1 &1&2&4&4& &  \\ \hline
-	2.1.2 &1&2&4&4& &  \\ \hline
-	2.2  &1&2&4&4&&  \\ \hline
-	2.2.1 &1&2&4&4&&   \\ \hline
-	2.2.2 &1&2&4&4&&   \\ \hline
-	2.3 &1&2&4&4&& \\ \hline
-	2.3.1 &1&2&4&4&&  \\ \hline
-	2.3.2 &1&2&4&4&&  \\ \hline
-	2.4  &1&2&4&4&&\\ \hline
-	2.4.1 &1&2&4&4&& \\ \hline
-	2.4.2 &1&2&4&4&& \\ \hline
-	2.5 &2&3&1&3&& \\ \hline
+	2.1  &1&2&4&4&   \\ \hline
+	2.1.1 &1&2&4&4 &  \\ \hline
+	2.1.2 &1&2&4&4&  \\ \hline
+	2.2  &1&2&4&4& \\ \hline
+	2.2.1 &1&2&4&4&   \\ \hline
+	2.2.2 &1&2&4&4&   \\ \hline
+	2.3 &1&2&4&4& \\ \hline
+	2.3.1 &1&2&4&4&  \\ \hline
+	2.3.2 &1&2&4&4&  \\ \hline
+	2.4  &1&2&4&4&\\ \hline
+	2.4.1 &1&2&4&4& \\ \hline
+	2.4.2 &1&2&4&4& \\ \hline
+	2.5 &2&3&1&4& \\ \hline
 	\hline 3 & \multicolumn{6}{c|}{Interface Software} \\ \hline
-	3.1  &1& 2&4 &4 & & \\ \hline
-	3.2  &1& 2& 4& 4& & \\ \hline
-	3.3 & 1&2& 4& 4& & \\ \hline
-	3.4  &2&1 & 4&4 &  &\\ \hline
+	3.1  &1& 2&4 &4 & \\ \hline
+	3.2  &1& 2& 4& 4& \\ \hline
+	3.3 & 1&2& 4& 4& \\ \hline
+	3.4  &2&1 & 4&4 &\\ \hline
 	\hline 4 & \multicolumn{6}{c|}{System Testing} \\ \hline
-	4.1  &3&3&2&1&6& \\ \hline
-	4.2  &1&2&4&4&6& \\ \hline
-	4.3  &3&3&2&1&6& \\ \hline
-	4.4  &4&3&1&2&6& \\ \hline
-	4.5  &3&4&1&2&6& \\ \hline
+	4.1  &3&3&2&1&6\\ \hline
+	4.2  &1&2&4&4&6\\ \hline
+	4.3  &3&3&2&1&6\\ \hline
+	4.4  &4&3&1&2&6\\ \hline
+	4.5  &3&4&1&2&6\\ \hline
 	\hline 5 & \multicolumn{6}{c|}{Integration Testing} \\ \hline
-	5.1  &2&1&4&4&6& \\ \hline
-	5.2  &1&4&2&3&6& \\ \hline
-	5.3  &3&4&1&2&6& \\ \hline
-	5.4  &3&4&2&1&6& \\ \hline
+	5.1  &2&1&4&4&6\\ \hline
+	5.2  &1&4&2&3&6\\ \hline
+	5.3  &3&4&1&2&6\\ \hline
+	5.4  &3&4&2&1&6\\ \hline
 	\hline 6 & \multicolumn{6}{c|}{Unit Testing} \\ \hline
-	6.1  &1&2&3&4& & \\ \hline
-	6.2  &4&3&2&1& & \\ \hline
-	6.3  &4&3&1&2& & \\ \hline
+	6.1  &1&2&3&4& \\ \hline
+	6.2  &4&3&2&1& \\ \hline
+	6.3  &4&3&1&2& \\ \hline
 	\hline 7 & \multicolumn{6}{c|}{Product Management} \\ \hline
-	7.1 &2&1&2&2&&  \\ \hline
-	7.2  &4&1&2&3&&  \\ \hline
-	7.3  &2&1&4&3& &  \\ \hline
-	7.4  &2&1&2&2& &  \\ \hline
-	7.5 &4&1&2&3&&  \\ \hline
-	7.6 &2&1&2&2&  &\\ \hline
-	7.7 &2&1&2&2&4&\\ \hline
+	7.1 &2&1&2&2&  \\ \hline
+	7.2  &4&1&2&3&  \\ \hline
+	7.3  &2&1&4&3&  \\ \hline
+	7.4  &2&1&2&2&  \\ \hline
+	7.5 &4&1&2&3&  \\ \hline
+	7.6 &2&1&2&2&\\ \hline
+	7.7 &2&1&2&2&4\\ \hline
 \end{longtable}
 \section{Activity on Node Dependency Network}
-\begin{figure}[p]
+\begin{figure}[H]
 \centering
 \includegraphics[width=1\textwidth]{AON.jpeg}
 \caption{Activity on Node}
 \label{fig:Activity on Node}
 \end{figure}
 \section{Gantt Chart Schedule}
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{gantt.jpg}
+\caption{Activity on Node}
+\label{fig:Activity on Node}
+\end{figure}
 \subsection{Landmark Schedule}
 Each landmark is marked on the Gantt Chart with a triangle.
 \subsection{Critical Design Review Schedule}
@@ -220,3 +226,18 @@ Chart updates will happen every two weeks, denoted by both the solid and dashed 
 	Voltage Regulation&2&3&\$6.00&\$18.00&DC-DC Converter&eBay\\ \hline
 	Total &&&&\$547.75&&\\ \hline
 \end{longtable}
+\section{Engineering Hours}
+
+\begin{table}[ht] 
+\caption{Engineering Hours}
+	\label{table:engineeringhoursl}
+	\centering 
+\begin{tabular}{|r|c|}
+	
+	\hline Josh DeWitt&150\\ \hline
+	James Gehringer&150\\ \hline
+	Evan Milton&150\\ \hline
+	Chad Staley&150\\ \hline
+	Total&600\\ \hline
+\end{tabular}
+\end{table} 
