@@ -23,6 +23,37 @@ The following 10 items are the success criteria for the project.
 	\item Thermal shutdown will occur above CPU temperatures of $60^{\circ}C$.
 \end{enumerate}
 \section{Validation Metrics}
+Table ~\ref{table:Val} shows the relationship between the engineering requirements and the marketing requirements.
+For a marketing requirement to be validated, the respective engineering requirements must be verified.
+
+\begin{table}[ht]
+	\caption{Engineering Requirement vs. Marketing Requirements}
+	\label{table:Val}
+	\centering
+	\begin{tabular}{|r |c |c |c |c |c |c |c |c |c |c|} 
+		\hline\hline
+		&1&2&3&4&5&6&7&8&9&10 \\
+		\hline
+		\textbf{Accurate} & X & X & X & X & X & X & & X & & \\
+		\hline
+		\textbf{Quick} & X & X & X & X & X & X & & X & & \\
+		\hline
+		\textbf{Web Interface} & X & X & X & X & X & & X & & & \\
+		\hline
+		\textbf{Drive Motors} & X & X & X & X & X & X & & X & X & \\
+		\hline
+		\textbf{Handle \gls{gpio}} & X & X & X & X & X & & & X & X & \\
+		\hline
+		\textbf{Emergency Stop} & X & X & X & X & X & & & X & X & \\
+		\hline
+		\textbf{Thermal Shutdown} & X & X & X & X & X & & & X & X & X \\
+		\hline
+		\textbf{Supply Range} & X & X & X & X & X & & & X &  &   \\
+
+	\hline 
+	\end{tabular}
+\end{table}
+
 \section{Verification Metrics}
 The following tests will give proof that all of the ten engineering requirements have been met.
 \begin{enumerate}
