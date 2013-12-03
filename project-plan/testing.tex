@@ -1,0 +1,101 @@
+\newcommand{\testheader}{\textrotate{\textbf{Step}} & \textbf{Action} & \textbf{Expected Result} & \textrotate{\textbf{Pass}} & \textrotate{\textbf{Fail}} & \textrotate{\textbf{N/A}} & \textbf{Comments} \\ \hline}
+\newcommand{\testinfo}[2]{\multicolumn{2}{|r|}{\textbf{Test Case Name:}} & \multicolumn{5}{m{11cm}|}{#1} \\ \hline \multicolumn{2}{|r|}{\textbf{Description:}} & \multicolumn{5}{m{11cm}|}{#2} \\ \hline}
+\newcommand{\testerinfo}{\multicolumn{2}{|r|}{\textbf{Name of Tester:}} & & \multicolumn{3}{l|}{\textbf{Date:}} & \\ \hline \multicolumn{2}{|r|}{\textbf{HW/SW Version:}} & & \multicolumn{3}{l|}{\textbf{Time:}} & \\ \hline}
+\newcommand{\testsetup}[1]{\multicolumn{2}{|r|}{\textbf{Setup:}} & \multicolumn{5}{m{11cm}|}{#1} \\ \hline}
+\newcommand{\testtabular}[3]{\begin{tabular}{|m{.25cm}|m{4cm}|m{5cm}|m{.25cm}|m{.25cm}|m{.25cm}|m{3cm}|}\hline\testinfo{#1}{#2}\testerinfo\testsetup{#3}\testheader}
+
+\chapter{Testing and Integration}
+Validation and verification prove to all stakeholders that the goals of the project have been met.
+Thorough testing throughout the entire project is vital to identifying potential issues and correcting them before a final product is created. 
+Validation was completed by comparing the engineering requirements with the marketing requirements that were discussed by the team. 
+
+The following 10 items are the success criteria for the project. 
+\begin{enumerate}
+	\item Create a complete \gls{bom} and order/sample all parts needed for the design.
+	\item Develop complete, accurate, readable schematic of the design, complete with interface loading analysis and interface timing analysis. 
+	\item Complete a layout and etch a \gls{pcb}.
+	\item Populate and debug the design on a custom \gls{pcb}.
+	\item Professionally package the finished product and demonstrate its functionality.
+	\item Stepper motor frequency capable of at least 10kHz, accurate within $\pm5\%$ of desired frequency.
+	\item Receive G-code through \gls{tcpip}. Software will be developed using IEEE Std 830-1998 Recommended Practice for Software Requirements Specifications.
+	\item Accept between 14V and 36V and draw no more than 10A.
+	\item Drive at least 4 stepper motors, 1 DC motor, and 16 GPIO. Receive input from at least 1 motor limit/emergency stop switch and 4 stepper motor home inputs.
+	\item Thermal shutdown will occur above CPU temperatures of $60^{\circ}C$.
+\end{enumerate}
+\section{Validation Metrics}
+Table ~\ref{table:Val} shows the relationship between the engineering requirements and the marketing requirements.
+For a marketing requirement to be validated, the respective engineering requirements must be verified.
+
+\begin{table}[ht]
+	\caption{Engineering Requirement vs. Marketing Requirements}
+	\label{table:Val}
+	\centering
+	\begin{tabular}{|r |c |c |c |c |c |c |c |c |c |c|} 
+		\hline\hline
+		&1&2&3&4&5&6&7&8&9&10 \\
+		\hline
+		\textbf{Accurate} & X & X & X & X & X & X & & X & & \\
+		\hline
+		\textbf{Quick} & X & X & X & X & X & X & & X & & \\
+		\hline
+		\textbf{Web Interface} & X & X & X & X & X & & X & & & \\
+		\hline
+		\textbf{Drive Motors} & X & X & X & X & X & X & & X & X & \\
+		\hline
+		\textbf{Handle \gls{gpio}} & X & X & X & X & X & & & X & X & \\
+		\hline
+		\textbf{Emergency Stop} & X & X & X & X & X & & & X & X & \\
+		\hline
+		\textbf{Thermal Shutdown} & X & X & X & X & X & & & X & X & X \\
+		\hline
+		\textbf{Supply Range} & X & X & X & X & X & & & X &  &   \\
+
+	\hline 
+	\end{tabular}
+\end{table}
+
+\section{Verification Metrics}
+The following tests will give proof that all of the ten engineering requirements have been met.
+\begin{enumerate}
+	\item Print out the schematic and the \gls{bom}. Work through all components on the schematic, placing a check mark next to each component and the corresponding part on the \gls{bom}. Once the schematic has been fully reviewed, ensure that all items on the \gls{bom} have exactly one check mark next to them.
+	\item Use schematic as the netlist for the \gls{pcb} and do not make any manual modifications to the netlist. Print out the schematic and review it with Professor Detloff to ensure readability. Verify loading and interface timing analyses through experimental measures using an oscilloscope. 
+	\item Generate a \gls{pcb} layout that passes all \gls{drc} operations performed by the \gls{drc} check available at http://www.4pcb.com. 
+	\item Use a \gls{dmm} to verify connectivity on all solder joints.
+	\item Demonstrate a fully-functional project at the annual senior design showcase. 
+	\item 
+	\testtabular{Stepper Motor Accuracy}{Tests that the stepper motor pulses are accurate.}{Configure oscilloscope to measure the frequency of input 1. Set a constant running frequency of 10kHz on all motors through G-code.}
+		1 & Connect oscilloscope to the input of the first stepper motor driver. & Oscilloscope measures within 5\% of 10kHz. & & & & \\ \hline
+		2 & Repeat the previous step for the second, third, and forth stepper motor drivers. & Oscilloscope measures within 5\% of 10kHz. & & & & \\ \hline
+	\end{tabular}
+
+	\item 
+	\testtabular{G-code Upload}{Checks that G-code can be successfully uploaded to the system through \gls{tcpip}.}{Connect system to network through Ethernet or WiFi. Connect test harness to motor drivers. Start up computer that can connect to the same network as the system.}
+		1 & Connect to system through \gls{tcpip}. & System is available and connection is established. & & & & \\ \hline
+		2 & Send G-code to system through \gls{tcpip}. & System receives G-code and sends acknowledgment. & & & & \\ \hline
+		3 & Send command to execute sent G-code. & System executes the newly received G-code. & & & & \\ \hline
+	\end{tabular}
+
+	\item
+	\testtabular{Voltage Supply}{Tests that the system operates between 14-36V.}{Connect system to variable power supply with a range of at least 14-36V or seperate power supplies with voltages of 14V, 25V, and 36V.}
+		1 & Set power supply to 14V. & \gls{pi} voltage supply is 5V. Microcontroller voltage supply is 5V. Motor Controller voltage supply is TBD.  & & & & \\ \hline
+		2 &  Set power supply to 25V. & \gls{pi} voltage supply is 5V. Microcontroller voltage supply is 5V. Motor Controller voltage supply is TBD. & & & & \\ \hline
+		3 & Set power supply to 36V. & \gls{pi} voltage supply is 5V. Microcontroller voltage supply is 5V. Motor Controller voltage supply is TBD. & & & & \\ \hline
+	\end{tabular}
+
+	\item
+	\testtabular{Applications Test}{Tests that the system drives 4 stepper motors, 1 DC motor, and 16 GPIO.}{Connect 4 stepper motors and 1 DC motor to motor drivers. Connect test GPIO load to GPIO output. }
+		1 & Connect to system through \gls{tcpip}. & System is available and connection is established. & & & & \\ \hline
+		2 & Send G-code to system through \gls{tcpip}. & System receives G-code and sends acknowledgment. & & & & \\ \hline
+		3 & Send command to execute sent G-code. & System executes the newly received G-code. & & & & \\ \hline
+		4 & Verify that all motors respond appropriately. & The 4 stepper motors and 1 DC motor respond appropiately. & & & & \\ \hline
+		5 & Verify that all 16 GPIO outputs respond. & The GPIO port responds appropriately. & & & & \\ \hline
+	\end{tabular}
+
+	\item
+	\testtabular{Thermal Shutdown}{Tests that the system shuts down at CPU temperatures greater than $60^{\circ}C$.}{Prepare the system for normal operation in a test oven.}
+		1 & Compare system temperature sensor to ambient temperature. & CPU temperature sensor is within $1^{\circ}C$ of ambient temperature.  & & & & \\ \hline
+		2 &  Increase oven temperature to  $55^{\circ}C$. Allow system to run until temperature sensor reaches  $55^{\circ}C$. & System operates normally. & & & & \\ \hline
+		3 &  Increase oven temperature to  $62^{\circ}C$. & System shuts off when CPU temperature reaches $60^{\circ}C$.  & & & & \\ \hline
+		4 &  Note oven temperature at which system shuts off. & System shuts off before oven temperature exceeds $61^{\circ}C$.  & & & & \\ \hline
+	\end{tabular}
+\end{enumerate}

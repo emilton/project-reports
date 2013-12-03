@@ -1,0 +1,44 @@
+\chapter{Development}
+The development of hardware and software will be done in parallel throughout the project execution to avoid leaving software development until the last stage of project execution. 
+Rapid prototyping will be used for hardware development and \gls{xp} techniques will be used for software development producing deliverables on a regular basis that can be evaluated by the Systems Engineer, who will give feedback to improve the next iteration. 
+Rapid hardware prototyping is essential, as some software components rely on the hardware existing before any work can be done.
+\section{Hardware}
+The goal of the hardware development is to create dependable circuits that meet design requirements.
+Hardware prototypes will be quickly developed using a CNC to mill PCBs.
+This way prototypes can be quickly tested and will not delay software development.
+Where applicable, circuits will be simulated using CircuitLab.
+Otherwise, circuits will be prototyped using a breadboard.
+Once circuits pass the simulation stage a PCB board file will be developed in Eagle CAD.
+PCBs will be created from the board file using copper clad prototyping boards that will be drilled out by the CNC.
+The PCBs will then be populated and software integration and testing will begin.
+Prototypes meeting design and test specifications will be sent to a board house to develop a final product.
+
+To create a complete Bill of Materials, parts lists will be generated for all final hardware modules.
+All circuits will require a complete schematic including board layout. 
+
+\section{Software}
+The goal of the software development is to create reliable programs that can be understood and maintained over the course of the Capstone Design Sequence and beyond.
+\gls{xp} techniques will be used for software development to allow greater flexibility in the system and allow more rapid feature implementation and ensure that the software components are fully integrated with the hardware components. 
+Using \gls{xp} techniques will save time in the long run, as undocumented, untested, and difficult-to-understand code will take more time for modifications and consume more resources for debugging issues.
+The most notable \gls{xp} techniques to be used are unit testing, pair programming, and stand-up meetings.
+
+\paragraph{Unit Testing}
+Programming through unit testing simply means that code for runtime is never written until a failing test proves that it is needed, ensuring that all code is written for a reason.
+Invalid inputs can be provided to code to test boundary conditions that are difficult to produce in acceptance testing, decreasing the number of bugs in code.
+Unit testing also enforces that the inputs, outputs, and use of code are fully documented, all while verifying code throughout development. 
+
+Automated unit testing that can easily be run at any time ensures that code is written modularly, provides verification throughout development, and checks that new changes do not break existing features of the code.
+Whenever a test fails after making a change, the developer can analyze the test to understand how their change caused the test to fail, ultimately correcting the problem before it is fully implemented in the system. 
+\paragraph{Pair Programming}
+One person on a small project team performing all development, creates "knowledge silos"and can be disastrous if that member leaves the team or can no longer participate in the project for any reason.
+Software limitations may restrict other design choices, including hardware design, so software knowledge should be spread throughout the team, improving the quality of the final product. 
+
+Though seemingly a minor outcome, pair programming prevents small bugs from being introduced into the code, which can save much time throughout software development.
+Software bugs are most easily found and corrected shortly after being written.
+The longer a bug stays in the code, the less familiar the engineers become with that code, resulting in the bug taking longer to correct once it reveals itself later in the project.
+The additional pair of eyes in pair programming prevent many small errors that may be glazed over if one person is writing code by themselves.
+\paragraph{Stand-up Meetings}
+The most important implication of stand-up meetings is the ability to keep software development on time.
+The meeting is performed while standing, to ensure brevity and allow all parties to get back to work as soon as possible.
+Despite not taking long, simply discussing the current stage in the development process allows individuals to express any potential roadblocks that may exist and discuss issues they are having.
+Another individual on the team will often have useful input and may help avoid roadblocks and solve errors, ultimately keeping development on schedule. 

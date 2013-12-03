@@ -1,10 +1,15 @@
 \documentclass[11pt]{report}
 \usepackage[margin=1in]{geometry}
+\usepackage{array}
+\usepackage{longtable}
 \usepackage{titlesec}
 \usepackage{graphicx}
 \usepackage{parskip}
 \usepackage{glossaries}
 \usepackage{datetime}
+\usepackage{hyperref}
+\usepackage{rotating}
+\usepackage{float}
 
 \titleformat{\chapter}{\Large\bfseries}{}{0pt}{\huge}
 \titlespacing\chapter{0pt}{*1}{*1}
@@ -24,6 +29,15 @@
 \let\oldtitle\title
 \renewcommand{\title}[1]{\oldtitle{\thickline \\ \novspace \thinline \\ \TitleFont {#1} \thinline \\ \novspace \thickline}}
 \newcommand{\tableoffiguresandtables}{\listoffigures\begingroup\let\clearpage\relax\listoftables\endgroup}
+\newcommand{\textrotate}[1]{\begin{turn}{-90}#1\end{turn}}
+
+\hypersetup{
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black
+}
 
 \author{
 	Evan Milton \\
