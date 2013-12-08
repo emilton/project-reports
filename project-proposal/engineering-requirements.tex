@@ -1,0 +1,51 @@
+\chapter{Engineering Requirements Specification}
+
+\section{Five \gls{pcsc}}
+\begin{enumerate}
+	\item Create a complete \gls{bom} and order/sample all parts needed for the design.
+	\item Develop complete, accurate, readable schematic of the design, complete with interface loading analysis and interface timing analysis. 
+	\item Complete a layout and etch a \gls{pcb}.
+	\item Populate and debug the design on a custom \gls{pcb}.
+	\item Professionally package the finished product and demonstrate its functionality.
+\end{enumerate}
+
+\section{Five \gls{pssc}}\
+\begin{enumerate}
+	\item Stepper motor frequency capable of at least 10kHz, accurate within $\pm5\%$ of desired frequency.
+	\item Receive G-code through \gls{tcpip}. Software will be developed using IEEE Std 830-1998 Recommended Practice for Software Requirements Specifications.
+	\item Accept between 14V and 36V and draw no more than 10A.
+	\item Drive at least 4 stepper motors, 1 DC motor, and 16 GPIO. Receive input from at least 1 motor limit/emergency stop switch and 4 stepper motor home inputs.
+	\item Thermal shutdown will occur above CPU temperatures of $60^{\circ}C$.
+\end{enumerate}
+
+\section{Requirements Validation}
+Table ~\ref{table:Val} shows the relationship between the engineering requirements and the marketing requirements.
+For a marketing requirement to be validated, the respective engineering requirements must be verified.
+
+\begin{table}[ht]
+	\caption{Engineering Requirement vs. Marketing Requirements}
+	\label{table:Val}
+	\centering
+	\begin{tabular}{|r |c |c |c |c |c |c |c |c |c |c|} 
+		\hline\hline
+		&1&2&3&4&5&6&7&8&9&10 \\
+		\hline
+		\textbf{Accurate} & X & X & X & X & X & X & & X & & \\
+		\hline
+		\textbf{Quick} & X & X & X & X & X & X & & X & & \\
+		\hline
+		\textbf{Web Interface} & X & X & X & X & X & & X & & & \\
+		\hline
+		\textbf{Drive Motors} & X & X & X & X & X & X & & X & X & \\
+		\hline
+		\textbf{Handle \gls{gpio}} & X & X & X & X & X & & & X & X & \\
+		\hline
+		\textbf{Emergency Stop} & X & X & X & X & X & & & X & X & \\
+		\hline
+		\textbf{Thermal Shutdown} & X & X & X & X & X & & & X & X & X \\
+		\hline
+		\textbf{Supply Range} & X & X & X & X & X & & & X &  &   \\
+
+	\hline 
+	\end{tabular}
+\end{table}
