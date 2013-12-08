@@ -25,12 +25,19 @@
       \fontsize{24}{36}
       \selectfont
 }
+\newcommand*{\SubtitleFont}{
+      \usefont{\encodingdefault}{\rmdefault}{}{n}
+      \fontsize{12}{12}
+      \selectfont
+}
 \newcommand{\thickline}{\rule{\textwidth}{1.6pt}}
 \newcommand{\thinline}{\rule{\textwidth}{0.4pt}}
 \newcommand{\novspace}{\vspace*{-\baselineskip}\vspace*{4pt}}
 \renewcommand{\dateseparator}{-}
 \let\oldtitle\title
-\renewcommand{\title}[1]{\oldtitle{\thickline \\ \novspace \thinline \\ \TitleFont {#1} \thinline \\ \novspace \thickline}}
+\newcommand{\fulltitle}[2]{\oldtitle{\thickline \\ \novspace \thinline \\ \TitleFont {#1} \thinline \\ \novspace \thickline #2}}
+\renewcommand{\title}[1]{\fulltitle{#1}{}}
+\newcommand{\titleandsubtitle}[2]{\fulltitle{#1}{\\ \SubtitleFont{#2}}}
 \newcommand{\tableoffiguresandtables}{\listoffigures\begingroup\let\clearpage\relax\listoftables\endgroup}
 \newcommand{\textrotate}[1]{\begin{turn}{-90}#1\end{turn}}
 \newcommand{\signature}[1]{\\Signature: & & Date: & \\ \cline{2-2} \cline{4-4}	& #1 & & YYYY-MM-DD \tabularnewline}
