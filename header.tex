@@ -18,6 +18,8 @@
 \titlespacing\subsection{0pt}{*0}{-\parskip}
 \titlespacing\paragraph{0pt}{*0}{*3}
 
+\newcolumntype{a}[1]{>{\centering}p{#1}}
+
 \newcommand*{\TitleFont}{
       \usefont{\encodingdefault}{\rmdefault}{b}{n}
       \fontsize{24}{36}
@@ -31,6 +33,8 @@
 \renewcommand{\title}[1]{\oldtitle{\thickline \\ \novspace \thinline \\ \TitleFont {#1} \thinline \\ \novspace \thickline}}
 \newcommand{\tableoffiguresandtables}{\listoffigures\begingroup\let\clearpage\relax\listoftables\endgroup}
 \newcommand{\textrotate}[1]{\begin{turn}{-90}#1\end{turn}}
+\newcommand{\signature}[1]{\\Signature: & & Date: & \\ \cline{2-2} \cline{4-4}	& #1 & & YYYY-MM-DD \tabularnewline}
+\newcommand{\signatures}{\begin{tabular}{ca{8cm}ca{4cm}c}\signature{Evan Milton}\signature{Josh DeWitt}\signature{Chat Staley}\signature{James Gehringer}\end{tabular}}
 
 \hypersetup{
 	colorlinks,
