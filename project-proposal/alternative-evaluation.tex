@@ -1,7 +1,12 @@
 \chapter{Design Alternatives Evaluation}
-Evaluations of design alternatives are shown Tables ~\ref{table:uPEval} through ~\ref{table:MCEval}.
+Evaluations of design alternatives are shown Tables ~\ref{table:WIEval} through ~\ref{table:MCEval}.
 
+
+\section{Web Interface}
 \begin{table}[h]
+\caption{Web Interface Evaluation}
+	\label{table:WIEval}
+	\centering
 \begin{tabular}{l|l|l|l|l|l|}
 \cline{2-6}
                                                 & Weight & PHP & \begin{tabular}[c]{@{}c@{}}Stand Alone\\  Application\end{tabular} & Javascript & HTML5 \\ \hline
@@ -13,7 +18,11 @@ Evaluations of design alternatives are shown Tables ~\ref{table:uPEval} through 
 \end{tabular}
 \end{table}
 
+\section{Master Controller}
 \begin{table}[h]
+\caption{Master Controller Evaluation}
+	\label{table:MaCEval}
+	\centering
 \begin{tabular}{|l|l|l|l|l|}
 \hline
                   & Weight & RasPi & \begin{tabular}[c]{@{}c@{}}Beagle\\ Bone\end{tabular} & \begin{tabular}[c]{@{}c@{}}Arduino\\ Mega\end{tabular} \\ \hline
@@ -26,7 +35,11 @@ Continue?         &        & Yes   & No                                         
 \end{tabular}
 \end{table}
 
+\section{Motor Driver Controller Microcontroller}
 \begin{table}[h]
+\caption{Motor Controller Evaluation}
+	\label{table:uCEval}
+	\centering
 \begin{tabular}{l|l|l|l|l|l|}
 \cline{2-6}
                                               & Weight & MSP430 & ATMega324P & AT90USB1287 & ARM Stellaris \\ \hline
@@ -39,7 +52,11 @@ Continue?         &        & Yes   & No                                         
 \end{tabular}
 \end{table}
 
+\section{Motor Drivers}
 \begin{table}[h]
+\caption{Motor Drivers Evaluation}
+	\label{table:MCEval}
+	\centering
 \begin{tabular}{|l|l|l|l|l|}
 \hline
                          & Weight & DRV8825 & A4988 & TB6560 \\ \hline
@@ -66,8 +83,8 @@ Continue?                &        & Yes     & Yes   & No     \\ \hline
 \end{table}
 
 \begin{table}[ht]
-	\caption{Motor Controller Evaluation}
-	\label{table:MCEval}
+	\caption{Motor Controller Evaluation 2}
+	\label{table:MCEval 2}
 	\centering
 	\begin{tabular}{|c c c|} 
 		\hline\hline
