@@ -42,6 +42,17 @@
 \newcommand{\textrotate}[1]{\begin{turn}{-90}#1\end{turn}}
 \newcommand{\signature}[1]{\\Signature: & & Date: & \\ \cline{2-2} \cline{4-4}	& #1 & & YYYY-MM-DD \tabularnewline}
 \newcommand{\signatures}{\begin{tabular}{ca{8cm}ca{4cm}c}\signature{Evan Milton}\signature{Josh DeWitt}\signature{Chad Staley}\signature{James Gehringer}\end{tabular}}
+\newcommand{\minutesessentials}[8]{\section{Meeting #1}
+\begin{tabular}{llc}
+	Date & #2 & \\
+	Time & #3 & \\
+	Location & #4 & \\
+	Attendance & Evan Milton & #5 \\
+	& Josh DeWitt & #6 \\
+	& Chad Staley & #7 \\
+	& James Gehringer & #8 \\
+\end{tabular}}
+\newcommand{\minutesdetails}[2]{\paragraph{Agenda}\begin{enumerate}#1\end{enumerate}\paragraph{Decisions Reached}\begin{enumerate}#2\end{enumerate}}
 
 \hypersetup{
 	colorlinks,
