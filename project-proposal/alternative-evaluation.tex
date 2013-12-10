@@ -1,6 +1,57 @@
 \chapter{Design Alternatives Evaluation}
 Evaluations of design alternatives are shown Tables ~\ref{table:uPEval} through ~\ref{table:MCEval}.
 
+\begin{table}[h]
+\begin{tabular}{l|l|l|l|l|l|}
+\cline{2-6}
+                                                & Weight & PHP & \begin{tabular}[c]{@{}c@{}}Stand Alone\\  Application\end{tabular} & Javascript & HTML5 \\ \hline
+\multicolumn{1}{|l|}{GUI Capabilities}          & 2      & -   & 1                                                                  & 1          & 1     \\ \hline
+\multicolumn{1}{|l|}{Team Knowledge}            & 3      & -   & -1                                                                 & 0          & 0     \\ \hline
+\multicolumn{1}{|l|}{Community Knowledge Base } & 1      & -   & -1                                                                 & 0          & -1    \\ \hline
+\multicolumn{1}{|l|}{Score}                     &        & -   & 2                                                                  & 2          & 1     \\ \hline
+\multicolumn{1}{|l|}{Continue?}                  &        & Yes & No                                                                 & Yes        & Yes   \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+                  & Weight & RasPi & \begin{tabular}[c]{@{}c@{}}Beagle\\ Bone\end{tabular} & \begin{tabular}[c]{@{}c@{}}Arduino\\ Mega\end{tabular} \\ \hline
+Speed             & 1      & -     & 0                                                     & -1                                                     \\ \hline
+Versatility       & 3      & -     & 0                                                     & 0                                                      \\ \hline
+GPIO              & 2      & -     & 1                                                     & 1                                                      \\ \hline
+Application Notes & 4      &       & -1                                                    & 0                                                      \\ \hline
+Score             &        & -     & -2                                                    & 1                                                      \\ \hline
+Continue?         &        & Yes   & No                                                    & Yes                                                    \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\begin{tabular}{l|l|l|l|l|l|}
+\cline{2-6}
+                                              & Weight & MSP430 & ATMega324P & AT90USB1287 & ARM Stellaris \\ \hline
+\multicolumn{1}{|l|}{Number of Timers}        & 4      & -      & -1         & -1          & 1             \\ \hline
+\multicolumn{1}{|l|}{Interrupt Capabilities } & 3      & -      & 0          & 0           & 0             \\ \hline
+\multicolumn{1}{|l|}{SPI}                     & 2      & -      & 0          & 0           & 0             \\ \hline
+\multicolumn{1}{|l|}{GPIO}                    & 1      &        & 1          & 1           & 1             \\ \hline
+\multicolumn{1}{|l|}{Score}                   &        & -      & -3         & -3          & 5             \\ \hline
+\multicolumn{1}{|l|}{Continue?}               &        & Yes    & No         & No          & Yes           \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+                         & Weight & DRV8825 & A4988 & TB6560 \\ \hline
+Power Output             & 4      & -       & -1    & -1     \\ \hline
+Microstepping Capability & 1      & -       & -1    & -1     \\ \hline
+Price                    & 2      & -       & 1     & 1      \\ \hline
+Failsafe                 & 3      &         & 1     & -1     \\ \hline
+Score                    &        & -       & 0     & -6     \\ \hline
+Continue?                &        & Yes     & Yes   & No     \\ \hline
+\end{tabular}
+\end{table}
+
 \begin{table}[ht]
 	\caption{Microprocessor Evaluation}
 	\label{table:uPEval}
