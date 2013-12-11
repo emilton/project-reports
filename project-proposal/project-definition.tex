@@ -5,10 +5,10 @@ The purpose of this Senior Thesis Project is to create a \gls{cnc} interface, ca
 The modern \gls{cnc} interface is limited to utilization of a full computer system, in combination with a motor driver platform to for complete functional control.
 This setup can cost upwards of \$500, depending on the quality and system specifications.
 It is the goal of this project to encapsulate these hardware and software requirements completely within a system costing less than \$100.
-This will bring the \gls{cnc} interface to a price point comparable with tbat of the modern printer. 
+This will bring the \gls{cnc} interface to a price point comparable with that of the modern printer. 
 
 \section{Existing Solutions}
-\gls{cnc} system requirments currently rely upon complex computer-driver interfaces to control the machine.
+\gls{cnc} system requirements currently rely upon complex computer-driver interfaces to control the machine.
 The system requires a complete software package operating from a PC to manipulate an entirely separate set of motor drives running the machine.
 While this may be practical for commercial and industrial applications, many of the features provided by this system will not be utilized by the average consumer.
 
@@ -20,19 +20,17 @@ This will bring system functionality to a level on par with the modern printer.
 
 \section{Project Scope}
 The \gls{cnc} interface will be configurable to operate on different mechanical systems. 
-
-The mechanical requirements and the human-machine interfacing for the project have been eliminated.
-The scope now only includes the software for the G-code interpretation, its upload interface, the master controller, the motor controller and the motor driver board.
-The G-code interpretation software will have a G-code file as an input and then output motor driver commands from the master controller to the motor controller.
-The motor controller will then send out the driver signals to the motor driver board. 
+The scope includes the software for the G-code interpretation, its upload interface, the master controller, the motor controller and the motor driver board.
+The G-code interpretation software will have a G-code file as an input and output motor driver commands from the master controller to the motor controller.
+The motor controller will send out the driver signals to the motor driver board. 
 The motor driver board will take the command outputs from the motor controller and then drive the motors. 
-There will also be 16 \gls{gpio} pins, an emergency stop switch, and home switches for the motors. 
+There will be 16 \gls{gpio} pins, an emergency stop switch, and home switches for the motors. 
 
 \section{Marketing Requirements}
 The system will meet the following criteria:
 \begin{enumerate} \parskip2pt
 	\item be accurate in its motor control.
-	\item be quickly accelerate the motors.
+	\item be able to quickly accelerate the motors.
 	\item be able to send command files through a web interface.
 	\item be able to drive multiple motors.
 	\item be able to handle general purpose input and output.
