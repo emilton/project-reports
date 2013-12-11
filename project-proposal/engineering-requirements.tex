@@ -1,4 +1,5 @@
 \chapter{Engineering Requirements Specification}
+The project's success will be determined by whether or not the 10 engineering requirements, consisting of 5 \gls{pcsc} and 5 \gls{pssc}, are met. 
 
 \section{Five Project Common Success Criteria}
 \begin{enumerate}
@@ -15,19 +16,19 @@
 The system will receive inputs from at least 1 motor limit/emergency stop switch and 4 stepper motor home inputs.
 	\item The system will Receive G-code through \gls{tcpip}.
 The system’s software will be developed using IEEE Std 830-1998 Recommended Practice for Software Requirements Specifications.
-	\item The maximum step frequency will be at least 10kHz.
-The target step frequency will be within 5\% of the desired frequency.
-	\item The system power supply will accept between 14V and 36V and draw a maximum of 10A.
-	\item The system will enter thermal shutdown above CPU temperatures of $60^{\circ}C$ and the motors will cease to operate.
+	\item The step frequency range will be at least 10kHz.
+For any chosen frequency in range, the actual step frequency will be within 5\% of the desired frequency.
+	\item The system power supply will accept between 14V and 36V and draw a maximum of 10A, including current required for the motors. 
+	\item The system will stop all motors and shutdown all microcontrollers if the main microcontroller temperature reaches $60^{\circ}C$.
 \end{enumerate}
 
 \section{Requirements Validation}
-Table ~\ref{table:Val} shows the relationship between the engineering requirements and the marketing requirements.
+Table ~\ref{table:validation} shows the relationship between the engineering requirements and the marketing requirements.
 For a marketing requirement to be validated, the respective engineering requirements must be verified.
 
-\begin{table}[ht]
-	\caption{Engineering Requirement vs. Marketing Requirements}
-	\label{table:Val}
+\begin{table}[H]
+	\caption{Engineering Requirements vs. Marketing Requirements}
+	\label{table:validation}
 	\centering
 	\begin{tabular}{|r |c |c |c |c |c|} 
 		\hline\hline
@@ -47,8 +48,7 @@ For a marketing requirement to be validated, the respective engineering requirem
 		\hline
 		\textbf{Thermal Shutdown } & X & & & X & X \\
 		\hline
-		\textbf{Supply Range} & & & & X &   \\
-
+		\textbf{Supply Range} & & & & X & \\
 	\hline 
 	\end{tabular}
 \end{table}
