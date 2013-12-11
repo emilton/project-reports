@@ -1,4 +1,17 @@
 \chapter{Functional Breakdown of Selected Design}
+The main microprocessor, an \gls{arm} 11 on the \gls{pi}, will primarily be responsible for controlling the three stepper motors for the delta robot.
+This objective will be achieved by creating a G-code interpreter written in C.
+G-code is a standard way to instruct a \gls{cnc} router to move the work head, but is more complicated than accepting individual commands to move the motors.
+The microprocessor will be responsible for scheduling movements to make smooth transitions to the destination, as interpreted from the G-code.
+
+The system will be a network device, connected through WiFi or Ethernet.
+The microprocessor will obtain G-code commands through local storage or by accepting G-code files over TCP/IP.
+The G-code received over TCP/IP and will be stored locally for faster use again in the future.
+Execution of G-code sequences will be started through a TCP/IP interface.
+All network interfaces will be password protected and use encryption algorithms to ensure that all commands executed are from authorized users. 
+
+A secondary microprocessor may be required to precisely control stepper motors and the \gls{gpio}.
+This secondary microprocessor will perform any required communication with the network-connected main microprocessor through a serial interface. 
 
 \begin{figure}[h]
 	\centering
