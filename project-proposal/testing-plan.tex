@@ -12,45 +12,88 @@ Validation was completed by comparing the engineering requirements with the mark
 \section{Verification Metrics}
 The following tests will give proof that all of the ten engineering requirements have been met.
 \begin{enumerate}
-	\item Print out the schematic and the \gls{bom}. Work through all components on the schematic, placing a check mark next to each component and the corresponding part on the \gls{bom}. Once the schematic has been fully reviewed, ensure that all items on the \gls{bom} have exactly one check mark next to them.
-	\item Use schematic as the netlist for the \gls{pcb} and do not make any manual modifications to the netlist. Print out the schematic and review it with Professor Detloff to ensure readability. Verify loading and interface timing analyses through experimental measures using an oscilloscope. 
+	\item Print out the schematic and the \gls{bom}.
+Work through all components on the schematic, placing a check mark next to each component and the corresponding part on the \gls{bom}.
+Once the schematic has been fully reviewed, ensure that all items on the \gls{bom} have exactly one check mark next to them.
+	\item Use schematic as the netlist for the \gls{pcb} and do not make any manual modifications to the netlist.
+Print out the schematic and review it with Professor Detloff to ensure readability.
+Verify loading and interface timing analyses through experimental measures using an oscilloscope. 
 	\item Generate a \gls{pcb} layout that passes all \gls{drc} operations performed by the \gls{drc} check available at http://www.4pcb.com. 
 	\item Use a \gls{dmm} to verify connectivity on all solder joints.
 	\item Demonstrate a fully-functional project at the annual senior design showcase. 
-	\item 
-	\testtabular{Stepper Motor Accuracy}{Tests that the stepper motor pulses are accurate.}{Configure oscilloscope to measure the frequency of input 1. Set a constant running frequency of 10kHz on all motors through G-code.}
-		1 & Connect oscilloscope to the input of the first stepper motor driver. & Oscilloscope measures within 5\% of 10kHz. & & & & \\ \hline
-		2 & Repeat the previous step for the second, third, and forth stepper motor drivers. & Oscilloscope measures within 5\% of 10kHz. & & & & \\ \hline
-	\end{tabular}
+\end{enumerate}
+\section{Project Milestone Verification}
+Landmark milestones will be complete once their associated tests pass.
+Table ~\ref{table:testvsland} shows the tests required to be completed for each landmark.
 
-	\item 
-	\testtabular{G-code Upload}{Checks that G-code can be successfully uploaded to the system through \gls{tcpip}.}{Connect system to network through Ethernet or WiFi. Connect test harness to motor drivers. Start up computer that can connect to the same network as the system.}
-		1 & Connect to system through \gls{tcpip}. & System is available and connection is established. & & & & \\ \hline
-		2 & Send G-code to system through \gls{tcpip}. & System receives G-code and sends acknowledgment. & & & & \\ \hline
-		3 & Send command to execute sent G-code. & System executes the newly received G-code. & & & & \\ \hline
+\begin{table}[H]
+	\caption{Landmark vs. Required Tests}
+	\label{table:testvsland}
+	\centering
+	\begin{tabular}{|r |c|} 
+		\hline\hline
+		\textbf{Landmark} & \textbf{Required Tests}\\
+		\hline
+		\textbf{1.1: Electrical Components} &  \\
+		\hline
+		\textbf{1.2: Control Software} &  \\
+		\hline
+		\textbf{1.3: Interface Software} & \\
+		\hline
+		\textbf{1.4: System Testing} & \\
+		\hline
+		\textbf{1.5: Integration Testing} & \\
+		\hline
+		\textbf{1.6: Unit Testing} & \\
+		\hline 
 	\end{tabular}
+\end{table}
+Test specifications are shown in the Integration, Interface, and Subsystem Testing sections.
 
-	\item
-	\testtabular{Voltage Supply}{Tests that the system operates between 14-36V.}{Connect system to variable power supply with a range of at least 14-36V or seperate power supplies with voltages of 14V, 25V, and 36V.}
-		1 & Set power supply to 14V. & \gls{pi} voltage supply is 5V. Microcontroller voltage supply is 5V. Motor Controller voltage supply is TBD.  & & & & \\ \hline
-		2 &  Set power supply to 25V. & \gls{pi} voltage supply is 5V. Microcontroller voltage supply is 5V. Motor Controller voltage supply is TBD. & & & & \\ \hline
-		3 & Set power supply to 36V. & \gls{pi} voltage supply is 5V. Microcontroller voltage supply is 5V. Motor Controller voltage supply is TBD. & & & & \\ \hline
-	\end{tabular}
+\subsection{Integration Testing}
+\begin{enumerate}
 
-	\item
+\item
 	\testtabular{Applications Test}{Tests that the system drives 4 stepper motors, 1 DC motor, and 16 GPIO.}{Connect 4 stepper motors and 1 DC motor to motor drivers. Connect test GPIO load to GPIO output. }
 		1 & Connect to system through \gls{tcpip}. & System is available and connection is established. & & & & \\ \hline
 		2 & Send G-code to system through \gls{tcpip}. & System receives G-code and sends acknowledgment. & & & & \\ \hline
 		3 & Send command to execute sent G-code. & System executes the newly received G-code. & & & & \\ \hline
-		4 & Verify that all motors respond appropriately. & The 4 stepper motors and 1 DC motor respond appropiately. & & & & \\ \hline
+		4 & Verify that all motors respond appropriately. & The 4 stepper motors and 1 DC motor respond appropriately. & & & & \\ \hline
 		5 & Verify that all 16 GPIO outputs respond. & The GPIO port responds appropriately. & & & & \\ \hline
 	\end{tabular}
 
-	\item
+\item
 	\testtabular{Thermal Shutdown}{Tests that the system shuts down at CPU temperatures greater than $60^{\circ}C$.}{Prepare the system for normal operation in a test oven.}
 		1 & Compare system temperature sensor to ambient temperature. & CPU temperature sensor is within $1^{\circ}C$ of ambient temperature.  & & & & \\ \hline
 		2 &  Increase oven temperature to  $55^{\circ}C$. Allow system to run until temperature sensor reaches  $55^{\circ}C$. & System operates normally. & & & & \\ \hline
 		3 &  Increase oven temperature to  $62^{\circ}C$. & System shuts off when CPU temperature reaches $60^{\circ}C$.  & & & & \\ \hline
 		4 &  Note oven temperature at which system shuts off. & System shuts off before oven temperature exceeds $61^{\circ}C$.  & & & & \\ \hline
 	\end{tabular}
+
+\end{enumerate}
+
+\subsection{Interface Testing}
+
+\subsection{Subsystem Testing}
+\begin{enumerate}
+\item 
+	\testtabular{Stepper Motor Accuracy}{Tests that the stepper motor pulses are accurate.}{Configure oscilloscope to measure the frequency of input 1. Set a constant running frequency of 10kHz on all motors through G-code.}
+		1 & Connect oscilloscope to the input of the first stepper motor driver. & Oscilloscope measures within 5\% of 10kHz. & & & & \\ \hline
+		2 & Repeat the previous step for the second, third, and forth stepper motor drivers. & Oscilloscope measures within 5\% of 10kHz. & & & & \\ \hline
+	\end{tabular}
+
+\item 
+	\testtabular{G-code Upload}{Checks that G-code can be successfully uploaded to the system through \gls{tcpip}.}{Connect system to network through Ethernet or WiFi. Connect test harness to motor drivers. Start up computer that can connect to the same network as the system.}
+		1 & Connect to system through \gls{tcpip}. & System is available and connection is established. & & & & \\ \hline
+		2 & Send G-code to system through \gls{tcpip}. & System receives G-code and sends acknowledgment. & & & & \\ \hline
+		3 & Send command to execute sent G-code. & System executes the newly received G-code. & & & & \\ \hline
+	\end{tabular}
+
+\item
+	\testtabular{Voltage Supply}{Tests that the system operates between 14-36V.}{Connect system to variable power supply with a range of at least 14-36V or seperate power supplies with voltages of 14V, 25V, and 36V.}
+		1 & Set power supply to 14V. & \gls{pi} voltage supply is 5V. Microcontroller voltage supply is 5V. Motor Controller voltage supply is TBD.  & & & & \\ \hline
+		2 &  Set power supply to 25V. & \gls{pi} voltage supply is 5V. Microcontroller voltage supply is 5V. Motor Controller voltage supply is TBD. & & & & \\ \hline
+		3 & Set power supply to 36V. & \gls{pi} voltage supply is 5V. Microcontroller voltage supply is 5V. Motor Controller voltage supply is TBD. & & & & \\ \hline
+	\end{tabular}
+
 \end{enumerate}
