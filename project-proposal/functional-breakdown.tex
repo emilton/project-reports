@@ -1,5 +1,5 @@
 \chapter{Functional Breakdown of Selected Design}
-The main microprocessor, an \gls{arm} 11 on the \gls{pi}, will primarily be responsible for controlling the three stepper motors for the delta robot.
+The main microprocessor, an \gls{arm} 11 on the \gls{pi}, will be responsible for controlling the three stepper motors for the CNC.
 This objective will be achieved by creating a G-code interpreter written in C.
 G-code is a standard way to instruct a \gls{cnc} router to move the work head, but is more complicated than accepting individual commands to move the motors.
 The microprocessor will be responsible for scheduling movements to make smooth transitions to the destination, as interpreted from the G-code.
@@ -12,8 +12,9 @@ All network interfaces will be password protected and use encryption algorithms 
 
 A secondary microprocessor may be required to precisely control stepper motors and the \gls{gpio}.
 This secondary microprocessor will perform any required communication with the network-connected main microprocessor through a serial interface. 
+These components will be utilized in the manner outlined below.
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{architecture.png}
 	\caption{System Architecture}
