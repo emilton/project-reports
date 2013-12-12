@@ -1,28 +1,28 @@
 \chapter{Functional Breakdown of Selected Design}
 The main microprocessor, an \gls{arm} 11 on the \gls{pi}, will be responsible for controlling the three stepper motors for the CNC.
 This objective will be achieved by creating a G-code interpreter written in C.
-G-code is a standard way to instruct a \gls{cnc} router to move the work head, but is more complicated than accepting individual commands to move the motors.
 The microprocessor will be responsible for scheduling movements to make smooth transitions to the destination, as interpreted from the G-code.
 
 The system will be a network device, connected through WiFi or Ethernet.
 The microprocessor will obtain G-code commands through local storage or by accepting G-code files over TCP/IP.
-The G-code received over TCP/IP and will be stored locally for faster use again in the future.
+The G-code received over TCP/IP and will be stored locally for reuse in the future.
 Execution of G-code sequences will be started through a TCP/IP interface.
 All network interfaces will be password protected and use encryption algorithms to ensure that all commands executed are from authorized users. 
 
 A secondary microprocessor may be required to precisely control stepper motors and the \gls{gpio}.
 This secondary microprocessor will perform any required communication with the network-connected main microprocessor through a serial interface. 
-These components will be utilized in the manner outlined below.
 
-\begin{figure}[H]
+\section{Level Zero Breakdown}
+Figure ~\ref{fig:architecture} shows the overall architecture of the Senior Thesis Project, which is fully specified by Table ~\ref{table:zerolevel}.
+
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=1\textwidth]{architecture.png}
 	\caption{System Architecture}
 	\label{fig:architecture}
 \end{figure}
 
-\section{Level Zero Breakdown}
-\begin{table}[H] 
+\begin{table}[h] 
 	\caption{Zero Level Module Definition}
 	\label{table:zerolevel}
 	\centering 
@@ -37,6 +37,7 @@ These components will be utilized in the manner outlined below.
 \end{table}
 
 \section{Level One Breakdown}
+Table ~\ref{table:firstlevel} specifies the definitions for the level one components of the Senior Thesis Project. 
 \begin{table}[H] 
 	\caption{First Level Module Definition}
 	\label{table:firstlevel}
@@ -72,6 +73,7 @@ These components will be utilized in the manner outlined below.
 \end{table}
 
 \section{Level Two Breakdown}
+Tables ~\ref{table:secondlevelweb} through ~\ref{table:secondleveldriver} specify the definitions for the level two components of the Senior Thesis Project.
 \begin{table}[H] 
 	\caption{Second Level Module Definition - Web Interface}
 	\label{table:secondlevelweb}
