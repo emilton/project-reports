@@ -1,0 +1,79 @@
+\chapter{Design Alternatives Evaluation}
+Evaluations of design alternatives are shown Tables ~\ref{table:TCPIP} through ~\ref{table:MCEval}.
+
+
+\section{TCP/IP Interface}
+Since sensitive data will not be shared with the device, security is not required, though it is preferred. 
+Since plaintext or SSL sockets and SFTP are more difficult to use than the other options, they should not be used since the final product should not require special training. 
+HTTPS will be used for its security advantages over HTTP, and ease of use over other methods. 
+
+\begin{table}[h]
+\caption{Web Interface Evaluation}
+	\label{table:TCPIP}
+	\centering
+\begin{tabular}{|r|c|c|c|c|c|c|}
+\hline
+Item              	& Weight & HTTPS  & HTTP       & SFTP        & SSL Socket	& Plaintext\\ \hline
+Security       	& 1      & -      & -1         & 0           & 0          	& -1   \\ \hline
+Implementation	& 2      & -      & 1          & 0           & -1     		& 1   \\ \hline
+Ease of Use       	& 3      & -      & 0          & -1          & -1         	& -1 \\ \hline
+Score         	&        & -      & 1          & -3          & -5         	& -2   \\ \hline
+Alternative     	&        & Y      & Y          & N           & N       	& N   \\ \hline
+\end{tabular}
+\end{table}
+
+\section{Master Controller}
+The \gls{pi} was selected from the following alternitives for its superior hardware, and application notes.
+\begin{table}[H]
+\caption{Master Controller Evaluation}
+	\label{table:MaCEval}
+	\centering
+\begin{tabular}{|r|c|c|c|c|}
+\hline
+Item              & Weight & RasPi & Beagle &Arduino \\ \hline
+Speed             & 1      & -     & 0                                                     & -1                                                     \\ \hline
+Versatility       & 3      & -     & 0                                                     & 0                                                      \\ \hline
+GPIO              & 2      & -     & 1                                                     & 1                                                      \\ \hline
+Application Notes & 4      & -     & -1                                                    & 0                                                      \\ \hline
+Score             &        & -     & -2                                                    & 1                                                      \\ \hline
+Alternative       &        & Y     & N                                                    & Y                                                    \\ \hline
+\end{tabular}
+\end{table}
+
+\section{Motor Driver Controller Microcontroller}
+Of the following alternatives, the MSP430 was selected for its low cost, adequate timer count, and interrupt capabilities.
+\begin{table}[H]
+\caption{Motor Controller Evaluation}
+	\label{table:uCEval}
+	\centering
+\begin{tabular}{|r|c|c|c|c|c|}
+\hline
+Item              	& Weight & MSP430 & ATMega324P & AT90USB1287 & ARM Stellaris \\ \hline
+GPIO          	& 1      & -      & 1          & 1           & 1             \\ \hline
+SPI         		& 2      & -      & 0          & 0           & 0             \\ \hline
+Interrupt			& 3      & -      & 0          & 0           & 0             \\ \hline
+Timers        	& 4      & -      & -1         & -1          & 1             \\ \hline
+Score         	&        & -      & -3         & -3          & 5             \\ \hline
+Alternative     	&        & Y      & N          & N           & Y           \\ \hline
+\end{tabular}
+\end{table}
+
+\section{Motor Drivers}
+Of the following alternatives, the DRV8825 was selected for its comparable power capabilities, and superior documentation.
+\begin{table}[H]
+\caption{Motor Drivers Evaluation}
+	\label{table:MCEval}
+	\centering
+\begin{tabular}{|r|c|c|c|c|}
+\hline
+Item                   & Weight & DRV8825 & A4988 & TB6560 \\ \hline
+Microstepping 	 	& 1      & -       & -1    & -1     \\ \hline
+Price                  & 2      & -       & 1     & 1      \\ \hline
+Failsafe               & 3      & -       & 1     & -1     \\ \hline                         
+Power Output           & 4      & -       & -1    & -1     \\ \hline
+Score                  &        & -       & 0     & -6     \\ \hline
+Alternative            &        & Y       & Y     & N      \\ \hline
+\end{tabular}
+\end{table}
+
+

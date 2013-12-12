@@ -1,0 +1,54 @@
+\chapter{Engineering Requirements Specification}
+The project's success will be determined by whether or not the 10 engineering requirements, consisting of 5 \gls{pcsc} and 5 \gls{pssc}, are met. 
+
+\section{Five Project Common Success Criteria}
+\begin{enumerate}
+	\item Create a complete \gls{bom} and order/sample all parts needed for the design.
+	\item Develop complete, accurate, readable schematic of the design, complete with interface loading analysis and interface timing analysis. 
+	\item Complete a layout and etch a \gls{pcb}.
+	\item Populate and debug the design on a custom \gls{pcb}.
+	\item Professionally package the finished product and demonstrate its functionality.
+\end{enumerate}
+
+\section{Five Project Specific Success Criteria}\
+\begin{enumerate}
+	\item The system will drive at least 4 stepper motors, 1 DC motor, and 16 \gls{gpio}.
+The system will receive inputs from at least 1 motor limit/emergency stop switch and 4 stepper motor home inputs.
+	\item The system will Receive G-code through \gls{tcpip}.
+The system’s software will be developed using IEEE Std 830-1998 Recommended Practice for Software Requirements Specifications.
+	\item The step frequency range will be at least 10kHz.
+For any chosen frequency in range, the actual step frequency will be within 5\% of the desired frequency.
+	\item The system power supply will accept between 14V and 36V and draw a maximum of 10A, including current required for the motors. 
+	\item The system will stop all motors and shutdown all microcontrollers if the main microcontroller temperature reaches $60^{\circ}C$.
+\end{enumerate}
+
+\section{Requirements Validation}
+Table ~\ref{table:validation} shows the relationship between the engineering requirements and the marketing requirements.
+For a marketing requirement to be validated, the respective engineering requirements must be verified.
+
+\begin{table}[H]
+	\caption{Engineering Requirements Validation}
+	\label{table:validation}
+	\centering
+	\begin{tabular}{|r |c |c |c |c |c|} 
+		\hline\hline
+		&1&2&3&4&5\\
+		\hline
+		\textbf{Accurate} &  & & X & X & \\
+		\hline
+		\textbf{Quick} &  & & X & X & \\
+		\hline
+		\textbf{Web Interface} & & X & & & \\
+		\hline
+		\textbf{Drive Motors} & X & & X & X & \\
+		\hline
+		\textbf{Handle \gls{gpio}} & X & & & X & \\
+		\hline
+		\textbf{Emergency Stop} & X & & & X & \\
+		\hline
+		\textbf{Thermal Shutdown } & X & & & X & X \\
+		\hline
+		\textbf{Supply Range} & & & & X & \\
+	\hline 
+	\end{tabular}
+\end{table}

@@ -10,6 +10,7 @@
 \usepackage{hyperref}
 \usepackage{rotating}
 \usepackage{float}
+\usepackage[toc,page]{appendix}
 
 \titleformat{\chapter}{\Large\bfseries}{}{0pt}{\huge}
 \titlespacing\chapter{0pt}{*1}{*1}
@@ -17,9 +18,16 @@
 \titlespacing\subsection{0pt}{*0}{-\parskip}
 \titlespacing\paragraph{0pt}{*0}{*3}
 
+\newcolumntype{a}[1]{>{\centering}p{#1}}
+
 \newcommand*{\TitleFont}{
       \usefont{\encodingdefault}{\rmdefault}{b}{n}
       \fontsize{24}{36}
+      \selectfont
+}
+\newcommand*{\SubtitleFont}{
+      \usefont{\encodingdefault}{\rmdefault}{}{n}
+      \fontsize{12}{12}
       \selectfont
 }
 \newcommand{\thickline}{\rule{\textwidth}{1.6pt}}
@@ -27,9 +35,24 @@
 \newcommand{\novspace}{\vspace*{-\baselineskip}\vspace*{4pt}}
 \renewcommand{\dateseparator}{-}
 \let\oldtitle\title
-\renewcommand{\title}[1]{\oldtitle{\thickline \\ \novspace \thinline \\ \TitleFont {#1} \thinline \\ \novspace \thickline}}
+\newcommand{\fulltitle}[2]{\oldtitle{\thickline \\ \novspace \thinline \\ \TitleFont {#1} \thinline \\ \novspace \thickline #2}}
+\renewcommand{\title}[1]{\fulltitle{#1}{}}
+\newcommand{\titleandsubtitle}[2]{\fulltitle{#1}{\\ \SubtitleFont{#2}}}
 \newcommand{\tableoffiguresandtables}{\listoffigures\begingroup\let\clearpage\relax\listoftables\endgroup}
 \newcommand{\textrotate}[1]{\begin{turn}{-90}#1\end{turn}}
+\newcommand{\signature}[1]{\\Signature: & & Date: & \\ \cline{2-2} \cline{4-4}	& #1 & & YYYY-MM-DD \tabularnewline}
+\newcommand{\signatures}{\begin{tabular}{ca{8cm}ca{4cm}c}\signature{Evan Milton}\signature{Josh DeWitt}\signature{Chad Staley}\signature{James Gehringer}\end{tabular}}
+\newcommand{\minutesessentials}[8]{\section{Meeting #1}
+\begin{tabular}{llc}
+	Date & #2 & \\
+	Time & #3 & \\
+	Location & #4 & \\
+	Attendance & Evan Milton & #5 \\
+	& Josh DeWitt & #6 \\
+	& Chad Staley & #7 \\
+	& James Gehringer & #8 \\
+\end{tabular}}
+\newcommand{\minutesdetails}[2]{\paragraph{Agenda}\begin{enumerate}#1\end{enumerate}\paragraph{Decisions Reached}\begin{enumerate}#2\end{enumerate}}
 
 \hypersetup{
 	colorlinks,
@@ -42,22 +65,23 @@
 \author{
 	Evan Milton \\
 	Computer and Electronics Engineering \\
-	University of Nebraska at Lincoln - Omaha Campus \\
+	University of Nebraska-Lincoln \\
 	Electronics Engineering
 		\and
 	Josh DeWitt \\
 	Computer and Electronics Engineering \\
-	University of Nebraska at Lincoln - Omaha Campus \\
-	Computer Engineering and Mathematics, minor in Computer Science
+	University of Nebraska-Lincoln \\
+	Computer Engineering, minor in Computer Science \\
+	Mathematics
 		\and
 	Chad Staley \\
 	Computer and Electronics Engineering \\
-	University of Nebraska at Lincoln - Omaha Campus \\
+	University of Nebraska-Lincoln \\
 	Electronics Engineering
 		\and
 	James Gehringer \\
 	Computer and Electronics Engineering \\
-	University of Nebraska at Lincoln - Omaha Campus \\
+	University of Nebraska-Lincoln \\
 	Computer Engineering, minor in Computer Science
 }
 \date{\yyyymmdddate\today}
