@@ -50,7 +50,9 @@ Table ~\ref{table:testvsland} shows the tests required to be completed for each 
 		\hline 
 	\end{tabular}
 \end{table}
-Test specifications are shown in the Integration, Interface, and Subsystem Testing sections.
+Test specifications are shown in the Integration, Interface, and Subsystem Testing sections. 
+Automated regression testing is run on the \gls{pi} through make, the automated C building took that processes makefiles.
+Regression tests will be written before the code that it is testing.
 
 \subsection{Integration Testing}
 \testtabular{Applications Test}{Tests that the system drives 4 stepper motors, 1 DC motor, and 16 GPIO.}{Connect 4 stepper motors and 1 DC motor to motor drivers. Connect test GPIO load to GPIO output. }
