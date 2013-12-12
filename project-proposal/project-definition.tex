@@ -1,5 +1,6 @@
 \chapter{Project Definition}
 The purpose of this Senior Thesis Project is to create a \gls{cnc} interface, capable of receiving standardized G-code through \gls{tcpip}, processing the G-code, and driving motors and \gls{gpio} according to the G-code. 
+G-code is a standard \gls{cnc} programming language, but is more complicated than accepting individual commands to move the motors.
 
 \section{Project Need}
 The modern \gls{cnc} interface is limited to utilization of a full computer system, in combination with a motor driver platform to for complete functional control.
@@ -40,7 +41,7 @@ The system will meet the following criteria:
 \section{Objective Tree}
 Figure ~\ref{fig:o-tree} outlines the requirements for having a functioning \gls{cnc} interface for this Senior Thesis Project.
 Safety is the most important objective in this project since the \gls{cnc} interface will control moving components, although these moving components are outside the scope of this report.
-Next most important is the \gls{cnc} functionality, otherwise the interface would not be able to control any \gls{cnc}
+Next most important is the \gls{cnc} functionality, otherwise the interface would not be able to control any \gls{cnc}.
 Speed and accuracy is rated next most important to ensure the movements coordinated by the interface are as closed to the desired as possible.
 The \gls{cnc} control is required to allow G-Code to be uploaded to the system and allow system monitoring.
 A variable power input is desired so that users may purchase a power supply that fits their motors' needs, ensuring that a properly priced power supply is bought for the system.
