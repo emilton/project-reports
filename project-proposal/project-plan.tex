@@ -1,4 +1,6 @@
 \chapter{Project Plan}
+This section describes how resources will be used to complete the defined project on time and within budget.
+
 \section{Risk Management Procedure}
 Certain risks will be faced throughout the project, though proper avoidance and mitigation plans will allow project objectives to be completed on time.
 Risks will be obsessed using AHP and pairwise comparisons.
@@ -34,9 +36,11 @@ This will be submitted to Professor Detolff for review.
 If the change is approved, an \gls{eco} will be used to direct the change.
 
 \section{Work Breakdown Structure}
+Table ~\ref{table:wbs} shows the \gls{wbs}. The major goals (1.1, 1.2, 1.3, etc.) correlate to the major milestones on the Gantt Chart.
+
 \begin{longtable}{|c|m{4cm}|m{4cm}|>{\centering}m{1.6cm}|m{3.5cm}|}
 	\caption{Work Breakdown Structure}
-	\label{table:primary} \\
+	\label{table:wbs} \\
 	\hline \textbf{ID} & \textbf{Activity} & \textbf{Deliverable} & \textbf{Duration (Days)} & \textbf{Resources} \\ \hline
 	\endfirsthead
 	\multicolumn{5}{c}{\tablename\ \thetable\ -- \textit{Continued from previous page}} \\ \hline
@@ -101,9 +105,12 @@ If the change is approved, an \gls{eco} will be used to direct the change.
 
 \pagebreak
 \section{Linear Responsibility Chart}
+Table ~\ref{table:lrc} describes who will be working on which tasks. 
+See Table ~\ref{table:wbs} to see the definition of each \gls{wbs} ID.
+
 \begin{longtable}{|c|c|c|c|c|c|c|}
 	\caption{Linear Responsibility Chart}
-	\label{table:primary} \\
+	\label{table:lrc} \\
 	\hline \textbf{WBS ID} & \textbf{Josh \newline DeWitt} & \textbf{James \newline Gehringer} & \textbf{Evan Milton} & \textbf{Chad \newline Staley} & \textbf{Herb Detloff} \\ \hline
 	\endfirsthead
 	\multicolumn{7}{c}{\tablename\ \thetable\ -- \textit{Continued from previous page}} \\ \hline
@@ -171,31 +178,44 @@ Key:
 	1 - Primary Responsibility & 2 - Support Work & 3 - Must be Consulted \\
 	4 - May be Consulted & 5 - Review & 6 - Final Approval \\
 \end{tabular}
+
 \section{Activity On Node Dependency Network}
+Figure ~\ref{fig:aon} shows the dependencies of all of the deliverables listed on the \gls{wbs}.
+See Table ~\ref{table:wbs} to see the definition of each \gls{wbs} ID.
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=.75\textwidth]{AON.png}
 \caption{Activity on Node}
-\label{fig:Activity on Node}
+\label{fig:aon}
 \end{figure}
+
 \section{Gantt Chart Schedule}
+Figure ~\ref{fig:gantt} shows the current schedule of work based upon the \gls{lrc} in Table ~\ref{table:lrc} and the \gls{aon} in Figure ~\ref{fig:aon}.
+Each landmark is marked on the Gantt Chart with a purple square.
+See Table ~\ref{table:wbs} to see the definition of each \gls{wbs} ID.
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=1\textwidth]{gantt.png}
 \caption{Gantt Chart}
-\label{fig:Gantt Chart}
+\label{fig:gantt}
 \end{figure}
-\subsection{Landmark Schedule}
-Each landmark is marked on the Gantt Chart with a purple square.
+
 \subsection{Critical Design Review Schedule}
 Critical design reviews will happen every two weeks, marked on the Gantt Chart by the vertical lines.
 Critical design review will end after 6 weeks. By this point the critical parts of the project will be finalized. 
+
 \subsection{Work Breakdown Structure and Linear Responsibility Chart Review and Update Schedule}
 Chart updates will happen every two weeks, denoted by both the solid and dashed vertical red lines.
+
 \section{Budget}
+Table ~\ref{table:budget} describes the current estimate for the budget for construction of one prototype.
+Extra components will be ordered to mitigate risk, but add to the total budget for the project. 
+
 \begin{longtable}{|>{\centering}m{3.0cm}|>{\centering}m{1.8cm}|>{\centering}m{1.8cm}|>{\centering}m{1.8cm}|>{\centering}m{1.8cm}|>{\centering}m{2.3cm}|m{1.8cm}|}
 	\caption{Budget}
-	\label{table:primary} \\
+	\label{table:budget} \\
 	\hline \textbf{Item} & \textbf{Required} & \textbf{Purchase} & \textbf{Cost} & \textbf{Total} & \textbf{Specification} &\textbf{Supplier}\\ \hline
 	\endfirsthead
 	\multicolumn{7}{c}{\tablename\ \thetable\ -- \textit{Continued from previous page}} \\ \hline
@@ -218,7 +238,10 @@ Chart updates will happen every two weeks, denoted by both the solid and dashed 
 	Voltage Regulation&2&3&\$6.00&\$18.00&DC-DC Converter&eBay\\ \hline
 	Total &&&&\$547.75&&\\ \hline
 \end{longtable}
+
 \section{Engineering Hours}
+Table ~\ref{table:engineeringhours} shows current estimates on how many hours each engineer will spend on the project.
+The estimate was based on working 10 hours per week for developing, verifying, and managing the project with 15\% added as a safety measure. 
 
 \begin{table}[H] 
 \caption{Engineering Hours}
