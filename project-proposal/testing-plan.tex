@@ -34,17 +34,18 @@ Table ~\ref{table:testvsland} shows the tests required to be completed for each 
 		\hline\hline
 		\textbf{Landmark} & \textbf{Required Tests}\\
 		\hline
-		\textbf{1.1: Electrical Components} &  \\
+		\textbf{1.1: Electrical Components} & Step Accuracy, Voltage Supply  \\
 		\hline
-		\textbf{1.2: Control Software} &  \\
+		\textbf{1.2: Control Software} & G-Code Upload  \\
 		\hline
-		\textbf{1.3: Interface Software} & \\
+		\textbf{1.3: Interface Software} & G-Code Upload, Website Test \\
 		\hline
-		\textbf{1.4: System Testing} & \\
+		\textbf{1.4: System Testing} & Step Accuracy, G-Code Upload, Voltage Supply,\\
+ 		& Applications Test, Thermal Shutdown\\
 		\hline
-		\textbf{1.5: Integration Testing} & \\
+		\textbf{1.5: Integration Testing} & Automated Regression Testing\\
 		\hline
-		\textbf{1.6: Unit Testing} & \\
+		\textbf{1.6: Unit Testing} & Step Accuracy, G-Code Upload\\
 		\hline 
 	\end{tabular}
 \end{table}
@@ -73,9 +74,23 @@ Test specifications are shown in the Integration, Interface, and Subsystem Testi
 \end{enumerate}
 
 \subsection{Interface Testing}
+\begin{enumerate}
+
+\item
+	\testtabular{Website Test}{Tests that G-code can be uploaded and commands sent through the website over \gls{tcpip} to the \gls{pi}.}{}
+		1 & & & & & \\ \hline
+		2 & & & & & \\ \hline
+		3 & & & & & \\ \hline
+		4 & & & & & \\ \hline
+		5 & & & & & \\ \hline
+	\end{tabular}
+
+\end{enumerate}
 
 \subsection{Subsystem Testing}
+
 \begin{enumerate}
+
 \item 
 	\testtabular{Stepper Motor Accuracy}{Tests that the stepper motor pulses are accurate.}{Configure oscilloscope to measure the frequency of input 1. Set a constant running frequency of 10kHz on all motors through G-code.}
 		1 & Connect oscilloscope to the input of the first stepper motor driver. & Oscilloscope measures within 5\% of 10kHz. & & & & \\ \hline
