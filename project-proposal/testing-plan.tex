@@ -51,7 +51,7 @@ Table ~\ref{table:testvsland} shows the tests required to be completed for each 
 	\end{tabular}
 \end{table}
 Test specifications are shown in the Integration, Interface, and Subsystem Testing sections. 
-Automated regression testing is run on the \gls{pi} through make, the automated C building took that processes makefiles.
+Automated regression testing is run on the \gls{pi} through make, the automated C building tool that processes makefiles.
 Regression tests will be written before the code that it is testing.
 
 \subsection{Integration Testing}
@@ -88,7 +88,7 @@ Regression tests will be written before the code that it is testing.
 	2 & Repeat the previous step for the second, third, and forth stepper motor drivers. & Oscilloscope measures within 5\% of 10kHz. & & & & \\ \hline
 \end{tabular}
 
-\testtabular{G-code processing}{Checks that G-code can be successfully processed by the system.}{Directly connect to \gls{pi} through a shell.}
+\testtabular{G-code Processing}{Checks that G-code can be successfully processed by the system.}{Directly connect to \gls{pi} through a shell.}
 	1 & Run all automated G-code processing tests. & All tests pass and no errors are reported. & & & & \\ \hline
 	2 & Create a sample G-code file for creating a square locally on the \gls{pi}. & File is saved in an accessible directory. & & & & \\ \hline
 	3 & Run G-code processing on sample G-code file. & System successfully interprets the G-code and outputs a file with instructions to the motor driver to draw a square. & & & & \\ \hline
