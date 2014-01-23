@@ -12,11 +12,11 @@ The project's success will be determined by whether or not the 10 engineering re
 
 \section{Five Project Specific Success Criteria}\
 \begin{enumerate}
-	\item The system will drive at least 4 stepper motors, 1 DC motor, and 16 \gls{gpio}.
-The system will receive inputs from at least 1 motor limit/emergency stop switch and 4 stepper motor home inputs.
+	\item The system will drive at least 4 stepper motors, 1 DC motor, and 16 General Purpose Outputs.
+The system will receive inputs from at least 1 emergency stop switch and 4 stepper motor home inputs.
 	\item The system will Receive G-code through \gls{tcpip}.
 The system’s software will be developed using IEEE Std 830-1998 Recommended Practice for Software Requirements Specifications.
-	\item The step frequency range will be at least 10kHz.
+	\item The step frequency range will be at a minimum of 10kHz.
 For any chosen frequency in range, the actual step frequency will be within 5\% of the desired frequency.
 	\item The system power supply will accept between 14V and 36V and draw a maximum of 10A, including current required for the motors. 
 	\item The system will stop all motors and shutdown all microcontrollers if the main microcontroller temperature reaches $60^{\circ}C$.
