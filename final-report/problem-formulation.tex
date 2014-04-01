@@ -1,1 +1,187 @@
 \chapter{Problem Formulation}
+\section{Problem Statement}
+The modern \gls{cnc} interface is limited to utilization of a full computer system, in combination with a motor driver platform to for complete functional control.
+This setup can cost upwards of \$500, depending on the quality and system specifications.
+This is not affordable for personal use, so many students and hobbyists
+2. Client – who will use the result of this project?
+
+Aimed at hobbyists and students who want an affordable CNC interface.
+
+3. What is the problem to be solved?  Why is this project needed?
+This system will encapsulate these hardware and software requirements completely for less than \$100, bringing the \gls{cnc} interface to a price point comparable with that of the modern printer. 
+The CeeNC is designed to be an affordable CNC interface that is user friendly and compact.
+
+\section{Background}
+
+State of the Art
+
+1. What are the present relevant solutions?
+
+CNC interfaces that come with the devices or are availble, yet they are unintuative and not user friendly.
+
+2. What products are presently available?
+\subsection{Competitive Products}
+
+
+\textbf{MakerBot}
+
+The MakerBot could be considered the leader in the current 3D printer market.
+It offers a build area of 410 cubic inches and a layer resolution of 100 microns, which is about the width of a piece of printer paper. It comes preassembled in an enclosed steel case. 
+The work area can be manually leveled for ease of calibration. 
+It uses a linear mill design for its work head control, comes with its own software for breaking apart the models, and has an easy to understand user interface. 
+The user can send models to be printed by USB or SD card. 
+The cost of the MakerBots are around 2000 dollars, depending on the model.
+
+\textbf{DeltaMaker}
+
+The DeltaMaker is designed by a different group, but has similar specifications. 
+It uses a Delta Robot to control its work head. The printer has a 100 micron layer resolution and a 10 inch diameter by 11 inch tall work space. 
+The frame is an open aluminum based frame that allows the project to be viewed from any side. 
+It uses available open source tool chains to send over the data for the models through USB. 
+It costs 1,999 dollars and is currently on backorder with 12 to 14 weeks of lead time.  
+
+\textbf{RepRap}
+
+The RepRap is a more open source approach to a 3D printer. 
+There are many different types of the RepRap. 
+Their website, reprap.org, has the instructions to gather the parts and assemble each type. 
+It uses a linear design for controlling its X, Y, and Z axis’s. 
+The work area varies from type to type, while many of the designs do not even have an estimated size listed. 
+The largest specific size listed for a work area is 9"x10"x7" for the X, Y and Z directions. 
+Most of the designs cost anywhere from 500 to 1500 dollars for the parts. 
+There is one version of the RepRap that offers multiple colors of filament.
+
+\textbf{Rostock}
+
+The Rostock is another design that is supported by the RepRap. 
+It is design using a Delta Robot to control the work heads position. 
+Their design page on RepRap’s website lists that the design will cost about 500 dollars for the hardware and that it has a work area of 8x8x16 inches. 
+It uses an Arduino to handle the G Code processing that is sent by USB. 
+The assembly instructions do refer to their current firmware as “a pretty hacky proof of concept and not a long term solution” [1] though.
+
+\textbf{OtherMill}
+
+STILL NEEDS TO BE WRITTEN
+
+
+\section{Results of Patent and Product Search}
+
+
+While there is a patent for a generic CNC [1], this project does not actually handle the mechanical parts of a CNC.
+So it does not apply. 
+Another point of concern was the use of G-code. G-code was patented by Fanus Ltd [2]. 
+The patent was filed on April 1, 1983. 
+Any patent filed before 1994 had a term of 17 years, meaning that the patent expired in 2000. 
+The discussed patents will focus on methods of interaction with the controller. 
+A search for method based patents was done for patents on control equations. 
+These seem like they had potential for uniqueness but no patents for control equations on CNC devices were found. 
+There were a lot on equations and methods used for navigation calculations [3], but those applied to transportation, specifically airplanes These are the areas of highest potential for liability, due to their similarity to popular commercial products.
+
+
+\subsection{Numerical control unit with set amount of execution}
+
+\textbf{Publication Number:} US 8036770 B2 \\
+\textbf{Filing Date:} April 4th, 2008 \\
+\textbf{Condensed Abstract:} \\
+This patent is for a machine that uses numerical controls. 
+It will start a command or set of commands when its start button is depressed. 
+It will also suspend execution if there is a change in direction or a non-cutting command is issued. 
+It will then wait for the start button to be depressed again before resuming operation [4]. 
+
+\subsection{Approach For Printing To Web Services-Enabled Printing Devices}
+
+\textbf{Publication Number:} US 20100225958 A1 \\
+\textbf{Filing Date:} March 6th, 2009 \\
+\textbf{Condensed Abstract:} \\
+This patent describes a method for retrieving printer data and displaying what functions it has available on a second party application.  
+A print driver will hold all the information and the information can be requested by the web service. 
+The web service will then parse this data and show what options the printer has available and allow print jobs to be made. 
+Then data and options can be sent back to the printer to create and execute print jobs [5].
+
+\subsection{Control device of electric motor}
+
+\textbf{Publication Number:} US 8598818 B2 \\
+\textbf{Filing Date:} July 29th, 2005 \\
+\textbf{Condensed Abstract:} \\
+This patent describes a method of motor control. 
+It breaks the control down into three parts, driving, monitoring, and stopping. 
+It focuses on stopping the motor in a safe matter, by using the monitoring to determine if the motor is operating under safe conditions. 
+Specifically, it looks at the velocity of a motor to check if it needs to be forcibly stopped when an emergency stop button is pressed [6].
+
+\subsection{SENA’s Products}
+
+A product search did not turn up any network enabled CNC devices.  
+It did turn up a series of devices that would allow a company to connecting existing devices to their network though. 
+SENA has a series of products that connects the CNC to the network through Ethernet, WiFi or Bluetooth. 
+There would be potential for infringement on these devices. 
+SENA’s United States office declined to comment on any patents being filed on any of their devices. 
+A patent search ran with SENA being the assignee returned no hits on patents related to these products.
+
+
+\section{Analysis of Patent Liability}
+
+
+Looking at the previously mentioned patents and products, there is a high chance of patent liability.  
+The first patent discussed is especially worrisome. 
+A lot of the claims are very similar to what our product will be doing. 
+Using standardized G-code to process what the print job is supposed to be is going to work the same. 
+There is no way around that. 
+The patent for G-code has expired, so nobody holds control over the use of G-code. 
+This patent does hold control of how G-code is used though.  
+Some of its claims even go as far as to mention specific command signifiers. 
+The major differences between our product and the product mentioned in patent one are when their product stops and the types of motors used to drive the CNC. 
+While our product does not include the mechanical side of the CNC, it is still designed to drive four stepper motors. 
+This patent states that it will use servomotors, as shown in their first figure of the patent [Appedix Figure 1]. 
+Secondly, their claims state that any time there is a change in the cutting direction or a non-cutting command is sent, the machine will pause and wait for the start button to be pushed again. 
+Our product will run a whole batch of control without stopping or prompting for user input. 
+The patent also mentions running in a mode that would run one command at a time, which is not what our product would do.
+Overall, it is surprising that this vague system was patentable.
+
+
+Patent two is not as troubling. 
+While their claims do state that they will use a print driver, most devices use drivers. 
+Since our device will be configurable, our driver will not return to the host the configurations of the printer.  
+It will make available to the user the options that can be used to configure the printer. 
+Secondly, their device sent its data to a second party application. 
+Our device will send data to the website, with no second party application needed. 
+Storing and retrieving data are both part of the claims, but are general practices that are used often.  
+The way the data is retrieved, through the second party application, will be where there is the difference. 
+The data will be directly sent to and stored on the device in the CNC Interface. 
+This also covers the claims that state how options will be passed to the system.
+
+
+Patent three has some potential for causing issue, but the wording will show some separation. 
+While the CNC Interface will monitor the motor, it will monitor the position and not the velocity. 
+Also, a safety switch will stop the motors, but the safety switch will not engage the motor monitoring as mentioned in the patent. 
+The CNC Interface will be constantly monitoring the motors. 
+Lastly, there will be no need to forcibly stop the motors as stated in patent 3. 
+The CNC Interface is designed to use stepper motors to move a work head, which will stop promptly.
+
+\section{Actions Recommended}
+
+
+The first patent is unavoidable.
+It covers a large area of CNCs because it has a method of how to use G-code, which itself is a standard. 
+Trying to redesign around this patent will cause the project to be redesigned from scratch.  
+It is doing substantially the same thing in substantially the same way. 
+The difference of the continuous movement versus the start and stop mentioned in the patent is not a large enough difference to have the products be different.  
+The major difference is in how the motors are driven.  
+There is a major difference between the type of signals needed to drive a stepper motor versus a servo motor. 
+In this situation, the difference in software and hardware will be substantial. 
+With this information, there will be no liability. 
+If there is, it will be able to be argued in court. 
+At the very least, a settlement can be reached.
+
+
+Patent 2 does not show any potential for liability. 
+Their product centers around data being sent through the network using a second party application.  
+That is substantially different. 
+The way the patent will have to work is use a standard communication setup to make sure the data is in a correct format for any second party application. 
+The CNC Interface will work using point to point communication.  
+Network enabled printers are prevalent in today’s world.
+
+
+The third patent shows little chance for patent liability also. 
+While the motor driving is the same end product, the way it will happen is not the same. 
+The monitoring is also different in method and end results.
+
