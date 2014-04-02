@@ -1,117 +1,52 @@
 \section{Packaging Design}
-The CeeNC is designed to be smaller than available commercial products.
-While smaller might not always be better, for a hobbyist or student, space can be a limiting factor. 
-Also, a smaller package will allow for more placement options for the user. 
-With a small, lightweight package, a user will be able to place the product anywhere, mount the device, or incorporate it into their \gls{cnc}'s design easily.
+\subsection{Overview}
+Packaging for the \gls{ceenc} was constructed primarily from laser cut acrylic, as shown below. 
+Laser cutting services were provided by Pokono, for a materials fee and machinery surcharge.
+Design of the packaging was completed utilizing InkScape Vector Design Software.
+Measurements were taken from the Master, Controller, and Driver boards, then translated into cutouts to support the components.
+These cutouts were attatched to the sides of the enclosure, then stabilized by box joints \& machine screws.
 
-While keeping the product compact is a goal, the motor driver circuit board will heat up. 
-The packaging will need to have sufficient airflow to allow heat to escape.
-Small openings and vents will be utilized to help avoid the product overheating.
-Vents will be placed at the top of the packaging and there will be a small opening at the front and bottom of the case.
-This will allow air to pass through the packaging.
-Small fans will be incorporated at the top of the packaging to help keep airflow constant.
+\subsection{Design Considerations}
+Cooling for the \gls{ceenc} is provided by two 40mm 5v Box Fans attatched to the back of the case.
+They push air into the device, which allows egress only through the vents placed directly above the Motor Drivers.
+This has the net effect of cooling all components, but with the primary focus on the Motor Drivers.
+Interactive LCD components and Port Access was also added to the front and back.
 
-It will also be important for the packaging to keep out as much dust and particles as possible.
-Considering that the CeeNC can be used for controlling machines that will cut materials, it will be important for the packaging to be able to protect the printed circuit boards.
-Debris from the materials being cut could potentially cause harm to the circuit.
+\subsection{Material Selection}
+Materials were chosen for both dimesnional stability, and aesthetic properties.
+For the prototype unit, selection was limited to materials provided by the manufacturer.
+Laser cut acrylic was used for the front and back of the enclosure, to allow for finer detail.
+The acrylic chosen was also tinted, to allow for the LCD within the device to be visible when powered, but prevent the rest of the device from showing.
+3-Ply laser cut walnut veneer was used for the sides of the enclosure.
+This material is both structurally sound, and visually pleasing. 
+Costs could be reduced here by choisng a less expensive mediums such as acrylic or cardboard.
 
-\subsection{Commercial Product Packaging}
-The CeeNC does not include the mechanical parts of the CNC, so the focus of the commercial product analysis will be on the packaging that contains processing units and motor drivers.
-Similar products considered will also be small and drive four motors.
-This will be comparable to the CeeNC in space and output heat.
+\subsection{Cost Analysis}
+Enclosure costs are primarily a result of the limited production quantity. 
+Material costs for the entirety of the device are well below the \$10.00 mark, but manufacturing fees push the total cost above \$50.00.
+Should the \gls{ceenc} be put into production, the total cost for the enclosure is expected to be below \$18.00.
+This is calculated based upon laser cutting time cost estimates for large batches, and the existing material cost.
+With the present design, full cutting of the enclosure takes between 5 and 10 minutes.
+At the standard rate of $50.00 per machine hour, this translates to $8.00 per unit.
+Additional costs incurred for processing, shipping, and technician time will not be incurred for larger orders.
 
-\subsubsection{MakerBot Replicator Mini}
-The Replicator Mini is MakerBot's smallest 3D printer.
-The system has four motors, three for directional movement and one to control the filament feed rate.
-Most of the machine's volume is the work area.
-The motor driver and processing unit are kept in the bottom of the packaging.
-The packaging is made out of commercial plastics with rubber feet [1].
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{packaging-design/front.png}
+	\caption{Enclosure Front}
+	\label{fig:front}
+\end{figure}
 
-The Replicator Mini is in its fifth generation and the packaging reflects its maturity.
-A major aspect to the 3D printer is it's work area.
-Since this model is meant to be compact, its use of space is efficient.
-Vents are placed in the back of the work area.
-Since this is a 3D printer and not a mill, having vents in the work area is not an issue.
-In other MakerBot models, the work area is purposefully heated to help avoid curling in the printing.
-Having the vents in the work area will help heat it, efficiently using energy.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{packaging-design/side1.png}
+	\caption{Enclosure Side Right}
+	\label{fig:side1}
+\end{figure}
 
-While the packaging is well done, there is only one downside.
-If there is a malfunction in the motor driver or processing unit, the boards are not easily accessible.
-This is most likely by design, since most users will not know how to fix the boards if they do malfunction. 
-For a student or hobbyist, this will be a negative if they would want to attempt a repair.
-
-For the CeeNC, one part that could be adapted to the packaging design could be the vent covers.
-Even thought they probably do not need to be, the vents in the work area of the MakerBot are covered.
-Covering the vents on the top of the CeeNC will help avoid dust and particles from getting to the circuit boards.
-
-\subsubsection{Othermill}
-
-The Othermill is a desktop CNC mill that is designed for high precision and low noise. It is a 10" by 10" plastic box with openings for viewing the work area.
-Like the MakerBot, the processing unit and motor drivers are located beneath the work area.
-Instead of having vents in the work area, there are small holes on the side of the package and longer open vents near the bottom.
-The packaging design overall is much less mature than the MakerBot's but the Othermill is a new product [2].
-
-Since the Othermill is actually for cutting materials ranging from wood to aluminum, keeping the circuit boards protected is important.
-To do this, the vents were smaller holes and on the side of the box as opposed to the top.
-This will make it more difficult for particles to get to the circuit boards.
-The vents at the bottom of the box will allow for constant airflow through the area but since the work area is not contained, duct and particles could exit the work.
-Then they could get drawn to the circuit boards through the vents at the bottom.
-Along with that flaw, the Othermill's packaging material looks cheap and unrefined.
-It is a newer product and the developers are focusing on keeping the price down.
-With a price of \$2,199, cutting corners on how that material looks may help reduce the price.
-
-Vent holes are designed into the CeeNC's packaging.
-Keeping them on the side of the packaging as opposed to the top will help keep the circuit boards more protected.
-On the other hand, the packaging does need to look professional.
-The Othermill's material does not look nearly as polished.
-The CeeNC will be using mahogany for the sides and acrylic for the front.
-Using these materials will make the product look more professional.
-
-\subsection{Product Packaging Specifications}
-
-The CeeNC package will be 3 47/64" by 3 3/4" by 2 53/64" with an inner volume of 24.47 inch\textsuperscript{3}.
-All the sides, excluding the front, will be made out of half inch mahogany[3].
-The front will be black acrylic.
-There will be openings on the front for the motor connectors and the general purpose outputs.
-The left and right sides will have openings for connections to the Raspberry Pi's USB ports, Ethernet port, SD card port, and power. 
-
-There are only three materials needed for the packaging, the mahogany, the acrylic, and some screws.
-The mahogany will be keyed so that the acrylic will sit safely.
-The tooling required will be for the mahogany and acrylic to be cut.
-The mahogany can be milled or laser cut.
-The laser cutting will cost about fifty dollars, while milling it will cost about eight dollars.
-Laser cutting the mahogany will make it look more professional and ensure that less mistakes will be made in the cuts.
-The estimated weight of the product will be 475 grams.
-The estimated cost will be \$150.
-
-\subsection{PCB Footprint Layout}
-
-
-\subsubsection{Raspberry Pi}
-The Raspberry Pi only comes in one size, an 8.6cm x 5.4cm x 1.7cm board[4].
-\subsubsection{C2000}
-The TMS320F28027 package was chosen because it is small[5], allowing for all the components to fit on an 8.6cm x 5.4cm board, but also large enough that it could be soldered by hand.
-The motor controller board was designed to be 8.6cm x 5.4cm to be the same size as the Raspberry Pi. 
-It was also the same package used on the development board.
-
-\subsubsection{Extra Components}
-The motor controllers were selected because they are a modular design.
-This allows for isolating issues during debugging.
-The connectors were chosen because they are standard connection type and also the most affordable.
-The parallel port was used because it is used in legacy hardware.
-The optoisolators were chosen because they are compact.
-
-\subsubsection{PCB Dimensions}
-The motor controller board will be 8.56cm x 5.6cm with an area of 47.9 cm\textsuperscript{2}.
-The motor driver board will be 8.5cm x 6.92cm with an area of 58.8 cm\textsuperscript{2}.
-
-\subsection{Recommendations and Actions}
-The CeeNC's compact design will allow for a wide variety of placements. 
-The major issue with the CeeNC is its ability to dissipate heat.
-After reviewing two commercial products, the MakerBot Replicator and the Othermill, the CeeNC's packaging design is on the right track.
-The only major difference were the vent placement and the materials used for the packaging.
-Vent placement will be reviewed.
-The mahogany will make the CeeNC's packaging look professional, more than the Othermill.
-It will be difficult to look more professional than the MakerBot's design though, since it has been through multiple redesigns.
-The packaging will be small, only big enough to fit the circuit boards.
-The components were chosen to keep the design as compact as possible.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{packaging-design/side2.png}
+	\caption{Enclosure Side Left}
+	\label{fig:side2}
+\end{figure}
