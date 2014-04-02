@@ -1,55 +1,45 @@
 \chapter{Problem Formulation}
-\section{Problem Statement}
 The modern \gls{cnc} interface is limited to utilization of a full computer system, in combination with a motor driver platform to for complete functional control.
 This setup can cost upwards of \$500, depending on the quality and system specifications.
-This is not affordable for personal use, so many students and hobbyists
-2. Client – who will use the result of this project?
-
-Aimed at hobbyists and students who want an affordable CNC interface.
-
-3. What is the problem to be solved?  Why is this project needed?
+This is not affordable for personal use, so many students and hobbyists will not have access to this tool.
+Students and hobbyists will benefit from having their own CNC.
 This system will encapsulate these hardware and software requirements completely for less than \$100, bringing the \gls{cnc} interface to a price point comparable with that of the modern printer. 
 The CeeNC is designed to be an affordable CNC interface that is user friendly and compact.
 
 \section{Background}
 
-State of the Art
+Currently, most 3D printers or \gls{cnc} mills come with software interfaces to control the printers.
+Once the software is installed on a computer, files can be made and uploaded for printing.
+This does lead to some limitations.
+Some of the software is not designed to run on all operating systems.
+Also, the user can only access the printer through the computer that the software is installed on.
 
-1. What are the present relevant solutions?
 
-CNC interfaces that come with the devices or are availble, yet they are unintuative and not user friendly.
-
-2. What products are presently available?
 \subsection{Competitive Products}
 
 
 \textbf{MakerBot}
 
-The MakerBot could be considered the leader in the current 3D printer market.
-It offers a build area of 410 cubic inches and a layer resolution of 100 microns, which is about the width of a piece of printer paper. It comes preassembled in an enclosed steel case. 
-The work area can be manually leveled for ease of calibration. 
-It uses a linear mill design for its work head control, comes with its own software for breaking apart the models, and has an easy to understand user interface. 
-The user can send models to be printed by USB or SD card. 
-The cost of the MakerBots are around 2000 dollars, depending on the model.
+The MakerBot is considered the leader in the current 3D printer market.
+It's interface software is MakerBot Desktop, or the older versions were MakerWare.
+The MakerBot software allows a user to scan in models and upload files to be printed.
+Currently, there is not support for sending files over WiFi, but there is support for both USB and Ethernet.
+The MakerBot costs around \$2000 depending on the model.
 
-\textbf{DeltaMaker}
+\textbf{SmoothieBoard}
 
-The DeltaMaker is designed by a different group, but has similar specifications. 
-It uses a Delta Robot to control its work head. The printer has a 100 micron layer resolution and a 10 inch diameter by 11 inch tall work space. 
-The frame is an open aluminum based frame that allows the project to be viewed from any side. 
-It uses available open source tool chains to send over the data for the models through USB. 
-It costs 1,999 dollars and is currently on backorder with 12 to 14 weeks of lead time.  
+SmoothieBoard is an open source driver system.
+Its interfacing software is simplistic.
+It does support Ethernet connections and the system can be accessed through a browser to upload files to the device.
+Once a file is uploaded, a command line interface on the device is used to execute files.
+The SmoothieBoard costs \$169.97.
 
-\textbf{RepRap}
+\textbf{EMC2}
 
-The RepRap is a more open source approach to a 3D printer. 
-There are many different types of the RepRap. 
-Their website, reprap.org, has the instructions to gather the parts and assemble each type. 
-It uses a linear design for controlling its X, Y, and Z axis’s. 
-The work area varies from type to type, while many of the designs do not even have an estimated size listed. 
-The largest specific size listed for a work area is 9"x10"x7" for the X, Y and Z directions. 
-Most of the designs cost anywhere from 500 to 1500 dollars for the parts. 
-There is one version of the RepRap that offers multiple colors of filament.
+EMC2, also known as LinuxCNC is a freely availble CNC interface.
+It allows for multiple CNC configurations, giving flexibility to people who want to build their own CNCs.
+It has profile support for multiple CNC setups.
+It does have to be installed on a Linux based machine and can only operate through a parallel port.
 
 \textbf{Rostock}
 
@@ -61,8 +51,12 @@ The assembly instructions do refer to their current firmware as “a pretty hack
 
 \textbf{OtherMill}
 
-STILL NEEDS TO BE WRITTEN
-
+The OtherMill is a new CNC on the market.
+It comes with OtherPlan software to control the OtherMill.
+It allows users to upload a variety of file types, that it then turns into g-code commands.
+It also has a command line interface that will allow a user to send indiviual commands.
+The OtherPlan software only supports Mac OS X and the OtherMill must be connected to this computer through USB.
+The OtherMill costs around \$2199
 
 \section{Results of Patent and Product Search}
 
