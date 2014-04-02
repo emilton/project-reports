@@ -1,1 +1,44 @@
 \section{Hardware Design}
+The \gls{ceenc} consists of three major hardware components, the \gls{pi}, the control board, and the driver board.
+The \gls{pi} will handle most of the processing and have a master relationship with the control board.
+The control board will be an additional microcontroller that supports the \gls{pi} in timing and motor control functions.
+The driver board will receive motor control commands from the control board and execute them using the \gls{ti} DRV8825 motor driver.
+The driver board was developed and implemented separately from the control board to allow for early and individual testing.
+
+\subsection{Raspberry Pi}
+The \gls{pi} will receive G-code from the web interface over \gls{tcpip} through the Ethernet or USB ports.
+The \gls{pi} will send commands to the motor control board microcontroller over a \gls{spi} bus.
+The \gls{pi} will send data to a port expander on the control board over an \gls{i2c} connection.
+The \gls{pi} will operate in the master mode for the \gls{spi} communication.
+The control board will be dependent on the information it receives from the \gls{pi} for motor operation.
+\gls{spi} was chosen because it is native on the \gls{pi} and most microcontrollers support it.
+The \gls{pi} will be powered from the +5V rail on the control board.
+
+\subsection{Control Board}
+The control board will be implemented using the TI C2000 microcontroller.
+A microcontroller supports the \gls{pi} so that the stepper motor timers can be run independently from the overhead of an operating system.
+The microcontroller will receive commands from the \gls{pi} over a \gls{spi} connection.
+The control board will contain an \gls{i2c} port expander that will provide 16 general purpose outputs and is controlled from the \gls{pi}.
+The control board will send commands to the driver board over a parallel port connection.
+A parallel port was chosen so that the driver board would also be able to interface with the parallel port on some PCs or other \gls{cnc} drivers.
+The parallel port also allows for the I/O of the microcontroller to be mapped to the I/O of the motor drivers in a 1-to-1 relationship.
+The microcontroller will output step, direction, and enable data for motor control.
+It will receive fault and home inputs from the motor driver board.
+The step lines must be capable of outputting a 10kHz signal.
+A step frequency of 10kHz will be sufficient for \gls{cnc} applications.
+The microcontroller uses 4 timers to track of the step count of each motor. 
+The control board will have one DC power input.
+This power input can range from 14V-36V.
+There will be two regulated power supplies on the control board, 5V and 3.3V.
+The 5V supply will power the \gls{pi}.
+The 3.3V supply will power the microcontroller, the \gls{i2c} port expander, and the opto-isolators on the motor driver board.
+The 14V-36V supply will power the motor drivers.
+
+\subsection{Driver Board}
+The motor drivers will be implemented using four \gls{ti} DRV8825.
+The DRV8825 is a dual stepper/DC motor driver.
+Each DRV8825 will receive step and direction commands from the motor control board over a parallel port connection.
+The motor driver ICs will step the motors according to the commands from the microcontroller.
+The motor driver board contains any necessary pull up/pull down resistors for the motor control signals.
+
+\subsection{Recommendations and Actions Taken}

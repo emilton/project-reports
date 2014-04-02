@@ -1,6 +1,8 @@
 \section{Software Design}
-The \gls{ceenc} is a project to drive a \gls{cnc} using a simple user interface and no need for installing drivers.
-Additionally, the \gls{ceenc} will not be plugged into the computer, but will be controlled through the network instead.
+
+\subsection{Introduction}
+The \gls{cnc} Interface is a project to drive a \gls{cnc} using a simple user interface and no need for installing drivers.
+Additionally, the \gls{cnc} Interface will not be plugged into the computer, but will be controlled through the network instead.
 The focus of software design for this project was to allow development from day one, not requiring any of the project's hardware to begin.
 To achieve this goal, a test-driven development approach was adopted, meaning unit tests that verify project success are created before any application code is written.
 This approach has allowed the software development to stay on track and not be pushed off until the end of the project.
@@ -95,7 +97,7 @@ At startup, the g-code interpreter is responsible for driving the state of the C
 The g-code interpreter relies heavily on mathematic formulas created by the software engineer, so many unit tests have been written to ensure proper functionality.
 The g-code interpreter has been outlined, flow-charted, and approximately 90\% written, with all written code being completely tested.
 
-\subsubsection{CNC Driver}
+\subsubsection{\gls{cnc} Driver}
 The \gls{cnc} driver project is written in C and is responsible for managing communication channels between the \gls{pi} and C2000 through the \gls{spi} and \gls{uart}.
 The g-code interpreter does not write to the \gls{spi} or \gls{uart} directly because these actions require root privileges, so this project was created to allow a single, small program to run as root, while the larger, more frequently changing programs are run by regular users.
 The \gls{cnc} driver listens to a pipe for commands to send to the C2000 and forwards them through \gls{spi}, verifying that it is received based on the echo back from the C2000.
@@ -108,9 +110,9 @@ The project is based off an algorithm that requires no floating point operations
 The commands are accepted through \gls{spi} and are acknowledged by echoing back the received data, with the command format specified in a C header file shared between the g-code interpreter and this project.
 The motor scheduler has been outlined, flow-charted, and approximately 65\% written, with all written code being completely tested.
 
-\subsection{Recommendations and Actions Taken}
-The \gls{ceenc}'s software is currently on-time because of the development approaches involving test-driven development and well thought-out modular software architecture that makes changes simple and low-risk.
+\subsection{Summary}
+The \gls{cnc} Interface's software is currently on-time because of the development approaches involving test-driven development and well thought-out modular software architecture that makes changes simple and low-risk.
 The software hierarchy is a modular design that takes advantage of the available features of the Linux \gls{os} for faster development.
-To aid in rapid development and implementation all firmware upgrades to any component of the \gls{ceenc} can be made remotely.
+To aid in rapid development and implementation all firmware upgrades to any component of the \gls{cnc} Interface can be made remotely.
 A user can \gls{ssh} into the \gls{pi} and make changes to the website control, g-code interpreter, or \gls{cnc} driver projects directly and bootload new C2000 code over the \gls{uart}.
 The software architecture created for this project is robust and encourages changes in improvements, while mitigating change risks through unit testing.

@@ -1,0 +1,26 @@
+\chapter{Failure Mode, Effects, and Criticality Analysis}
+
+\begin{table}[h]
+\caption{\gls{fmeca} Analysis}
+\label{tab:fmeca}
+\centering
+{\scriptsize
+\tabcolsep=0.1cm
+\begin{tabular}{|m{2cm}|m{2cm}|m{2cm}|m{3cm}|m{1.7cm}|m{5cm}|}
+\hline
+	Functional Block & Failure Mode & Failure Cause & Effects & Criticality & Suggested Action \\ \hline
+	Power Regulation & 5V rail voltage $>$5V & 5V regulator internal short & Destruction of 3.3V regulator and all microelectronics, including \gls{pi} & Critical & Choose a reliable 5V regulator, include over-voltage protection circuit. \\ \hline
+	Power Regulation & 5V rail voltage $<$5V & 5V regulator internal open circuit & No microcontroller on system starts & Marginal & include instructions on replacing the 5V regulator \\ \hline
+	Power Regulation & 3.3V rail voltage $>$3.3V & 3.3V regulator internal short & Destruction of all microelectronics on control board & Marginal & Choose a reliable 3.3V regulator, include over-voltage protection circuit \\ \hline
+	Power Regulation & 3.3V rail voltage $<$3.3V & 3.3V regulator internal open circuit & Control board microcontroller does not start, \gls{pi} cannot connect to microcontroller & Marginal & Choose a reliable 3.3V regulator, include instructions on replacing the 3.3V regulator \\ \hline
+	Off-Board Connectors & Open connection & Worn out connectors & Subsystems cannot communicate & Marginal & Design system so that disconnecting and reconnecting of connectors is not frequently required, include instructions on replacing the connectors \\ \hline
+	Off-Board Connectors & Poor electrical connection & Worn out connectors & Poor inter-system communication & Marginal & Design system so that disconnecting and reconnecting of connectors is not frequently required, include instructions on replacing the connectors \\ \hline
+	Off-Board Connectors & Short & Incorrect connection made & Damaged components, particularly power regulators & Marginal & Design system so that correct connection is as clear as possible and include detailed assembly instructions \\ \hline
+	$\mu$Controller & Incorrect control pulses & Software error & \gls{cnc} accuracy less than expected & Negligible & Make firmware upgrades possible in-system through bootloader \\ \hline
+	$\mu$Controller & Emergency button not registered & Hardware failure & \gls{cnc} not stopped when requested & Catastrophic & Create a system test to ensure that emergency button functions \\ \hline
+	$\mu$Controller & Emergency button not registered & Software error & \gls{cnc} not stopped when requested & Catastrophic & Include watchdog timer with as short a period as possible that performs the same action as the emergency stop button \\ \hline
+	Crystal & No oscillation & Electrical or mechanical shock to crystal & Control board microcontroller does not start & Marginal & Include handling and electrical shock prevention instructions, allow use of internal oscillator when external crystal fails \\ \hline
+	Crystal & Increased Frequency & \gls{emi}\cite{emicrystal} & \gls{cnc} accuracy less than expected & Marginal & Create a system test to compare timing on the \gls{ti} microcontroller compared to the UTC fetched from the Internet on the \gls{pi}. \\ \hline
+\end{tabular}
+}
+\end{table}
