@@ -1,1 +1,71 @@
 \chapter{Design Requirements and Success Criteria}
+The project's success will be determined by whether or not the 10 engineering requirements, consisting of 5 \gls{pcsc} and 5 \gls{pssc}, are met. 
+
+\section{Five Project Common Success Criteria}
+\begin{enumerate}
+	\item Create a complete \gls{bom} and order/sample all parts needed for the design.
+	\item Develop complete, accurate, readable schematic of the design, complete with interface loading analysis and interface timing analysis. 
+	\item Complete a layout and etch a \gls{pcb}.
+	\item Populate and debug the design on a custom \gls{pcb}.
+	\item Professionally package the finished product and demonstrate its functionality.
+\end{enumerate}
+
+\section{Five Project Specific Success Criteria}
+\begin{enumerate}
+	\item The system will drive at least 4 stepper motors, 1 DC motor, and 16 General Purpose Outputs.
+The system will receive inputs from at least 1 emergency stop switch and 4 stepper motor home inputs.
+	\item The system will Receive G-code through \gls{tcpip}.
+The system’s software will be developed using IEEE Std 830-1998 Recommended Practice for Software Requirements Specifications.
+	\item The step frequency range will be at a minimum of 10kHz.
+For any chosen frequency in range, the actual step frequency will be within 5\% of the desired frequency.
+	\item The system power supply will accept between 14V and 36V and draw a maximum of 10A, including current required for the motors. 
+	\item The system will stop all motors and shutdown all microcontrollers if the main microcontroller temperature reaches $60^{\circ}C$.
+\end{enumerate}
+
+\section{Design Constraints}
+The major design constraints considered in this report are computational requirements, interface requirements, on-chip peripheral requirements, off-chip peripheral requirements, power constraints, packaging constraints, and cost constraints.
+
+\subsection{Computational Requirements}
+The main computational requirement for this project is the conversion of G-code commands to motor control functions.
+The secondary computational requirement is the count and timing of stepper motor steps.
+The \gls{pi} will handle software conversion while the microcontroller will handle the timing and count of the motor steps.
+When a G-code design file is uploaded and sent to the \gls{pi}, the \gls{pi} will convert the code into commands that can be sent to the microcontroller over a \gls{spi} bus.
+This conversion may occur in non-real-time.
+The microcontroller will handle the timing and counting of the motor control functions.
+Once the microcontroller receives the motor control commands, it will output appropriate step and direction data to the motor drivers.
+The motor control data must execute in real-time to ensure accuracy.
+The microcontroller must be capable of outputting a step frequency of at least 10kHz and within 5\% of the target frequency for any frequency in that range.
+The microcontroller will also monitor the status of the motor drivers and communicate any faults back to the computer.
+
+\subsection{Interface Requirements}
+The microcontroller must have at least 8 outputs for stepper motor control, 4 inputs for stepper motor home, 1 input for the motor driver faults, 1 input for an emergency stop, and 1 PWM output for DC motor control.
+Between the computer and microcontroller, an additional 16 outputs must be available for use by the end user as part of the project success criteria.
+The additional outputs may be accomplished by using serial to parallel shift registers or an \gls{i2c} port expander.
+If shift registers are used, 3 output pins will be required by either the pi or microcontroller for the clock, storage input, and data input.
+If an \gls{i2c} port expnader is used, 2 output pins will be required by either the \gls{pi} or the microcontroller for the \gls{i2c} channel.
+All digital logic will be 3.3V.
+To protect the \gls{pi} and microcontroller, opto-isolators will be used at the input and output of the motor drivers.
+
+\subsection{On-Chip Peripheral Requirements}
+The \gls{pi} will require either Ethernet or Wi-Fi capabilities to connect to a website.
+The \gls{pi} must have a 1 channel \gls{spi} bus to communicate with the microcontroller. 
+The microcontroller must have a 1 channel \gls{spi} bus to communicate with the \gls{pi}.
+The microcontroller must have a JTAG port for programming.
+The microcontroller must have 4 16-bit timers for motor step counting.
+
+\subsection{Power Constraints}
+The system will accept one DC power supply that can be between 14V and 36V.
+The system will draw no more than 10A including the current required for the motors.
+A 5V power regulator will be used to supply the computer.
+A 3.3V power regulator will be used to supply the microcontroller and ICs.
+The 14-36V DC rail will be used to supply the motor drivers. 
+
+\subsection{Packaging Constraints}
+The finished project must be professionally packaged.
+The footprint of the packaging will likely not be much larger than the footprint of largest PCB which is expected to be approximately 87mm x 56 mm, however this is not a requirement.
+The size of the finished project will not impact performance in a considerable manner.
+
+\subsection{Cost Constraints}
+Current CNC interfaces require use of a full computer system in combination with a motor driver platform.
+These setups can cost upwards of \$500.
+This project will combine and simplify these hardware and software requirements for a cost of under \$100.
