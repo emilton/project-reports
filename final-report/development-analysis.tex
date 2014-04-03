@@ -1,37 +1,34 @@
 \chapter{Development Analysis}
+
+The design development process for the \gls{ceenc} focused on reviewing existing products and documentation for \gls{cnc}s and generating several design alternatives to avoid issues case any one alternative become infeasible during implementation.
+Product management held an important role in making sure that the project was on track throughout the design and implementation stages.
+
 \section{Literature Review}
 Research post component selection was completed largely using the provided \gls{ti} documentation for the specific device.
+Various websites have also aided in fully understanding \gls{cnc} requirements.
+
 \subsection{Intelligent Stepper Motor Driver with DRV8811/18/24/25}
 This document is provided as a supplement to the DRV8811/18/21/24/25 data sheets. 
 It provided an analogous solution for comparison to the algorithms developed on C2000 platform.
-It details a technique to improve real time control of an internal indexer bipolar stepper motor driver such as the DRV8825 while obtaining programmable acceleration and deceleration profiles, speed control and position control by the utilization of a conventional MSP430 microcontroller and any of the aforementioned power stages.\cite{dev_intelligent}
+It details a technique to improve real time control of an internal indexer bipolar stepper motor driver such as the DRV8825 while obtaining programmable acceleration and deceleration profiles, speed control and position control by the utilization of a conventional MSP430 microcontroller and any of the aforementioned power stages\cite{dev_intelligent}.
 
 \subsection{Programming TMS320x28xx and 28xxx Peripherals in C/C++}
 This application report explores a hardware abstraction layer implementation to make C/C++ coding easier on C28x devices. 
-This method is compared to traditional \#define macros and topics of code efficiency and special case registers are also addressed.\cite{dev_peripherals}
+This method is compared to traditional \#define macros and topics of code efficiency and special case registers are also addressed\cite{dev_peripherals}.
 It was used to solve issues related to the analog GPIO systems present on the C2000, and increase over all system efficiency.
 
 \subsection{TMS320C28x Optimizing C/C++ Compiler v6.2.4}
 This user's guide discusses the characteristics of the C/C++ compiler.
 It provides an overview of these tools and introduces the features of the optimizing C/C++ compiler. 
-The assembler and linker are also discussed in detail.\cite{dev_optimize}
+The assembler and linker are also discussed in detail\cite{dev_optimize}.
 It was used for researching new compiler optimizations referenced in the Programming TMS320x28xx and 28xxx Peripherals in C/C++ documentation.
 
 %other people can post their docs.
 
 \section{Concept Generation}
-Figure ~\ref{fig:architecture} shows the overall architecture of the Senior Thesis Project.
+The Level One design criterion are as follows.
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=1\textwidth]{architecture.png}
-	\caption{System Architecture}
-	\label{fig:architecture}
-\end{figure}
-
-The Level One design criterion are as follows. 
-
-\subsection{Web Interface}
+\subsection{Communication Protocol}
 There are several communication protocols over the internet, all of which are well-supported and have implementations available for use. 
 The decision comes down to how secure and easy to use the system needs to be.
 
@@ -76,7 +73,6 @@ The most powerful device in this series is the Arduino Mega, with a 16 MHz clock
 While not capable of running an entire OS, this microcontroller offers direct register access and is ethernet capable.
 The Arduino community is also one of the most active open source hardware communities alive on the web today.
 
-
 \subsection{Motor Driver Controller Microcontroller}
 There are four microcontrollers that were evaluated for use in the Motor Driver Controller board, the MSP430, the ATMega324P, the AT90USB1287, and the ARM Stellaris.
 These microcontrollers were evaluated based on the number of timers they had, their interrupt capabilities, their SPI capabilities and the number of GPIO pins.
@@ -120,9 +116,15 @@ The TB6560 can be used in applications that require 2-phase, 1-2-phase, 2W1-2-ph
 The TB6560 is capable of low-vibration, high-performance forward and reverse driving of a two-phase bipolar stepping motor using only a clock signal.
 
 \section{Concept Reduction}
-
 Evaluations of design alternatives are shown Tables ~\ref{table:TCPIP} through ~\ref{table:MCEval}.
+Figure ~\ref{fig:architecture} shows the final architecture of the Senior Thesis Project given the alternative evaluations.
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{architecture.png}
+	\caption{System Architecture}
+	\label{fig:architecture}
+\end{figure} 
 
 \subsection{TCP/IP Interface}
 Since sensitive data will not be shared with the device, security is not required, though it is preferred. 
@@ -211,7 +213,7 @@ This \gls{aon} allowed for a critical path to be determined.
 The critical path is the series of tasks that will take the longest amount of time.
 Once dependencies and responsibilities were decided, a realistic schedule could be designed.
 This schedule was represented in a Gantt Chart.
-This Gantt Chart did go through a few iterations of design before the final schedule was set.
+This Gantt Chart went through a few iterations of design before the final schedule was set.
 
 Once the schedule was set, the implementation phase of the project started. 
 Each member worked on assigned tasks individually or with other members if it was needed.
