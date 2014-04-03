@@ -45,14 +45,15 @@ The device offers a command line interface that allows users to send indiviual c
 The OtherPlan software only supports Mac OS X and the OtherMill must be connected to this computer through USB.
 
 \subsection{Patent Liability Analysis}
-While there is a patent for a generic \gls{cnc} [1], this project does not specify the hardware for a \gls{cnc} so it does not apply to the \gls{ceenc}
-G-code was patented by Fanus Ltd [2] on April 1, 1983, but any patent filed before 1994 had a term of 17 years, meaning that the patent expired in 2000.
+While there is a patent for a generic \gls{cnc}  \cite{3cncpatent}
+, this project does not specify the hardware for a \gls{cnc} so it does not apply to the \gls{ceenc}
+G-code was patented by Fanus Ltd  \cite{controlmethodpatent} on April 1, 1983, but any patent filed before 1994 had a term of 17 years, meaning that the patent expired in 2000.
 
 \subsubsection{Results of Patent and Product Search}
 The patents below focus on methods of interaction with a \gls{cnc}.
 A search for method based patents was done for patents on control equations, however no patents for control equations on \gls{cnc} devices were found.
 These are the areas of highest potential for liability, due to their similarity to popular commercial products.
-Several equations and methods used for navigation calculations were found [3], but those applied to transportation, specifically airplanes.
+Several equations and methods used for navigation calculations were found \cite{navpatent}, but those applied to transportation, specifically airplanes.
 
 \textbf{Numerical control unit with set amount of execution} \\
 \textbf{Publication Number:} US 8036770 B2 \\
@@ -61,7 +62,7 @@ Several equations and methods used for navigation calculations were found [3], b
 This patent is for a machine that uses numerical controls.
 It will start a command or set of commands when its start button is depressed.
 It will also suspend execution if there is a change in direction or a non-cutting command is issued.
-It will then wait for the start button to be depressed again before resuming operation [4].
+It will then wait for the start button to be depressed again before resuming operation \cite{executionpatent}.
 
 \textbf{Approach For Printing To Web Services-Enabled Printing Devices} \\
 \textbf{Publication Number:} US 20100225958 A1 \\
@@ -70,7 +71,7 @@ It will then wait for the start button to be depressed again before resuming ope
 This patent describes a method for retrieving printer data and displaying what functions it has available on a second party application.
 A print driver will hold all the information and the information can be requested by the web service.
 The web service will then parse this data and show what options the printer has available and allow print jobs to be made.
-Then data and options can be sent back to the printer to create and execute print jobs [5].
+Then data and options can be sent back to the printer to create and execute print jobs \cite{webservicepatent}.
 
 \textbf{Control device of electric motor} \\
 \textbf{Publication Number:} US 8598818 B2 \\
@@ -79,7 +80,7 @@ Then data and options can be sent back to the printer to create and execute prin
 This patent describes a method of motor control. 
 It breaks the control down into three parts, driving, monitoring, and stopping.
 It focuses on stopping the motor in a safe matter, by using the monitoring to determine if the motor is operating under safe conditions.
-Specifically, it looks at the velocity of a motor to check if it needs to be forcibly stopped when an emergency stop button is pressed [6].
+Specifically, it looks at the velocity of a motor to check if it needs to be forcibly stopped when an emergency stop button is pressed \cite{motorcontrolpatent}.
 
 \textbf{SENA Technologies Products} \\
 A product search did not turn up any network enabled \gls{cnc} devices, however it did find a series of devices that would allow a company to connect existing devices to their network.
