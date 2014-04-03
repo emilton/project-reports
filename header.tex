@@ -5,9 +5,12 @@
 \usepackage{titlesec}
 \usepackage{graphicx}
 \usepackage{parskip}
-\usepackage{glossaries}
 \usepackage{datetime}
 \usepackage{hyperref}
+\usepackage{glossaries}
+\usepackage{acronym}
+\usepackage{nomencl}
+\usepackage{multicol}
 \usepackage{rotating}
 \usepackage{float}
 \usepackage[toc,page]{appendix}
@@ -17,6 +20,7 @@
 \titlespacing\chapter{0pt}{*1}{*1}
 \titlespacing\section{0pt}{*0}{-\parskip}
 \titlespacing\subsection{0pt}{*0}{-\parskip}
+\titlespacing\subsubsection{0pt}{*0}{-\parskip}
 \titlespacing\paragraph{0pt}{*0}{*3}
 
 \newcolumntype{a}[1]{>{\centering}p{#1}}
@@ -54,6 +58,10 @@
 	& James Gehringer & #8 \\
 \end{tabular}}
 \newcommand{\minutesdetails}[2]{\paragraph{Agenda}\begin{enumerate}#1\end{enumerate}\paragraph{Decisions Reached}\begin{enumerate}#2\end{enumerate}}
+
+%Let us use the acronym package without changing everything.
+\renewcommand{\newacronym}[3]{\acro{#1}[#2]{#3}}
+\renewcommand{\gls}[1]{\ac{#1}}
 
 \hypersetup{
 	colorlinks,

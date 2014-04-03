@@ -1,6 +1,21 @@
 \chapter{Engineering Analysis}
 
+Once design alternatives were evaluated and the anticipated project implementation specifics were chosen, the team set out to professionally implement the design.
+This entails carefully designing each of the project's components, including the hardware design, software design, and packaging design.
+Thorough design ensured that implementation issues were anticipated and therefore mitigated or avoided.
+
 \input{packaging-design/packaging.tex}
 \input{hardware-design/hardware.tex}
 \input{pcb-design/pcb.tex}
 \input{software-design/software.tex}
+
+\section{Design Performance}
+The product performs as expected.
+All of the objectives were met.
+When a mill is combined with a \gls{ceenc}, the mill correctly mills a design in a timely fashion. 
+The general purpose outputs work correctly.
+The system can drive four stepper motors, one DC motor, and receives input from an emergency stop switch and 4 stepper home inputs.
+The g code used to execute commands can be sent over \gls{tcpip}.
+The steppers are driven at a frequency range of at least 10kHz within 5\% accuracy.
+The whole system can handle a variety of power supplies and draws no more than 10 amps.
+The thermal shutdown also is triggered when the system reaches $60^{\circ}C$.

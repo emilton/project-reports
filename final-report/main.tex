@@ -1,5 +1,15 @@
 \input{../header.tex}
 
+\titleandsubtitle{CNC Interface \\ Project Final Report}{Submitted in Partial Fulfillment of the Requirements for the B.Sc. Degree, \\ Computer and Electronics Engineering, College of Engineering, \\ University of Nebraska \\ Peter Kiewit Institute, Omaha, Nebraska, U.S.A}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\tableoffiguresandtables
+
+\chapter*{Acronyms}
+\begin{multicols}{2}
+\begin{acronym}
 \newacronym{2d}{2-D}{Two-Dimensional}
 \newacronym{3d}{3-D}{Three-Dimensional}
 \newacronym{aon}{AON}{Activity On Node}
@@ -7,7 +17,7 @@
 \newacronym{bom}{BOM}{Bill of Materials}
 \newacronym{cad}{CAD}{Computer-Aided Design}
 \newacronym{ceen}{CEEN}{Computer and Electronics Engineering}
-\newacronym{ceenc}{CEEN-C}{Computer and Electronics Engineering Numerical Controller}
+\newacronym{ceenc}{\textsc{CeeNC}}{CEEN Numerical Controller}
 \newacronym{cnc}{CNC}{Computer Numerical Control}
 \newacronym{cpu}{CPU}{Central Processing Unit}
 \newacronym{dmm}{DMM}{Digital Multi-Meter}
@@ -20,6 +30,8 @@
 \newacronym{fmeca}{FMECA}{Failure Mode, Effects, and Criticality Analysis}
 \newacronym{gpio}{GPIO}{General Purpose Input/Output}
 \newacronym{ieee}{IEEE}{Institute of Electrical and Electronics Engineers}
+\newacronym{i2c}{I$^2$C}{Inter-Integrated Circuit}
+\newacronym{io}{I/O}{Input/Output}
 \newacronym{jtag}{JTAG}{Joint Test Action Group}
 \newacronym{kb}{kB}{kiloBytes}
 \newacronym{led}{LED}{Light Emitting Diode}
@@ -28,6 +40,7 @@
 \newacronym{mttf}{MTTF}{Mean Time to Failure}
 \newacronym{nesc}{NESC}{National Electrical Safety Code}
 \newacronym{os}{OS}{Operating System}
+\newacronym{oppm}{OPPM}{One Page Project Manager}
 \newacronym{otp}{OTP}{One-Time Programmable}
 \newacronym{pcb}{PCB}{Printed Circuit Board}
 \newacronym{pi}{Pi}{Raspberry Pi}
@@ -35,23 +48,18 @@
 \newacronym{pssc}{PSSC}{Project Specific Success Criteria}
 \newacronym{ram}{RAM}{Random Access Memory}
 \newacronym{rom}{ROM}{Read-Only Memory}
+\newacronym{rf}{RF}{Radio Frequency}
 \newacronym{spi}{SPI}{Serial Peripheral Interface}
 \newacronym{ssh}{SSH}{Secure Shell}
-\newacronym{tcpip}{TCP/IP}{Transmission Control Protocol/Internet Protocol}
-\newacronym{rf}{RF}{Radio Frequency}
 \newacronym{sar}{SAR}{Specific Absorption Rate}
 \newacronym{smt}{SMT}{Surface Mount Technology}
+\newacronym{tcpip}{TCP/IP}{Transmission Control Protocol/Internet Protocol}
 \newacronym{ti}{TI}{Texas Instruments}
 \newacronym{uart}{UART}{Universal Asynchronous Receiver/Transmitter}
 \newacronym{wbs}{WBS}{Work Breakdown Structure}
 \newacronym{xp}{XP}{Extreme Programming}
-
-\titleandsubtitle{CNC Interface \\ Project Final Report}{Submitted in Partial Fulfillment of the Requirements for the B.Sc. Degree, \\ Computer and Electronics Engineering, College of Engineering, \\ University of Nebraska \\ Peter Kiewit Institute, Omaha, Nebraska, U.S.A}
-
-\begin{document}
-\maketitle
-\tableofcontents
-\tableoffiguresandtables
+\end{acronym}
+\end{multicols}
 
 \input{front-matter.tex}
 \input{executive-summary.tex}
@@ -63,11 +71,16 @@
 \input{economic-analysis.tex}
 \input{reliability-analysis/reliability.tex}
 \input{environmental-analysis/environmental.tex}
+\input{individual-contributions.tex}
 \input{conclusion.tex}
 
 \begin{appendices}
+	\input{packaging-design/packaging-images.tex}
+	\input{pcb-design/schematics.tex}
+	\input{pcb-design/pcb-images.tex}
 	\input{software-design/firmware-flowchart.tex}
 	\input{software-design/firmware-hierarchy.tex}
+	\input{bom.tex}
 	\input{reliability-analysis/schematic-breakdown.tex}
 	\input{reliability-analysis/fmeca.tex}
 	\input{bibliography.tex}
