@@ -1,6 +1,4 @@
 \chapter{Conclusion}
-Restate the problem that gave rise to the report. 
-Summarize the main points and the approach that was taken. 
 
 Today, \gls{cnc}s are tied to a dedicated computer to control the system.
 These systems can be costly and can require a lot of space.
@@ -11,15 +9,31 @@ This will help these groups decrease the costs and time it takes to prototype a 
 
 The CeeNC is three major parts, the user interface, the master controller, and the motor control.
 The project was designed using a reiterative engineering process.
+Design reviews were used to verify that the project was being built correctly.
 During this process, the idea of the CeeNC was reformulated multiple times in the planning phase before the objectives were decided on and accepted.
 From there it was decided to keep the design modular to help with debugging.
 The Raspberry Pi was selected to get a powerful device to be the master controller but also at an affordable price.
- 
+ It could also host the user interface.
+The master controller would take in files and translate the g code to commands for the motor controller.
+The motor controller would then translate those commands to pulses to the motor driver board to control the motors.
+All the boards were designed to about the same size as the Raspberry Pi to keep the size of the whole product small.
+
+
 \section{Design Performance}
-Summarize the design performance.
- 
+
+The product performs as expected.
+All of the objectives were met.
+When a mill is combined with a CeeNC, the mill correctly mills a design in a timely fashion. 
+The general purpose outputs work correctly.
+The system can drive 4 stepper motors, one DC motor, and receives input from an emergency stop switch and 4 stepper home inputs.
+The g code used to execute commands can be sent over \gls{tcpip}.
+The steppers are driven at a frequency range of at least 10kHz within 5\% accuracy.
+The whole system can handle a variety of power supplies and draws no more than 10 amps.
+The thermal shutdown also is triggered when the system reaches 60\textsuperscript{o}C.
 \section{Recommendations}
 Provide recommendations, explaining subsequent action or posing specific questions for investigations. 
 
-\section{Lessons learned}
+One recommendation for the project moving forward would be to looking into a way to consolidate the master controller and motor controller.
+
+\section{Lessons Learned}
 Discuss the lessons learned. 
