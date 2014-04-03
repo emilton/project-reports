@@ -1,5 +1,6 @@
 \chapter{Design Requirements and Success Criteria}
-The project's success will be determined by whether or not the 10 engineering requirements, consisting of 5 \gls{pcsc} and 5 \gls{pssc}, are met. 
+The project's success will be determined by whether or not the 10 engineering requirements, consisting of 5 \gls{pcsc} and 5 \gls{pssc}, are met.
+The \gls{pssc}s were developed based on the objective tree, shown in Figure ~\ref{fig:o-tree}.
 
 \section{Five Project Common Success Criteria}
 \begin{enumerate}
@@ -13,14 +14,14 @@ The project's success will be determined by whether or not the 10 engineering re
 \section{Five Project Specific Success Criteria}
 \label{sec:psscs}
 \begin{enumerate}
-	\item The system will drive at least 4 stepper motors, 1 DC motor, and 16 General Purpose Outputs.
+	\item The system will drive at least 4 stepper motors, 1 DC motor, and 16 general purpose outputs.
 The system will receive inputs from at least 1 emergency stop switch and 4 stepper motor home inputs.
 	\item The system will Receive G-code through \gls{tcpip}.
 The system’s software will be developed using IEEE Std 830-1998 Recommended Practice for Software Requirements Specifications.
-	\item The step frequency range will be at a minimum of 10kHz.
+	\item The step frequency range will be at least 0Hz to 10kHz.
 For any chosen frequency in range, the actual step frequency will be within 5\% of the desired frequency.
 	\item The system power supply will accept between 14V and 36V and draw a maximum of 10A, including current required for the motors. 
-	\item The system will stop all motors and shutdown all microcontrollers if the main microcontroller temperature reaches $60^{\circ}C$.
+	\item The system will stop all motors and shutdown all microcontrollers if the main microcontroller temperature reaches $60^{\circ}C$ ($140^{\circ}F$).
 \end{enumerate}
 
 \section{Design Constraints}
@@ -49,10 +50,10 @@ To protect the \gls{pi} and microcontroller, opto-isolators will be used at the 
 
 \subsection{On-Chip Peripheral Requirements}
 The \gls{pi} will require either Ethernet or Wi-Fi capabilities to connect to a website.
-The \gls{pi} must have a 1 channel \gls{spi} bus to communicate with the microcontroller. 
-The microcontroller must have a 1 channel \gls{spi} bus to communicate with the \gls{pi}.
+The \gls{pi} must have a one channel \gls{spi} bus to communicate with the microcontroller. 
+The microcontroller must have a one channel \gls{spi} bus to communicate with the \gls{pi}.
 The microcontroller must have a JTAG port for programming.
-The microcontroller must have 4 16-bit timers for motor step counting.
+The microcontroller may require up to four 16-bit timers for motor step counting.
 
 \subsection{Power Constraints}
 The system will accept one DC power supply that can be between 14V and 36V.
