@@ -16,10 +16,10 @@ The project's success will be determined by whether or not the 10 engineering re
 The system will receive inputs from at least 1 emergency stop switch and 4 stepper motor home inputs.
 	\item The system will Receive G-code through \gls{tcpip}.
 The system’s software will be developed using IEEE Std 830-1998 Recommended Practice for Software Requirements Specifications.
-	\item The step frequency range will be at a minimum of 10kHz.
+	\item The step frequency range will be at minimum 0Hz to 10kHz.
 For any chosen frequency in range, the actual step frequency will be within 5\% of the desired frequency.
 	\item The system power supply will accept between 14V and 36V and draw a maximum of 10A, including current required for the motors. 
-	\item The system will stop all motors and shutdown all microcontrollers if the main microcontroller temperature reaches $60^{\circ}C$.
+	\item The system will stop all motors and halt all microcontrollers if the main microcontroller temperature reaches $60^{\circ}C$ ($140^{\circ}F$).
 \end{enumerate}
 
 \section{Requirements Validation}
