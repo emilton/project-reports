@@ -74,13 +74,13 @@ While not capable of running an entire OS, this microcontroller offers direct re
 The Arduino community is also one of the most active open source hardware communities alive on the web today.
 
 \subsection{Motor Driver Controller Microcontroller}
-There are four microcontrollers that were evaluated for use in the Motor Driver Controller board, the MSP430, the ATMega324P, the AT90USB1287, and the ARM Stellaris.
+There are four microcontrollers that were evaluated for use in the Motor Driver Controller board, the C2000, the ATMega324P, the AT90USB1287, and the ARM Stellaris.
 These microcontrollers were evaluated based on the number of timers they had, their interrupt capabilities, their SPI capabilities and the number of GPIO pins.
 
-\paragraph{MSP430} The MSP430 has 5 timers, which is more than what the project will need.
+\paragraph{C2000} The C2000 has 9 timers, which is more than what the project will need.
 It does have interrupt capabilities.
-The MSP430 does handle SPI communication. 
-There are up to 90 GPIO pins.
+The C2000 does handle SPI communication. 
+There are up to 22 GPIO pins.
 
 \paragraph{ATMega324P} The ATMega324P has 3 timers.
 There are interrupt capabilities with this microcontroller.
@@ -165,14 +165,14 @@ Alternative       &        & Y     & N                                          
 \end{table}
 
 \subsection{Motor Driver Controller Microcontroller}
-Of the following alternatives, the MSP430 was selected for its low cost, adequate timer count, and interrupt capabilities.
+Of the following alternatives, the C2000 was selected for its low cost, adequate timer count, and interrupt capabilities.
 \begin{table}[H]
 \caption{Motor Controller Evaluation}
 	\label{table:uCEval}
 	\centering
 \begin{tabular}{|r|c|c|c|c|c|}
 \hline
-Item              	& Weight & MSP430 & ATMega324P & AT90USB1287 & ARM Stellaris \\ \hline
+Item              	& Weight & C2000 & ATMega324P & AT90USB1287 & ARM Stellaris \\ \hline
 GPIO          	& 1      & -      & 1          & 1           & 1             \\ \hline
 SPI         		& 2      & -      & 0          & 0           & 0             \\ \hline
 Interrupt			& 3      & -      & 0          & 0           & 0             \\ \hline
