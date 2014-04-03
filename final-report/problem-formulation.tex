@@ -28,15 +28,9 @@ Once a file is uploaded, a command line interface on the device is used to execu
 The SmoothieBoard costs \$169.97.
 
 \subsubsection{EMC2}
-EMC2, also known as LinuxCNC is a freely available \gls{cnc} interface.
+EMC2, also known as LinuxCNC, is a freely available \gls{cnc} interface.
 It allows for multiple \gls{cnc} configurations, giving flexibility to people who want to build their own \gls{cnc}s.
 EMC2 requires a dedicated Linux-based machine and can only operate through a parallel port connector.
-
-\subsubsection{Rostock}
-The Rostock is a delta robot \gls{3d} printer is supported by RepRap, meaning it is a \gls{cnc} that can print many of its own components for making another device. 
-The RepRap is estimated to cost \$500 for the hardware for a work area of 8x8x16 inches.
-An Arduino handles the G-code processing that is sent to it through USB.
-The assembly instructions do refer to their current firmware as “a pretty hacky proof of concept and not a long term solution” [1] though.
 
 \subsubsection{OtherMill}
 The OtherMill is a new \gls{cnc} controlled by OtherPlan software that costs \$2199.
@@ -96,7 +90,7 @@ Using standardized G-code to instruct the work head will remain the same because
 However, this patent holds control of how G-code is used though, with claims mentioning specific command signifiers.
 The major differences between \gls{ceenc} and the claims in the first patent are when their product stops and the types of motors used to drive the \gls{cnc}.
 While our product does not include the mechanical side of the \gls{cnc}, it is still designed to drive four stepper motors. 
-This patent states that it will use servomotors, as shown in their first figure of the patent [Appedix Figure 1]. 
+This patent states that it will use servomotors, as shown in their first figure of the patent. 
 Secondly, their claims state that any time there is a change in the cutting direction or a non-cutting command is sent, the machine will pause and wait for the start button to be pushed again, but the \gls{ceenc} will run a whole batch of control without stopping or prompting for user input.
 Overall, this patent is vague system and many of the concepts were created by the team without reference, so the claims were obvious and it is surprising that it was patentable.
 
